@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Chris\**" />
+    <Compile Remove="Craig\**" />
+    <Compile Remove="David\**" />
+    <Compile Remove="Helen\**" />
+    <Compile Remove="Joe\**" />
+    <Compile Remove="Lewis\**" />
+    <Compile Remove="Ross\**" />
+    <Compile Remove="Steve\**" />
+    <EmbeddedResource Remove="Chris\**" />
+    <EmbeddedResource Remove="Craig\**" />
+    <EmbeddedResource Remove="David\**" />
+    <EmbeddedResource Remove="Helen\**" />
+    <EmbeddedResource Remove="Joe\**" />
+    <EmbeddedResource Remove="Lewis\**" />
+    <EmbeddedResource Remove="Ross\**" />
+    <EmbeddedResource Remove="Steve\**" />
+    <None Remove="Chris\**" />
+    <None Remove="Craig\**" />
+    <None Remove="David\**" />
+    <None Remove="Helen\**" />
+    <None Remove="Joe\**" />
+    <None Remove="Lewis\**" />
+    <None Remove="Ross\**" />
+    <None Remove="Steve\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomTypes\CustomTypes.csproj" />
+    <ProjectReference Include="..\Helpers\Helpers.csproj" />
+  </ItemGroup>
+
+</Project>

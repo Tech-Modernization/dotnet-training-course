@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="TBA 1\" />
+    <Folder Include="TBA 2\" />
+    <Folder Include="TBA 3\" />
+    <Folder Include="TBA 4\" />
+    <Folder Include="TBA 5\" />
+    <Folder Include="Ricky\" />
+    <Folder Include="Jill\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomTypes\CustomTypes.csproj" />
+    <ProjectReference Include="..\Helpers\Helpers.csproj" />
+  </ItemGroup>
+
+</Project>

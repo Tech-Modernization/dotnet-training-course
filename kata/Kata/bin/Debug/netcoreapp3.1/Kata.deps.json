@@ -1,0 +1,95 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Kata/1.0.0": {
+        "dependencies": {
+          "CustomTypes": "1.0.0",
+          "Demos": "1.0.0",
+          "GuestAreas": "1.0.0",
+          "Helpers": "1.0.0",
+          "TeamAreas": "1.0.0"
+        },
+        "runtime": {
+          "Kata.dll": {}
+        }
+      },
+      "CustomTypes/1.0.0": {
+        "runtime": {
+          "CustomTypes.dll": {}
+        }
+      },
+      "Demos/1.0.0": {
+        "dependencies": {
+          "CustomTypes": "1.0.0",
+          "Helpers": "1.0.0"
+        },
+        "runtime": {
+          "Demos.dll": {}
+        }
+      },
+      "GuestAreas/1.0.0": {
+        "dependencies": {
+          "CustomTypes": "1.0.0",
+          "Helpers": "1.0.0"
+        },
+        "runtime": {
+          "GuestAreas.dll": {}
+        }
+      },
+      "Helpers/1.0.0": {
+        "dependencies": {
+          "CustomTypes": "1.0.0"
+        },
+        "runtime": {
+          "Helpers.dll": {}
+        }
+      },
+      "TeamAreas/1.0.0": {
+        "dependencies": {
+          "CustomTypes": "1.0.0",
+          "Helpers": "1.0.0"
+        },
+        "runtime": {
+          "TeamAreas.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Kata/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CustomTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Demos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GuestAreas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Helpers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TeamAreas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
