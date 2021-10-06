@@ -1,0 +1,65 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "00-DemoKata/1.0.0": {
+        "dependencies": {
+          "01-Exercises": "1.0.0",
+          "02-Helpers": "1.0.0",
+          "03-CustomTypes": "1.0.0"
+        },
+        "runtime": {
+          "00-DemoKata.dll": {}
+        }
+      },
+      "01-Exercises/1.0.0": {
+        "dependencies": {
+          "02-Helpers": "1.0.0",
+          "03-CustomTypes": "1.0.0"
+        },
+        "runtime": {
+          "01-Exercises.dll": {}
+        }
+      },
+      "02-Helpers/1.0.0": {
+        "dependencies": {
+          "03-CustomTypes": "1.0.0"
+        },
+        "runtime": {
+          "02-Helpers.dll": {}
+        }
+      },
+      "03-CustomTypes/1.0.0": {
+        "runtime": {
+          "03-CustomTypes.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "00-DemoKata/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "01-Exercises/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "02-Helpers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "03-CustomTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

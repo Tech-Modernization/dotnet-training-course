@@ -1,0 +1,13 @@
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\Helpers.deps.json
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\Helpers.dll
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\Helpers.pdb
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\CustomTypes.dll
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\CustomTypes.pdb
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.AssemblyReference.cache
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfoInputs.cache
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfo.cs
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CopyComplete
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb

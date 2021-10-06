@@ -1,0 +1,15 @@
+C:\Users\paulb\source\repos\DemoKata\Exercises\bin\Debug\netcoreapp3.1\01-Exercises.deps.json
+C:\Users\paulb\source\repos\DemoKata\Exercises\bin\Debug\netcoreapp3.1\01-Exercises.dll
+C:\Users\paulb\source\repos\DemoKata\Exercises\bin\Debug\netcoreapp3.1\01-Exercises.pdb
+C:\Users\paulb\source\repos\DemoKata\Exercises\bin\Debug\netcoreapp3.1\02-Helpers.dll
+C:\Users\paulb\source\repos\DemoKata\Exercises\bin\Debug\netcoreapp3.1\03-CustomTypes.dll
+C:\Users\paulb\source\repos\DemoKata\Exercises\bin\Debug\netcoreapp3.1\03-CustomTypes.pdb
+C:\Users\paulb\source\repos\DemoKata\Exercises\bin\Debug\netcoreapp3.1\02-Helpers.pdb
+C:\Users\paulb\source\repos\DemoKata\Exercises\obj\Debug\netcoreapp3.1\01-Exercises.csproj.AssemblyReference.cache
+C:\Users\paulb\source\repos\DemoKata\Exercises\obj\Debug\netcoreapp3.1\01-Exercises.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulb\source\repos\DemoKata\Exercises\obj\Debug\netcoreapp3.1\01-Exercises.AssemblyInfoInputs.cache
+C:\Users\paulb\source\repos\DemoKata\Exercises\obj\Debug\netcoreapp3.1\01-Exercises.AssemblyInfo.cs
+C:\Users\paulb\source\repos\DemoKata\Exercises\obj\Debug\netcoreapp3.1\01-Exercises.csproj.CoreCompileInputs.cache
+C:\Users\paulb\source\repos\DemoKata\Exercises\obj\Debug\netcoreapp3.1\01-Exercises.csproj.CopyComplete
+C:\Users\paulb\source\repos\DemoKata\Exercises\obj\Debug\netcoreapp3.1\01-Exercises.dll
+C:\Users\paulb\source\repos\DemoKata\Exercises\obj\Debug\netcoreapp3.1\01-Exercises.pdb

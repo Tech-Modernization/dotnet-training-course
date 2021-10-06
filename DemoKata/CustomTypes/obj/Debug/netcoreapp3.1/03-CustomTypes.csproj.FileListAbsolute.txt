@@ -1,0 +1,10 @@
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\bin\Debug\netcoreapp3.1\03-CustomTypes.deps.json
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\bin\Debug\netcoreapp3.1\03-CustomTypes.dll
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\bin\Debug\netcoreapp3.1\03-CustomTypes.pdb
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\obj\Debug\netcoreapp3.1\03-CustomTypes.csproj.AssemblyReference.cache
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\obj\Debug\netcoreapp3.1\03-CustomTypes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\obj\Debug\netcoreapp3.1\03-CustomTypes.AssemblyInfoInputs.cache
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\obj\Debug\netcoreapp3.1\03-CustomTypes.AssemblyInfo.cs
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\obj\Debug\netcoreapp3.1\03-CustomTypes.csproj.CoreCompileInputs.cache
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\obj\Debug\netcoreapp3.1\03-CustomTypes.dll
+C:\Users\paulb\source\repos\DemoKata\CustomTypes\obj\Debug\netcoreapp3.1\03-CustomTypes.pdb

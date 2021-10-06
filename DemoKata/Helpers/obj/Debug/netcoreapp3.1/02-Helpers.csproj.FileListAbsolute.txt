@@ -1,0 +1,13 @@
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\02-Helpers.deps.json
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\02-Helpers.dll
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\02-Helpers.pdb
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\03-CustomTypes.dll
+C:\Users\paulb\source\repos\DemoKata\Helpers\bin\Debug\netcoreapp3.1\03-CustomTypes.pdb
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\02-Helpers.csproj.AssemblyReference.cache
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\02-Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\02-Helpers.AssemblyInfoInputs.cache
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\02-Helpers.AssemblyInfo.cs
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\02-Helpers.csproj.CoreCompileInputs.cache
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\02-Helpers.csproj.CopyComplete
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\02-Helpers.dll
+C:\Users\paulb\source\repos\DemoKata\Helpers\obj\Debug\netcoreapp3.1\02-Helpers.pdb
