@@ -2,9 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CustomTypes.MenuFactory
+namespace Kata.CustomTypes.MenuFactory
 {
-    class WineVariant
+    public enum WineVariant
     {
+        Bordeaux,
+        Cabernet,
+        Grenache,
+        Merlot,
+        Shiraz,
+        Zinfandel,
+        CheninBlanc,
+        PinotGrigio,
+        Rioja
     }
 }

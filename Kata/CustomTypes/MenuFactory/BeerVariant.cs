@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Kata.CustomTypes.MenuFactory
 {
-    public enum CoffeeVariant
+    public enum BeerVariant
     {
-        Cappuccino,
-        Mocha,
-        Latte,
-        Americano,
-        Espresso
+        Ale,
+        Bitter,
+        Dark,
+        Lager,
+        Ginger
     }
 }

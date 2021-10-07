@@ -6,18 +6,72 @@ namespace Kata.CustomTypes.MenuFactory
 {
     public class CoffeeMenuItem : DrinkMenuItem
     {
-        public Dictionary<CoffeeVariant, decimal> Variants = new Dictionary<CoffeeVariant, decimal>();
-
+        public TariffVariantDictionary<CoffeeVariant> Tariff = new TariffVariantDictionary<CoffeeVariant>();
         public CoffeeMenuItem()
         {
-            Variants.Add(CoffeeVariant.Mocha, 3M);
-            Variants.Add(CoffeeVariant.Americano, 1M);
-            Variants.Add(CoffeeVariant.Latte, 5M);
-            Variants.Add(CoffeeVariant.Espressio, 2M);
+            variantHeading = "Our coffees:";
+            var vb = new DrinkVariantBuilder<CoffeeVariant>(getBasePrice, getSizePriceOffset, isValidCombo);
+            vb.CreateVariants(Tariff);
+        }
 
-            SizeVariants.Add(SizeVariant.Tall, 0M);
-            SizeVariants.Add(SizeVariant.Grande, 0M);
-            SizeVariants.Add(SizeVariant.Vente, 0M);
+        public override bool HasVariants => Tariff.Count > 0;
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine(variantHeading);
+            foreach (var variant in Tariff)
+            {
+                sb.AppendLine($"{variant.Key,-25}{variant.Value:C}");
+            }
+            return sb.ToString();
+        }
+
+        public bool isValidCombo(CoffeeVariant cv, SizeVariant sv)
+        {
+            if (sv == 0) return true;
+
+            var valEspresso = new List<SizeVariant> { SizeVariant.Single, SizeVariant.Double };
+            var valRest = new List<SizeVariant> { SizeVariant.Tall, SizeVariant.Grande, SizeVariant.Vente };
+            return cv == CoffeeVariant.Espresso ? valEspresso.Contains(sv) : valRest.Contains(sv);
+        }
+
+        public decimal? getBasePrice(CoffeeVariant cv)
+        {
+            switch (cv)
+            {
+                case CoffeeVariant.Mocha:
+                    return 3.20M;
+                case CoffeeVariant.Americano:
+                    return 2.20M;
+                case CoffeeVariant.Latte:
+                    return 2.80M;
+                case CoffeeVariant.Cappuccino:
+                    return 2.60M;
+                case CoffeeVariant.Espresso:
+                    return 2.00M;
+                default:
+                    throw new NotImplementedException($"{cv} not priced yet");
+            }
+        }
+
+        public decimal? getSizePriceOffset(SizeVariant sv)
+        {
+            switch (sv)
+            {
+                case SizeVariant.Tall:
+                    return 0M;
+                case SizeVariant.Grande:
+                    return 0.85M;
+                case SizeVariant.Vente:
+                    return 1.70M;
+                case SizeVariant.Single:
+                    return 0M;
+                case SizeVariant.Double:
+                    return 1M;
+                default:
+                    return null;
+            }
         }
     }
 }

@@ -15,6 +15,8 @@ namespace Kata.CustomTypes.MenuFactory
         Cup,
         Pot,
         Pint,
-        Half
+        Half,
+        Single,
+        Double
     }
 }

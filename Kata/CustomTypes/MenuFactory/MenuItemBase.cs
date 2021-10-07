@@ -5,6 +5,6 @@ namespace Kata.CustomTypes.MenuFactory
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public bool HasVariants { get; set; }
+        public abstract bool HasVariants { get; }
     }
 }

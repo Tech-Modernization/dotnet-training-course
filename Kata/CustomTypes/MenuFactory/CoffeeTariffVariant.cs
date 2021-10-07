@@ -4,12 +4,7 @@ using System.Text;
 
 namespace Kata.CustomTypes.MenuFactory
 {
-    public enum CoffeeVariant
+    public class CoffeeTariffVariant : TariffVariantBase<CoffeeVariant, SizeVariant>
     {
-        Cappuccino,
-        Mocha,
-        Latte,
-        Americano,
-        Espresso
     }
 }
