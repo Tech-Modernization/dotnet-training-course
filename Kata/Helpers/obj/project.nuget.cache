@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4X1+LqmGwFr4avbWwDUB4wKaUapFPk914mlkMs+nu0WClzywoT2wnMtn2HOppvD+VMWK3bWGKpnLI3NAzlzsRA==",
+  "dgSpecHash": "yKvMuJD9IWh4+qbPAc37ifr7x8NosSzF2SBKUBlM/nPred01WM6+VW2YOLXQ0mV70sZcKfJYm7mmlBZ3qx2QRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\paulb\\source\\repos\\localKata\\Helpers\\Helpers.csproj",
+  "projectFilePath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Helpers\\Helpers.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

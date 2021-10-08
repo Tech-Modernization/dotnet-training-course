@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YUdkHKJ/i8gW9wmCqLc8I7x7Ls80+0sMaIEVbCJHf8ca9s7QLgFoGRJf+VFOYUMBTwHPOIJ+KrTGZ839yuJNpA==",
+  "dgSpecHash": "hAbJdkkTZlAAVpi2BQIxt5ae8IqFgkwHN15POAvTh5flWiEgixOSlVItGvqTTR3rj5oijrQMKhZq259BNPl9vA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\paulb\\source\\repos\\localKata\\Demos\\Demos.csproj",
+  "projectFilePath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Demos\\Demos.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

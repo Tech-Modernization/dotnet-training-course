@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paulb\\source\\repos\\localKata\\Helpers\\Helpers.csproj",
+      "projectUniqueName": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Helpers\\Helpers.csproj",
       "projectName": "Helpers",
-      "projectPath": "C:\\Users\\paulb\\source\\repos\\localKata\\Helpers\\Helpers.csproj",
+      "projectPath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Helpers\\Helpers.csproj",
       "packagesPath": "C:\\Users\\paulb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paulb\\source\\repos\\localKata\\Helpers\\obj\\",
+      "outputPath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Helpers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -58,8 +58,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\paulb\\source\\repos\\localKata\\CustomTypes\\CustomTypes.csproj": {
-              "projectPath": "C:\\Users\\paulb\\source\\repos\\localKata\\CustomTypes\\CustomTypes.csproj"
+            "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\CustomTypes\\CustomTypes.csproj": {
+              "projectPath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\CustomTypes\\CustomTypes.csproj"
             }
           }
         }

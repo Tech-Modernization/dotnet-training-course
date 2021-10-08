@@ -26,20 +26,6 @@
           "bin/placeholder/Demos.dll": {}
         }
       },
-      "GuestAreas/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "CustomTypes": "1.0.0",
-          "Helpers": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/GuestAreas.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GuestAreas.dll": {}
-        }
-      },
       "Helpers/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -51,20 +37,6 @@
         },
         "runtime": {
           "bin/placeholder/Helpers.dll": {}
-        }
-      },
-      "TeamAreas/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "CustomTypes": "1.0.0",
-          "Helpers": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/TeamAreas.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/TeamAreas.dll": {}
         }
       }
     }
@@ -80,29 +52,17 @@
       "path": "../Demos/Demos.csproj",
       "msbuildProject": "../Demos/Demos.csproj"
     },
-    "GuestAreas/1.0.0": {
-      "type": "project",
-      "path": "../GuestAreas/GuestAreas.csproj",
-      "msbuildProject": "../GuestAreas/GuestAreas.csproj"
-    },
     "Helpers/1.0.0": {
       "type": "project",
       "path": "../Helpers/Helpers.csproj",
       "msbuildProject": "../Helpers/Helpers.csproj"
-    },
-    "TeamAreas/1.0.0": {
-      "type": "project",
-      "path": "../TeamAreas/TeamAreas.csproj",
-      "msbuildProject": "../TeamAreas/TeamAreas.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "CustomTypes >= 1.0.0",
       "Demos >= 1.0.0",
-      "GuestAreas >= 1.0.0",
-      "Helpers >= 1.0.0",
-      "TeamAreas >= 1.0.0"
+      "Helpers >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -112,11 +72,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paulb\\source\\repos\\localKata\\Kata\\Kata.csproj",
+      "projectUniqueName": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Kata\\Kata.csproj",
       "projectName": "Kata",
-      "projectPath": "C:\\Users\\paulb\\source\\repos\\localKata\\Kata\\Kata.csproj",
+      "projectPath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Kata\\Kata.csproj",
       "packagesPath": "C:\\Users\\paulb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paulb\\source\\repos\\localKata\\Kata\\obj\\",
+      "outputPath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Kata\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -137,20 +97,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\paulb\\source\\repos\\localKata\\CustomTypes\\CustomTypes.csproj": {
-              "projectPath": "C:\\Users\\paulb\\source\\repos\\localKata\\CustomTypes\\CustomTypes.csproj"
+            "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\CustomTypes\\CustomTypes.csproj": {
+              "projectPath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\CustomTypes\\CustomTypes.csproj"
             },
-            "C:\\Users\\paulb\\source\\repos\\localKata\\Demos\\Demos.csproj": {
-              "projectPath": "C:\\Users\\paulb\\source\\repos\\localKata\\Demos\\Demos.csproj"
+            "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Demos\\Demos.csproj": {
+              "projectPath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Demos\\Demos.csproj"
             },
-            "C:\\Users\\paulb\\source\\repos\\localKata\\GuestAreas\\GuestAreas.csproj": {
-              "projectPath": "C:\\Users\\paulb\\source\\repos\\localKata\\GuestAreas\\GuestAreas.csproj"
-            },
-            "C:\\Users\\paulb\\source\\repos\\localKata\\Helpers\\Helpers.csproj": {
-              "projectPath": "C:\\Users\\paulb\\source\\repos\\localKata\\Helpers\\Helpers.csproj"
-            },
-            "C:\\Users\\paulb\\source\\repos\\localKata\\TeamAreas\\TeamAreas.csproj": {
-              "projectPath": "C:\\Users\\paulb\\source\\repos\\localKata\\TeamAreas\\TeamAreas.csproj"
+            "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Helpers\\Helpers.csproj": {
+              "projectPath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\Helpers\\Helpers.csproj"
             }
           }
         }

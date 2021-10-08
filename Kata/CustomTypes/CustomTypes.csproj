@@ -5,6 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="MenuFactoryRecursiveApproach\**" />
+    <Compile Remove="MenuFactoryVariantApproach\**" />
+    <EmbeddedResource Remove="MenuFactoryRecursiveApproach\**" />
+    <EmbeddedResource Remove="MenuFactoryVariantApproach\**" />
+    <None Remove="MenuFactoryRecursiveApproach\**" />
+    <None Remove="MenuFactoryVariantApproach\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Extensions\" />
   </ItemGroup>
 
