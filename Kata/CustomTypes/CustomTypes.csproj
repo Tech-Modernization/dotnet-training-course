@@ -5,12 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FixedValues\**" />
     <Compile Remove="MenuFactoryRecursiveApproach\**" />
     <Compile Remove="MenuFactoryVariantApproach\**" />
+    <Compile Remove="Validation\**" />
+    <EmbeddedResource Remove="FixedValues\**" />
     <EmbeddedResource Remove="MenuFactoryRecursiveApproach\**" />
     <EmbeddedResource Remove="MenuFactoryVariantApproach\**" />
+    <EmbeddedResource Remove="Validation\**" />
+    <None Remove="FixedValues\**" />
     <None Remove="MenuFactoryRecursiveApproach\**" />
     <None Remove="MenuFactoryVariantApproach\**" />
+    <None Remove="Validation\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +26,7 @@
     <Compile Remove="MenuFactoryDic\CoffeeMenuItem.cs" />
     <Compile Remove="MenuFactoryDic\CoffeeVariant.cs" />
     <Compile Remove="MenuFactoryDic\DefaultVariant.cs" />
+    <Compile Remove="MenuFactoryDic\DrinkMenuItem.cs" />
     <Compile Remove="MenuFactoryDic\DrinkMenuItemVariant.cs" />
     <Compile Remove="MenuFactoryDic\DrinksMenu.cs" />
     <Compile Remove="MenuFactoryDic\DrinksMenuItem.cs" />

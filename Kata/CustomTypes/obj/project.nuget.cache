@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w5hz/795rUxf3Ll6CgN1sW8mXo6gT18/X8MKMzfHlTEO6f3NmyzF35t58aQumxbJ+EyoyHI5+/80mGke0oZVlw==",
+  "dgSpecHash": "fKgfJoYgyKFdRY5H+3YDfX+a/eEsJiR65kXDyumOBz7s2K7xcP/aweeho7mDpT4O3LQ8dovfjPAitPMFlVVE7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\paulb\\source\\repos\\dotnet-training-course\\Kata\\CustomTypes\\CustomTypes.csproj",
+  "projectFilePath": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

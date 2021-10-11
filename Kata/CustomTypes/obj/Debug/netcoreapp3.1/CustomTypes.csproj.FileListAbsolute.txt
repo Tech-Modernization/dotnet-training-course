@@ -28,3 +28,13 @@ C:\Users\paulb\source\repos\dotnet-training-course\Kata\CustomTypes\obj\Debug\ne
 C:\Users\paulb\source\repos\dotnet-training-course\Kata\CustomTypes\bin\Debug\netcoreapp3.1\CustomTypes.deps.json
 C:\Users\paulb\source\repos\dotnet-training-course\Kata\CustomTypes\bin\Debug\netcoreapp3.1\CustomTypes.dll
 C:\Users\paulb\source\repos\dotnet-training-course\Kata\CustomTypes\bin\Debug\netcoreapp3.1\CustomTypes.pdb
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.csproj.AssemblyReference.cache
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.AssemblyInfoInputs.cache
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.AssemblyInfo.cs
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.csproj.CoreCompileInputs.cache
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.dll
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.pdb
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\bin\Debug\netcoreapp3.1\CustomTypes.deps.json
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\bin\Debug\netcoreapp3.1\CustomTypes.dll
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\CustomTypes\bin\Debug\netcoreapp3.1\CustomTypes.pdb

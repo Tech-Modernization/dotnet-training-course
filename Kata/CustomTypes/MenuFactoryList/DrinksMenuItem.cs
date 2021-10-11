@@ -6,10 +6,8 @@ namespace Kata.CustomTypes.MenuFactoryList
 {
     public class DrinksMenuItem : MenuItemBase
     {
-        public DrinksMenuItem(string name, ref decimal price) : base(name, price)
+        public DrinksMenuItem(string name, decimal price) : base(name, price)
         {
-            price *= 2;
-            Console.WriteLine($"Receiving {name} @ double the price: {price:C}");
         }
     }
 
