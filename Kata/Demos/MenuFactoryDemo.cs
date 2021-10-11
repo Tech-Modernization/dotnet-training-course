@@ -5,21 +5,13 @@ using Kata.CustomTypes.MenuFactoryList;
 
 namespace Kata.Demos
 {
-    public class MenuFactoryDemo : IDemo
+    public class MenuFactoryDemo : FactoryDemoBase<MenuBase, MenuItemBase>
     {
-        public void Run()
+        public MenuFactoryDemo(params MenuBase[] concreteCreators) : base(concreteCreators)
         {
-            var creators = new MenuBase[2];
-            creators[0] = new DrinksMenu();
-            creators[1] = new FoodMenu();
-            foreach (var creator in creators)
-            {
-                Console.WriteLine(creator);
-                foreach (var product in creator.Items)
-                {
-                    Console.WriteLine($"   {product.Name}....{product.Price:C}");
-                }
-            }
         }
+
+        public override string ReadOnlyPropertyName => "Items";
+        
     }
 }

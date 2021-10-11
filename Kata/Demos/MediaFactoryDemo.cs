@@ -5,21 +5,11 @@ using CustomTypes.MediaFactory;
 
 namespace Kata.Demos
 {
-    public class MediaFactoryDemo
+    public class MediaFactoryDemo : FactoryDemoBase<MediaCollectionBase, MediaItemBase>
     {
-        public static void Run()
+        public override string ReadOnlyPropertyName => "Items";
+        public MediaFactoryDemo(params MediaCollectionBase[] concreteCreators) : base(concreteCreators)
         {
-            var creators = new MediaCollectionBase[2];
-            creators[0] = new AudioCollection();
-            creators[1] = new VideoCollection();
-            foreach (var creator in creators)
-            {
-                Console.WriteLine(creator);
-                foreach (var product in creator.Items)
-                {
-                    Console.WriteLine($"   {product}");
-                }
-            }
         }
     }
 }
