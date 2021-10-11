@@ -14,7 +14,40 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="MenuFactoryDic\BeerVariant.cs" />
+    <Compile Remove="MenuFactoryDic\CocaColaMenuItem.cs" />
+    <Compile Remove="MenuFactoryDic\CocaColaVariant.cs" />
+    <Compile Remove="MenuFactoryDic\CoffeeMenuItem.cs" />
+    <Compile Remove="MenuFactoryDic\CoffeeVariant.cs" />
+    <Compile Remove="MenuFactoryDic\DefaultVariant.cs" />
+    <Compile Remove="MenuFactoryDic\DrinkMenuItemVariant.cs" />
+    <Compile Remove="MenuFactoryDic\DrinksMenu.cs" />
+    <Compile Remove="MenuFactoryDic\DrinksMenuItem.cs" />
+    <Compile Remove="MenuFactoryDic\MenuBase.cs" />
+    <Compile Remove="MenuFactoryDic\MenuItemBase.cs" />
+    <Compile Remove="MenuFactoryDic\MenuItemVariant.cs" />
+    <Compile Remove="MenuFactoryDic\MenuItemVariantDictionary.cs" />
+    <Compile Remove="MenuFactoryDic\MenuVariant.cs" />
+    <Compile Remove="MenuFactoryDic\SizeVariant.cs" />
+    <Compile Remove="MenuFactoryDic\TeaVariant.cs" />
+    <Compile Remove="MenuFactoryDic\WineVariant.cs" />
+    <Compile Remove="MenuFactoryRecursive\BeerVariant.cs" />
+    <Compile Remove="MenuFactoryRecursive\CoffeeVariant.cs" />
+    <Compile Remove="MenuFactoryRecursive\DrinkMenuItem.cs" />
+    <Compile Remove="MenuFactoryRecursive\DrinksMenu.cs" />
+    <Compile Remove="MenuFactoryRecursive\IMenu.cs" />
+    <Compile Remove="MenuFactoryRecursive\MenuBase.cs" />
+    <Compile Remove="MenuFactoryRecursive\MenuItemBase.cs" />
+    <Compile Remove="MenuFactoryRecursive\SizeVariant.cs" />
+    <Compile Remove="MenuFactoryRecursive\TeaVariant.cs" />
+    <Compile Remove="MenuFactoryRecursive\WineMenuItem.cs" />
+    <Compile Remove="MenuFactoryRecursive\WineVariant.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Extensions\" />
+    <Folder Include="MenuFactoryDic\" />
+    <Folder Include="MenuFactoryRecursive\" />
   </ItemGroup>
 
 </Project>

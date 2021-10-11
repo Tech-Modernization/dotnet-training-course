@@ -4,22 +4,14 @@ using System.Text;
 
 namespace Kata.CustomTypes.MenuFactoryDic
 {
-    public class DrinkMenuItemVariant : MenuItemVariant
+    public class DrinkMenuItemVariant<T> : MenuItemVariant<T, SizeVariant>
     {
+        public T DrinkName { get; }
         public SizeVariant Size { get; }
-        public DrinkMenuItemVariant(string name, decimal price) : base(name, price)
+        public DrinkMenuItemVariant(T drinkVar, SizeVariant size) : base(drinkVar, size)
         {
-        }
-        public DrinkMenuItemVariant(string name, decimal price, SizeVariant size) : base(name, price)
-        {
-            Size = size;
-        }
-
-        public override string ToString()
-        {
-            var formattedPrice = $"{Price:C}";
-            var formattedSize = $"({Size})";
-            return $"    {Name,-40} {formattedSize,-15} {formattedPrice,10}";
+            DrinkName = FirstVariant;
+            Size = SecondVariant;
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.MenuFactoryRecursive
+namespace Kata.CustomTypes.MenuFactoryDic
 {
     public enum CoffeeVariant
     {

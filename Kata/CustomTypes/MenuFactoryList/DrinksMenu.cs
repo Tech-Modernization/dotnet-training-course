@@ -1,19 +1,17 @@
-﻿namespace Kata.CustomTypes.MenuFactoryList
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Kata.CustomTypes.MenuFactoryList
 {
     public class DrinksMenu : MenuBase
     {
-        protected override void CreateMenuItems()
+        protected override void CreateItems()
         {
-            var cokes = new DrinkMenuItem();
-            cokes.Name = "Coca-Cola";
-            cokes.AddVariant("Classic", SizeVariant.Half, 1.75M);
-            cokes.AddVariant("Classic", SizeVariant.Pint, 2.5M);
-            cokes.AddVariant("Diet", SizeVariant.Half, 1.75M);
-            cokes.AddVariant("Diet", SizeVariant.Pint, 2.5M);
-            cokes.AddVariant("Cherry", SizeVariant.Half, 2.25M);
-            cokes.AddVariant("Cherry", SizeVariant.Pint, 3.0M);
-            Items.Add(cokes);
-            Items.Add(new CoffeeMenuItem());
+            var price = 1.5M;
+            Items.Add(new DrinksMenuItem("Water", ref price));
+            //Items.Add(new DrinksMenuItem("Tea", 1.25M));
+           // Items.Add(new DrinksMenuItem("Coffee", 4.0M));
         }
     }
 }
