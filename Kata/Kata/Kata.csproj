@@ -8,9 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CustomTypes\CustomTypes.csproj" />
     <ProjectReference Include="..\Demos\Demos.csproj" />
-    <ProjectReference Include="..\GuestAreas\GuestAreas.csproj" />
     <ProjectReference Include="..\Helpers\Helpers.csproj" />
-    <ProjectReference Include="..\TeamAreas\TeamAreas.csproj" />
   </ItemGroup>
 
 </Project>

@@ -60,8 +60,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\GuestAreas\\GuestAreas.csproj",
-      "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\TeamAreas\\TeamAreas.csproj",
       "CustomTypes >= 1.0.0",
       "Demos >= 1.0.0",
       "Helpers >= 1.0.0"
@@ -105,14 +103,8 @@
             "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\Demos\\Demos.csproj": {
               "projectPath": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\Demos\\Demos.csproj"
             },
-            "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\GuestAreas\\GuestAreas.csproj": {
-              "projectPath": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\GuestAreas\\GuestAreas.csproj"
-            },
             "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj": {
               "projectPath": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj"
-            },
-            "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\TeamAreas\\TeamAreas.csproj": {
-              "projectPath": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\TeamAreas\\TeamAreas.csproj"
             }
           }
         }
@@ -147,22 +139,10 @@
   },
   "logs": [
     {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\GuestAreas\\GuestAreas.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\GuestAreas\\GuestAreas.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    },
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\TeamAreas\\TeamAreas.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\TeamAreas\\TeamAreas.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\Kata\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }
