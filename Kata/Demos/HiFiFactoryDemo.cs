@@ -5,21 +5,10 @@ using CustomTypes.HiFiFactory;
 
 namespace Kata.Demos
 {
-    public class HiFiFactoryDemo
+    public class HiFiFactoryDemo : FactoryDemoBase<HomeStereoBase, ComponentBase>
     {
-        public static void Run()
+        public HiFiFactoryDemo(params HomeStereoBase[] concreteCreators) : base(concreteCreators)
         {
-             var creators = new HomeStereoBase[2];
-            creators[0] = new Separates();
-            creators[1] = new MiniHifi();
-            foreach (var creator in creators)
-            {
-                Console.WriteLine(creator);
-                foreach (var product in creator.Components)
-                {
-                    Console.WriteLine($"   {product}");
-                }
-            }
         }
     }
 }
