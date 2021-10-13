@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Kata.CustomTypes.MenuFactoryListDone
 {
@@ -15,10 +17,17 @@ namespace Kata.CustomTypes.MenuFactoryListDone
         public MenuItemBase(string name, decimal price) : this()
         {
             Name = name;
-            this.AddVariant(name, price);
+            AddVariant(name, price);
         }
         protected virtual void AddVariant(string name, decimal price)
         {
+            if (Variants.Any(variant => variant.Name == name && variant.Price == price))
+            {
+                // duplicate variant
+                Console.WriteLine($"Ignoring duplicate {Name} variant [{name},{price:C}]");
+                return;
+            }
+
             Variants.Add(new MenuItemVariant(name, price));
         }
     }

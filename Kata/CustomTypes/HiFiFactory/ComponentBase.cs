@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CustomTypes.HiFiFactory
+namespace Kata.CustomTypes.HiFiFactory
 {
     public abstract class ComponentBase
     {

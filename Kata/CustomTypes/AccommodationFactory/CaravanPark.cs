@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CustomTypes.AccommodationFactory
+namespace Kata.CustomTypes.AccommodationFactory
 {
     public class CaravanPark : EnclosureBase
     {

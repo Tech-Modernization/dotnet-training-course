@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TrackListFactoryDemo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CustomTypes\CustomTypes.csproj" />
     <ProjectReference Include="..\Helpers\Helpers.csproj" />
   </ItemGroup>

@@ -49,12 +49,20 @@
     <Compile Remove="MenuFactoryRecursive\TeaVariant.cs" />
     <Compile Remove="MenuFactoryRecursive\WineMenuItem.cs" />
     <Compile Remove="MenuFactoryRecursive\WineVariant.cs" />
+    <Compile Remove="TrackListAbstractFactory\AbstractFactoryTemplate.cs" />
+    <Compile Remove="TrackListAbstractFactory\AlbumFactoryBase.cs" />
+    <Compile Remove="TrackListAbstractFactory\CompactDiscAlbum.cs" />
+    <Compile Remove="TrackListAbstractFactory\CompactDiscTrackList.cs" />
+    <Compile Remove="TrackListAbstractFactory\TrackDetail.cs" />
+    <Compile Remove="TrackListAbstractFactory\TrackListBase.cs" />
+    <Compile Remove="TrackListAbstractFactory\VinylAlbum.cs" />
+    <Compile Remove="TrackListAbstractFactory\VinylTrackList.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
     <Folder Include="MenuFactoryDic\" />
     <Folder Include="MenuFactoryRecursive\" />
+    <Folder Include="TrackListAbstractFactory\" />
   </ItemGroup>
 
 </Project>

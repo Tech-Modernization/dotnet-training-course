@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CustomTypes.MediaFactory
+namespace Kata.CustomTypes.MediaFactory
 {
     // Concrete Product role
     public class AudioItem : MediaItemBase

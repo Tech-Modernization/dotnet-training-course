@@ -1,5 +1,5 @@
 ﻿using Kata.CustomTypes.BookshopFactory;
-using CustomTypes.MediaFactory;
+using Kata.CustomTypes.MediaFactory;
 using System;
 
 namespace Kata.Demos

@@ -9,6 +9,8 @@ namespace Kata.CustomTypes.MenuItemVariantFactory
         protected override void CreateVariants()
         {
             Variants.Add(new DrinkMenuItemVariant());
+            Variants.Add(new DrinkMenuItemVariant());
+            Variants.Add(new DrinkMenuItemVariant());
         }
     }
 }

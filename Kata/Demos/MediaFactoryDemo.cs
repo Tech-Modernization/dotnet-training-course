@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CustomTypes.MediaFactory;
+using Kata.CustomTypes.MediaFactory;
 
 namespace Kata.Demos
 {

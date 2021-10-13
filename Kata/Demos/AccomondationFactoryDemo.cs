@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CustomTypes.AccommodationFactory;
+using Kata.CustomTypes.AccommodationFactory;
 
 namespace Kata.Demos
 {

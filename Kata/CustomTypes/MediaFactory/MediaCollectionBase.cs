@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace CustomTypes.MediaFactory
+namespace Kata.CustomTypes.MediaFactory
 {
     // Playing the Creator in the Factory Pattern...
     public abstract class MediaCollectionBase
