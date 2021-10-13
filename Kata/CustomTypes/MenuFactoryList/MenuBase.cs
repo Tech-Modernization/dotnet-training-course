@@ -10,10 +10,10 @@ namespace Kata.CustomTypes.MenuFactoryList
         // constructor
         public MenuBase()
         {
-            this.CreateItems();
+            this.CreateMenuItems();
         }
 
         // factory method
-        protected abstract void CreateItems();
+        protected abstract void CreateMenuItems();
     }
 }

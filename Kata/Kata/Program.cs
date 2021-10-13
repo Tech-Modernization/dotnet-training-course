@@ -9,9 +9,9 @@ namespace Kata
         static void Main(string[] args)
         {
             new MenuFactoryDemo(new CustomTypes.MenuFactoryListDone.DrinksMenu(), new CustomTypes.MenuFactoryListDone.FoodMenu()).Run();
-            new MenuItemFactoryDemo(new CustomTypes.MenuItemVariantFactory.DrinkMenuItem(),
+           /* new MenuItemFactoryDemo(new CustomTypes.MenuItemVariantFactory.DrinkMenuItem(),
                 new CustomTypes.MenuItemVariantFactory.FoodMenuItem()).Run();
-
+           */
 
         }
 
