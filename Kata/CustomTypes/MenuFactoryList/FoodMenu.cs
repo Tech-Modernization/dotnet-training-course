@@ -6,6 +6,8 @@ namespace Kata.CustomTypes.MenuFactoryList
 {
     public class FoodMenu : MenuBase
     {
+        public FoodMenu() : base("Food")
+        { }
         protected override void CreateMenuItems()
         {
             Items.Add(new FoodMenuItem("Fish n Chips", 5M));

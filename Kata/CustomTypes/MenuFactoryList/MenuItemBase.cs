@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text;
 
 namespace Kata.CustomTypes.MenuFactoryList
 {
     public abstract class MenuItemBase
     {
         protected string Name { get; set; }
-        protected decimal Price { get; set; }
+        private decimal price;
         // 1. backing store
         private List<MenuItemVariant> variants = new List<MenuItemVariant>();
         // 2. property access
@@ -15,10 +15,28 @@ namespace Kata.CustomTypes.MenuFactoryList
         public MenuItemBase(string name, decimal price)
         {
             Name = name;
-            Price = price;
-            this.CreateVariants();
+            this.price = price;
+            CreateVariants();
         }
         // 4. factory method
-        protected abstract void CreateVariants();
+        protected virtual void CreateVariants()
+        {
+            Variants.Add(new MenuItemVariant(Name, price));
+        }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            if (Variants.Count > 1)
+            {
+                sb.AppendLine($"{Name} sub-menu");
+            }
+
+            foreach(var v in Variants)
+            {
+                sb.AppendLine($"    {v}");
+            }
+            return sb.ToString();
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Kata.Demos;
+using Kata.CustomTypes.MenuFactoryList;
 
 namespace Kata
 {
@@ -8,11 +9,8 @@ namespace Kata
     {
         static void Main(string[] args)
         {
-            new MenuFactoryDemo(new CustomTypes.MenuFactoryListDone.DrinksMenu(), new CustomTypes.MenuFactoryListDone.FoodMenu()).Run();
-           /* new MenuItemFactoryDemo(new CustomTypes.MenuItemVariantFactory.DrinkMenuItem(),
-                new CustomTypes.MenuItemVariantFactory.FoodMenuItem()).Run();
-           */
-
+            var demo = new MenuFactoryDemo(new DrinksMenu(), new FoodMenu());
+            demo.Run();
         }
 
         //private static void FillZiggyStardust(TrackListBase sender, EventArgs args)

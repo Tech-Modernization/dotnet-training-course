@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Kata.CustomTypes.MenuFactoryListDone;
+using Kata.CustomTypes.MenuFactoryList;
 
 namespace Kata.Demos
 {

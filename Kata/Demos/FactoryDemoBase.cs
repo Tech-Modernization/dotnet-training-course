@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Linq;
 
 namespace Kata.Demos
@@ -30,7 +29,7 @@ namespace Kata.Demos
                 Console.WriteLine(c);
                 foreach(var p in GetProducts(c))
                 {
-                    Console.WriteLine($"    {p}");
+                    Console.WriteLine(p);
                 }
             }
         }

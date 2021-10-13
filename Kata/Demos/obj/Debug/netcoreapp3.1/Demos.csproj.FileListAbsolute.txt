@@ -55,6 +55,6 @@ C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\De
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.AssemblyInfoInputs.cache
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.AssemblyInfo.cs
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.csproj.CoreCompileInputs.cache
-C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.csproj.CopyComplete
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.dll
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.pdb
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.csproj.CopyComplete
