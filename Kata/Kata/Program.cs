@@ -13,32 +13,17 @@ namespace Kata
     {
         static void Main(string[] args)
         {
-            var demo = new DictionaryDemo<string, decimal>();
-            Console.WriteLine($"Looking up beer: {demo.Search("beer")}");
-
-            demo.Setup("beer", 3.4M);
-            demo.Setup("beer", 3.4M);
-            demo.Setup("water", 1.2M);
-            demo.Setup("tea", 2.2M);
-            demo.Run();
-
-            Console.WriteLine($"Looking up eggs: {demo.Search("eggs")}");
-        }
-
-
-        /*
-        static void Main(string[] args)
-        {
             IDemo demoInstance = default;
-            var demoMenu = MenuHelper<IDemo>.CreateMenu();
+            var demoMenu = MenuHelperDone<IDemo>.CreateMenu();
             do
             {
                 demoInstance = demoMenu.SelectFromMenu("Choose a demo: ");
                 demoInstance?.Run();
+                Console.ReadKey();
             }
             while (demoInstance != null);
         }
-*/
+
         /*
         static void Main(string[] args)
         {
