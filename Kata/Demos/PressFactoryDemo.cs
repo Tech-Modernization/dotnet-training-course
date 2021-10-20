@@ -10,5 +10,15 @@ namespace Kata.Demos
         public PressFactoryDemo(params PressBase[] concreteCreators) : base(concreteCreators)
         {
         }
+
+        public override void DisplayExplicit(PressBase c)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void DisplayImplicit(PressBase c)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

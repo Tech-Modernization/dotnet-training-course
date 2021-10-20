@@ -1,17 +1,90 @@
 ﻿using System;
 using System.Collections.Generic;
 using Kata.Demos;
+using Kata.Helpers;
 using Kata.CustomTypes.MenuFactoryList;
+using Kata.CustomTypes.PublicationFactory;
+using Kata.CustomTypes.RecyclingFactory;
+using Kata.CustomTypes.EntUnitDemo;
 
 namespace Kata
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            var demo = new MenuFactoryDemo(new DrinksMenu(), new FoodMenu());
+            var demo = new DictionaryDemo<string, decimal>();
+            Console.WriteLine($"Looking up beer: {demo.Search("beer")}");
+
+            demo.Setup("beer", 3.4M);
+            demo.Setup("beer", 3.4M);
+            demo.Setup("water", 1.2M);
+            demo.Setup("tea", 2.2M);
             demo.Run();
+
+            Console.WriteLine($"Looking up eggs: {demo.Search("eggs")}");
         }
+
+
+        /*
+        static void Main(string[] args)
+        {
+            IDemo demoInstance = default;
+            var demoMenu = MenuHelper<IDemo>.CreateMenu();
+            do
+            {
+                demoInstance = demoMenu.SelectFromMenu("Choose a demo: ");
+                demoInstance?.Run();
+            }
+            while (demoInstance != null);
+        }
+*/
+        /*
+        static void Main(string[] args)
+        {
+            var bins = new ContainerBase[5];
+            bins[0] = new GlassContainer();
+            bins[1] = new PaperContainer();
+            bins[2] = new OrganicContainer();
+            bins[3] = new PlasticContainer();
+            bins[4] = new TinContainer();
+
+            var wasteItems = new MaterialBase[5] {
+                new WineBottle(),
+                    new Newspaper(),
+                    new OrangePeel(),
+                    new WaterBottle(),
+                    new BakedBeans()
+            };
+
+            foreach(var wi in wasteItems)
+            {
+                foreach(var b in bins)
+                {
+                    if (wi.GetType().BaseType.Name.Replace("Base", "") == b.GetType().Name.Replace("Container", ""))
+                    {
+                        Console.WriteLine($"{wi} goes in {b}");
+                        break;
+                    }
+                }
+            }
+        }
+
+        
+        static void loopDemoContext(RecyclingFactoryDemo demo)
+        {
+            for (var pm = Placement.Implicit; pm <= Placement.Sample; pm++)
+            {
+                demo.PlacementMode = pm;
+                for (var ig = 0; ig < 2; ig++)
+                {
+                    demo.IgnoreMiddleTier = (ig & 1) == 0;
+                    demo.Run();
+                    demo.GenerateWaste();
+                }
+            }
+        }
+        */
 
         //private static void FillZiggyStardust(TrackListBase sender, EventArgs args)
         //{
@@ -44,22 +117,5 @@ namespace Kata
         //    sender.Add("Side 2", "Brain Damage");
         //    sender.Add("Side 2", "Eclipse");
         //}
-
-        static void displayFactory<TAbstractCreator, TAbstractProduct>(string propName, params TAbstractCreator[] creators)
-        {
-            if (string.IsNullOrEmpty(propName))
-            {
-                propName = $"{typeof(TAbstractProduct).Name.Replace("Base", "")}s";
-            }
-
-            foreach (var c in creators)
-            {
-                Console.WriteLine(c);
-                foreach (var p in (List<TAbstractProduct>) c.GetType().GetProperty(propName)?.GetValue(c))
-                {
-                    Console.WriteLine($"    {p}");
-                }
-            }
-        }
     }
 }

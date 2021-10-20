@@ -4,18 +4,31 @@ using System.Linq;
 
 namespace Kata.Demos
 {
-    public class FactoryDemoBase<TAbstractCreator, TAbstractProduct> : IDemo, IFactoryDemo<TAbstractCreator, TAbstractProduct>
+    public enum Placement { Implicit, Explicit, Sample };
+    public abstract class FactoryDemoBase<TAbstractCreator, TAbstractProduct> : IDemo, IFactoryDemo<TAbstractCreator, TAbstractProduct>
     {
         private List<TAbstractCreator> creators = new List<TAbstractCreator>();
+
+        private string abstractProductName = typeof(TAbstractProduct).FullName;
+        private string abstractCreatorName = typeof(TAbstractCreator).FullName;
         private string readonlyPropertyName;
-        public virtual string ReadOnlyPropertyName { get => readonlyPropertyName; }
-        
+        protected virtual string ReadOnlyPropertyName { get => readonlyPropertyName; }
+
+        public Placement PlacementMode { get; set; }
+        public bool IgnoreMiddleTier { get; set; }
+
+        public virtual void FillExplicit(TAbstractCreator ac) { }
+        public virtual void FillImplicit(Type ct, Type ap) { }
+        public virtual void DisplayExplicit(TAbstractCreator ac) { }
+        public virtual void DisplayImplicit(TAbstractCreator ac) { }
+
         public FactoryDemoBase(params TAbstractCreator[] concreteCreators)
         {
             readonlyPropertyName = $"{typeof(TAbstractProduct).Name.Replace("Base", "")}s";
+
             if (!CreatorProductRelationshipIsValid())
-                throw new Exception($"Type {typeof(TAbstractCreator).Name} does not contain a property of List<{typeof(TAbstractProduct).Name}>");
-            
+                throw new Exception($"Type {abstractCreatorName} does not contain a property of List<{abstractProductName}>");
+
             foreach (var c in concreteCreators)
             {
                 creators.Add(c);
@@ -24,14 +37,27 @@ namespace Kata.Demos
 
         public virtual void Run()
         {
-            foreach(var c in creators)
+            Console.WriteLine($"Running {this.GetType().Name}\nPlacement: {PlacementMode}"
+                + $"\nMiddle tier: {(IgnoreMiddleTier ? "ignored" : "enabled")}");
+
+            foreach (var c in creators)
             {
                 Console.WriteLine(c);
-                foreach(var p in GetProducts(c))
+                if (PlacementMode == Placement.Implicit)
                 {
-                    Console.WriteLine(p);
+                    FillImplicit(c.GetType(), getAbstractProductType(c));
+                    DisplayImplicit(c);
+                    continue;
                 }
+
+                FillExplicit(c);
+                DisplayExplicit(c);
             }
+        }
+        protected Type getAbstractProductType(TAbstractCreator c)
+        {
+            var propType = c.GetType().GetProperty(ReadOnlyPropertyName).PropertyType;
+            return propType.GenericTypeArguments.FirstOrDefault();
         }
 
         public bool CreatorProductRelationshipIsValid()
@@ -46,6 +72,7 @@ namespace Kata.Demos
                 return (noSetter && isList && typeArgIsProduct);
             })
                 .ToList();
+
             return lists.Count == 1;
         }
 
@@ -54,5 +81,6 @@ namespace Kata.Demos
             var propertyInfo = creator.GetType().GetProperty(ReadOnlyPropertyName);
             return (List<TAbstractProduct>)propertyInfo.GetValue(creator);
         }
+
     }
 }

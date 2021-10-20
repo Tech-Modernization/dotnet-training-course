@@ -12,10 +12,6 @@ namespace Kata.CustomTypes.MenuFactoryList
 
         protected override void CreateVariants()
         {
-            // it's either this or add a constructor argument to prevent the
-            // creation of a default variant.  this is *much* simpler.
-            Variants.Clear();
-
             for (var size = SizeVariant.Small; size <= SizeVariant.Large; size++)
             {
                 Variants.Add(new DrinkMenuItemVariant("Americano", 1.8M, size));

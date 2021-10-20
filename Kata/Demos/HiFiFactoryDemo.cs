@@ -10,5 +10,15 @@ namespace Kata.Demos
         public HiFiFactoryDemo(params HomeStereoBase[] concreteCreators) : base(concreteCreators)
         {
         }
+
+        public override void DisplayExplicit(HomeStereoBase c)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void DisplayImplicit(HomeStereoBase c)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

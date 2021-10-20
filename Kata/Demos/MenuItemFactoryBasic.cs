@@ -5,7 +5,7 @@ using Kata.CustomTypes.MenuFactoryList;
 
 namespace Kata.Demos
 {
-    public class MenuItemFactoryBasic
+    public class MenuItemFactoryBasic : IDemo
     { 
         public void Run()
         {

@@ -69,6 +69,11 @@ C:\Users\paulb\source\repos\dotnet-training-course\Kata\Kata\obj\Debug\netcoreap
 C:\Users\paulb\source\repos\dotnet-training-course\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.dll
 C:\Users\paulb\source\repos\dotnet-training-course\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.pdb
 C:\Users\paulb\source\repos\dotnet-training-course\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.genruntimeconfig.cache
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.AssemblyReference.cache
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfoInputs.cache
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfo.cs
+C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.CoreCompileInputs.cache
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.exe
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.deps.json
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.runtimeconfig.json
@@ -81,11 +86,6 @@ C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Hel
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\CustomTypes.pdb
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Demos.pdb
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Helpers.pdb
-C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.AssemblyReference.cache
-C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfoInputs.cache
-C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfo.cs
-C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.CoreCompileInputs.cache
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.dll
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.pdb
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.genruntimeconfig.cache

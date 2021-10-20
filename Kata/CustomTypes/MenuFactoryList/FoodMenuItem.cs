@@ -12,10 +12,5 @@ namespace Kata.CustomTypes.MenuFactoryList
         {
             IsVeganFriendly = isVeganFriendly;
         }
-
-        protected override void CreateVariants()
-        {
-            // no variants at this level
-        }
     }
 }

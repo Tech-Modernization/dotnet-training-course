@@ -5,9 +5,9 @@ using Kata.CustomTypes.AccommodationFactory;
 
 namespace Kata.Demos
 {
-    public class AccomondationFactoryDemo
+    public class AccomondationFactoryDemo : IDemo
     {
-        public static void Run()
+        public void Run()
         {
             var creators = new EnclosureBase[2];
             creators[0] = new Field();

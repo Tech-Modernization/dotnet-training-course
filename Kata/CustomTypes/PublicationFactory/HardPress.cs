@@ -8,7 +8,7 @@ namespace Kata.CustomTypes.PublicationFactory
     {
         protected override void CreatePublications()
         {
-            Publications.Add(new Hardback());
+            Publications.Add(new Hardback(true));
             Publications.Add(new Hardback());
         }
     }

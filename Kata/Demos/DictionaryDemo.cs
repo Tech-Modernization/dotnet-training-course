@@ -4,47 +4,32 @@ using System.Text;
 
 namespace Kata.Demos
 {
-    public class DictionaryDemo
+    public class DictionaryDemo<TKey, TValue> : IDemo, IDictionaryDemo<TKey, TValue>
     {
-        public static void Run()
+        private Dictionary<TKey, TValue> dictionary = new Dictionary<TKey, TValue>();
+
+        public void Run()
         {
-            var dict = new Dictionary<int, string>();
-            dict.Add(1, "me");
-            dict.Add(2, "you");
-            dict.Add(24, "uncle pete");
-            dict.Add(4000000, "aunty beryl");
-
-            Console.WriteLine($"{dict[2]}");
-
-            foreach (var k in dict.Keys)
+            foreach(var entry in dictionary)
             {
-                Console.WriteLine(dict[k]);
+                Console.WriteLine($"Key: {entry.Key},  Value: {entry.Value}");
+            }
+        }
+
+        public TValue Search(TKey key)
+        {
+            if (dictionary.Count == 0)
+            {
+                Console.WriteLine($"There aren't entries to search.");
+                return default;
             }
 
-            dict.Clear();
-            do
-            {
-                Console.Write("Gimme a key:");
-                var key = Console.ReadLine();
-                if (key.Length == 0) break;
-                Console.Write("Gimme a name:");
-                var name = Console.ReadLine();
-                if (name.Length == 0) break;
+            return dictionary.ContainsKey(key) ? dictionary[key] : default;
+        }
 
-                if (dict.ContainsKey(int.Parse(key)))
-                {
-                    dict[int.Parse(key)] = name;
-                    continue;
-                }
-
-                dict.Add(int.Parse(key), name);
-
-            } while (true);
-
-            foreach (var k in dict.Keys)
-            {
-                Console.WriteLine(dict[k]);
-            }
+        public void Setup(TKey key, TValue val)
+        {
+            dictionary.TryAdd(key, val);
         }
     }
 }

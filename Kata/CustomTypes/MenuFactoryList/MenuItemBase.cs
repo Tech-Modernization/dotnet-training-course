@@ -16,7 +16,7 @@ namespace Kata.CustomTypes.MenuFactoryList
         {
             Name = name;
             this.price = price;
-            CreateVariants();
+            this.CreateVariants();
         }
         // 4. factory method
         protected virtual void CreateVariants()
@@ -27,14 +27,16 @@ namespace Kata.CustomTypes.MenuFactoryList
         public override string ToString()
         {
             var sb = new StringBuilder();
+            var indent = string.Empty;
             if (Variants.Count > 1)
             {
-                sb.AppendLine($"{Name} sub-menu");
+                sb.Append($"\n{Name} sub-menu");
+                indent = new string(' ', 4);
             }
 
             foreach(var v in Variants)
             {
-                sb.AppendLine($"    {v}");
+                sb.Append($"\n{indent}{v}");
             }
             return sb.ToString();
         }
