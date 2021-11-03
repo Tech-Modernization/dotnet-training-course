@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj",
+      "projectUniqueName": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj",
       "projectName": "Helpers",
-      "projectPath": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj",
+      "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj",
       "packagesPath": "C:\\Users\\paulb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\obj\\",
+      "outputPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -58,8 +58,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj": {
-              "projectPath": "C:\\Users\\paulb\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj"
+            "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj": {
+              "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj"
             }
           }
         }
