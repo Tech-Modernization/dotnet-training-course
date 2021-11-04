@@ -92,9 +92,12 @@ steps:
 
 Part 6
 
-objectives:
+conceptual objectives:
 - practice class-level generics 
-- practive anonymous methods
+- practive interface-level generics
+- practice anonymous methods
+
+functional objective:
 - provide a means of abstracting and encapsulating the functionality of following a recipe
 
 steps:
@@ -111,9 +114,111 @@ steps:
 
 Part 7
 
-objectives:
+conceptual objectives:
 - introduce generic type constraints
-- make of the design 
+
+functional objectives:
+- protect the Recipe class from abuse 
+
+steps:
+
+* instantiating the Recipe class with a string as the generic type is an abuse of the class
+
+- create a class DishBase that inherits from List<Ingredient>
+- add a public string property DishName
+- create a class SpagBol that inherits from DishBase 
+- create a class Salad that doesn't inherit anything
+- add a public string property SaladName to Salad
+- override ToString in Recipe and output the DishName property of Dish
+- test this with both SpagBol and Salad 
+
+* see that Salad crashes
+* differently from the menu, we don't want to deal with non-conformant types
+
+- insert this line between the class declaration of Recipt<TDish> and it's opening brace
+
+       where TDish: DishBase
+
+- test with SpagBol and Salad again
+
+* see that the code won't even compile 
+  - and if you've still got your Recipe<string> in there, that is now also a problem.
+
+Part 8
+
+conceptual objectives:
+- more on generic type constraints.
+
+functional objectives:
+- avoid having to pass in an instance of the DishBase to the Recipe constructor
+
+you may remember from the first demo of generics that it wasn't possible to instantiate T.
+well, it's not - unless you use the new() constraint
+
+steps:
+- add ", new()" to the "where" constraint on the Recipe class
+- remove the constructor argument
+- change the constructor code to Dish = new TDish();
+- remove the Recipe<string> 
+- have Salad inherit from DishBase
+- retest
+
+part 9
+
+conceptual objectives:
+- practice generic type constraints
+- practice anonymous methods 
+
+functional objectives:
+- provide a means of instantiating the ingredients for the dish
+
+steps: 
+- create an interface IPantry 
+- add a method Measure returning Ingredient and accepting name and amount as 
+  with the anonymous version of measure.
+- add an overload for Measure taking a generic type parameter TIngredient 
+- add an anonymous method "instantiate" as an argument to the Measure overload, returning TIngredient
+- declare a class Pantry that implements IPantry
+- add a pantry to DishBase that inheritors can access but not external code
+- in the Spagbol constructor call pantry.Measure with string arguments and add the result to the list
+- then call the generic pantry.Measure for a Tomato and add that to the list
+- then call it for a List of DateTime.
+
+* hmmm.  it seems the Measure method can be abused as well.  how do we protect it?
+
+- add a generic type constraint to the overload ensuring that TIngredient "is" always an Ingredient
+- you'll need to add this to the implementation as well
+- the project won't build now until you remove the List<DateTime> from the SpagBol constructor.
+
+part 10
+
+conceptual objectives
+- reverse casting generic types 
+
+functional objectives
+- practice inline anonymous methods 
+
+steps:
+- update your call to Measure<Tomato>() so that it instantiates TIngredient
+
+          Add(pantry.Measure<Tomato>(() => new TIngredient()));
+
+* it won't compile.  how do you fix it?
+
+- yes, you could add the new() constraint to the interface and refactor but there's another solution
+- try this instead
+
+        Add(pantry.Measure<Tomato>(() => new Tomato() as TIngredient);
+
+- abuse the Measure method by specifying a List of DateTime
+- add a line to the Measure method to return null if the type is not an Ingredient
+- add code to test if the ingredient is a tomato and in
+
+
+
+- add a generic type constraint to the overload ensuring that TIngredient "is" always an Ingredient
+
+
 Part 15
 
 - if you're not working in the Kata.sln solution, 
@@ -141,8 +246,6 @@ Part 3
 
 - up
 
-- create a class DishBase that inherits from List<Ingredient>
-- create a class Recipe accepting a generic type 
 
 Part 2
 

@@ -57,7 +57,8 @@ namespace Kata.Demos
         }
         private void RunPart6()
         {
-            var r = new Recipe<DishBase>();
+            /*
+            var r = new Recipe<string>("beans on toast");
             r.Process(ingreds =>
             {
                 var s = new Stage("fake stage");
@@ -66,14 +67,19 @@ namespace Kata.Demos
                 CW(s);
                 return s;
             }, ingreds[0], ingreds[1]);
-
+            */
 
         }
 
 
         private void RunPart7()
         {
-            throw new NotImplementedException();
+            /*
+            var r1 = new Recipe<SpagBol>(new SpagBol());
+            Console.WriteLine(r1);
+            var r2 = new Recipe<Salad>(new Salad());
+            Console.WriteLine(r2);
+            */
         }
         private void RunPart8()
         {
@@ -98,7 +104,7 @@ namespace Kata.Demos
         public interface IPantry
         {
             Ingredient Measure(string name, string amount);
-            public TIngredient Measure<TIngredient>(Func<TIngredient> instantiate) where TIngredient : Ingredient;
+            Ingredient Measure<TIngredient>(Func<TIngredient> instantiate) where TIngredient : Ingredient;
         }
 
         public interface IIngredient
@@ -114,7 +120,7 @@ namespace Kata.Demos
                 return new Ingredient(name, amount);
             }
 
-            public TIngredient Measure<TIngredient>(Func<TIngredient> instantiate) where TIngredient : Ingredient
+            public Ingredient Measure<TIngredient>(Func<TIngredient> instantiate) where TIngredient : Ingredient
             {
                 return instantiate();
             }
@@ -218,7 +224,7 @@ namespace Kata.Demos
             }
         }
 
-        public interface IRecipeFollower<T> where T : DishBase
+        public interface IRecipeFollower<T>
         {
             void Follow();
             Stage Process(Func<Ingredient[], Stage> process, params Ingredient[] ingredients);
@@ -256,31 +262,35 @@ namespace Kata.Demos
             }
         }
 
-        public class Recipe<T> : IRecipeFollower<T> where T : DishBase, new()
+        public class Recipe<TDish> : IRecipeFollower<TDish>
+                   where TDish : DishBase
         {
-            T Dish;
+            TDish Dish;
 
-            public Recipe()
+            public Recipe(TDish dish)
             {
-                Dish = new T();
+                Dish = dish;
             }
 
-            public T Assemble(List<Stage> stages, List<Ingredient> ingredients, Action<T>[] step)
+            public TDish Assemble(List<Stage> stages, List<Ingredient> ingredients, Action<TDish>[] step)
             {
                 throw new NotImplementedException();
             }
 
             public void Follow()
             {
-                foreach (var i in Dish)
-                {
-                    i.Prepare();
-                }
+    
             }
 
             public Stage Process(Func<Ingredient[], Stage> process, params Ingredient[] ingredients)
             {
                 return process(ingredients);
+            }
+
+            public override string ToString()
+            {
+                var d = Dish as DishBase;
+                return $"Following recipe for {d.DishName}";
             }
         }
         public class FryUp : DishBase
@@ -290,11 +300,12 @@ namespace Kata.Demos
                 DishName = "Cooked Breakfast";
             }
         }
-        public class Salad : DishBase
+        public class Salad 
         {
+            public string SaladName { get; }
             public Salad()
             {
-                DishName = "Salad";
+                SaladName = "Salad";
             }
         }
     }
