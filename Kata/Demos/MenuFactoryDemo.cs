@@ -13,12 +13,7 @@ namespace Kata.Demos
 
         protected override string ReadOnlyPropertyName => "Items";
 
-        public override void DisplayExplicit(MenuBase c)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void DisplayImplicit(MenuBase c)
+        public override void FillExplicit(MenuBase ac)
         {
             throw new NotImplementedException();
         }

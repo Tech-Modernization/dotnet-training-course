@@ -38,10 +38,10 @@ namespace Kata.Helpers
 
         public static MenuHelperDone<T> CreateMenu()
         {
-            return BuildMenu(typeof(T));
+            return buildMenu(typeof(T));
         }
 
-        private static MenuHelperDone<T> BuildMenu(Type menuSourceType)
+        private static MenuHelperDone<T> buildMenu(Type menuSourceType)
         {
             var typesInAssembly = menuSourceType.Assembly.DefinedTypes.Where(t => !t.IsAbstract);
             var newMenu = new MenuHelperDone<T>();

@@ -1,148 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-/*
- * part 1
-
-define an interface IMenu accepting a generic type 
-define a method Build()
--- accepting 1 or more instances of the generic type as arguments 
--- returning a list of string to contain the menu options "<menu-index>  <option-text>"
-
-part 2 
-
-define a class Menu that implements IMenu for string 
-write a program to instantiate the Menu class, call its Build method and display the options returned.
-
-part 3 
-
-modify the Menu class to accept a generic type and pass it to the interface 
-
-test the build method with int, string and decimal types 
-
-update the build method to format decimals as a price.
-
-part 4
-
-define classes Book, CD and DVD implementing IMedia
-add a private field Author to Book,  Artist to CD and Director to DVD 
-add a private string Title to all 3.
-
-define an interface IFormatProvider 
-IFormatProvider defines a method FormatDetails:
--- accepting  no arguments
--- returning a string with the author/artist/director of the book/cd/dvd and its title
-
-implement FormatDetails in your classes 
-
-test your menu with each of the 3 classes
-
-notice that the name of the type is output cuz Console.WriteLine doesn't know how to format it.
-
-part 5 
-
-update your Build method to use the FormatDetail method in the book, cd and dvd classes to format the option text
-
-part 6
-
-merge the menu options, adjusting the index accordingly 
-
-define an abstract class Media that accepts a generic type and implements IFormatProvider 
-have Book, CD and DVD inherit from that class and specify their own type as the generic type specifier for Media
-
-update the program to instantiate a single menu of Media 
-
-update the IMenu interface to include an overload for the build method that accept a list of existing options as a parameter
-
-copy the exsisting build method signature and add an empty method body
-
-add the new parameter to the existing build method signature
-
-in the empty method add a line to return the result of calling the overload, passing in an empty list of string
-
-update the build method to use the incoming list as the option text list and initialise the counter to its length
-
-you can now use the existing calls to the build to extend the menu options instead of having get them all in the same call.
-
-
-part 7 
-
-but what if the menu needs to establish its options on the fly 
-and the objects *don't* conform to some common abstract idea?
-i.e. what if they're not media items?
-
-define classes for Hammer, Shoes and FishingTackle all implementing IFormatProvider
-
-change the Menu instance to be of type IFormatProvider
-
-run the menu.build again passing in a random selection of books, hammers etc.
-
-part 8
-
-what if the menu needs to display items that cannot be modified to implement IFormatProvider?
-
-change the menu instance to be of type object and test again.
-
-now remove the implementation of IFormatProvider from the FishingTackle and Shoes definitions.
-
-update the Build method to output a default option text if the incoming object does not implement IFormatProvider
-
-part 9
-
-add an overload for the build method in IMenu that accepts 1 or more "objects"
-and also add a parameter to allow a default formatting method to be passed as well.
-
-the syntax you need is:
-
-void Build(Func<object, string> formatDetails, List<string> menuText, params object[] options);
-
-Implement the interface in the Menu class and move the body of the existing Build()
-implementation to the new version.  
-
-Reinstate the creation of the list<string> as the return value.  The setting of the option index 
-should automagically work cuz you're simulating what you did in part 6.
-
-Modify the Build(List<string> menuText, params object[] options) overload to call the new overload
-
-return Build(null, menuText, options);
-
-test the program - notice that nothing has changed in the results.
-
-part 10 
-
-modify the program to add an implementation for your new anonymous method
-
-menu.Build(option => option.GetType().Name, (continue with the rest of the build parameters as before));
-
-update the build overload with the anonymous parameter to execute the formatDetails anonymous method if it is present.
-
-optionText = formatDetails?(option[i]) ?? $"no default formatter for non-IFormatProvider {option}";
-
-part 11:
-
-make your method provide data that's actually needed.
-
-this is the syntax you'll need:
-
-menu.Build(option => {
-if (option is Shoes) return ((Shoes) option).FormatDetails();
-if (option is FishingTackle) ((FishingTackle)option).FormatDetails();
-return option.GetType().Name;
-}, ...(as before));
-
-
-part 12:
-
-move your anonymous method into a variable for neatness
-
-Func<object, string> formatProvider = option => {
-if (option is Shoes) return ((Shoes) option).FormatDetails();
-if (option is FishingTackle) ((FishingTackle)option).FormatDetails();
-return option.GetType().Name;
-}
-
-*/
 
 namespace Kata.Demos.E10Done
 {
@@ -156,27 +16,19 @@ namespace Kata.Demos.E10Done
 
         public void Run()
         {
-            Func<object, string> formatProvider = (option) => { 
-                if (option is Shoes) return ((Shoes)option).FormatDetails();
-                if (option is FishingTackle) return ((FishingTackle)option).FormatDetails();
-                return option.ToString();
-            };
-
-            var menu = new Menu<IFormatProvider>();
+            var menu = new Menu<Media>();
             var menuText = menu.Build(new Book("Kipper's Birthday", "Mick Inkpen"),
                 new Book("The Dark Side Of The Sun", "Terry Pratchett"));
-            menu.Build(menuText,
+            menuText = menu.Build(menuText,
                 new CD("Queen", "Greatest Hits"),
                 new CD("Mike Oldfield", "Tubular Bells"));
-            menu.Build(formatProvider, menuText,
-                new Shoes("Brogues", 12),
-                new FishingTackle("Hooks"),
-                new Hammer("Claw"),
-                new Dog("fido"),
-                new PressFactoryDemo(),
-                new Exception("Something's gone horribly right!"),
-                new string('-', 25)
-                );
+            menuText = menu.Build(menuText, new DVD("Dances With Wolves", "Kevin Costner"), new DVD("Leon", "Luc Besson"));
+            menuText = menu.Build<Exception>(e => e.Message,
+                new Exception("Something's gone horribly right!"));
+            menuText = menu.Build<Bicycle>(b => $"{b.Model} bike", new Bicycle("Mountain"), new Bicycle("Hybrid"));
+            menuText = menu.Build<Detergent>(d => $"Detergent {d.Brand}", new Detergent("Daz"), new Detergent("The Leading Brand"));
+            menuText = menu.Build<decimal>(d => $"{d:C}", 123.45M);
+                
 
             Console.WriteLine(string.Join("\n", menuText));
         }
@@ -213,40 +65,82 @@ namespace Kata.Demos.E10Done
         public interface IMenu<T>
         {
             List<string> Build(params T[] options);
-            List<string> Build(List<string> menuText, params object[] options);
-            List<string> Build(Func<object, string> formatDetails, List<string> menuText, params object[] options);
+            List<string> Build(List<string> menuText, params T[] options);
+            List<string> Build<T2>(Func<T2, string> formatter, params T2[] options);
         }
 
-        public class Menu<T> : IMenu<T>
+        public class MenuOption<T> : IFormatProvider
         {
-            public List<string> Build(Func<object, string> formatDetails, List<string> menuText, params object[] options)
-            {
-                for (var i = 0; i < options.Length; i++)
-                {
-                    var menuIndex = menuText.Count + i + 1;
-                    var opt = options[i];
-                    if (opt is IFormatProvider)
-                    {
-                        var fp = opt as IFormatProvider;
-                        menuText.Add($"{menuIndex,3} {fp.FormatDetails()}");
+            public T Item;
+            public Func<T, string> Format;
 
-                        continue;
-                    }
-                    
-                    var optText = formatDetails == null ? $"No default formatter found for non-IFormatProvider {opt}" : formatDetails(opt); 
-                    menuText.Add($"{menuIndex,3} {optText}");
-                }
-                return menuText;
+            public string FormatDetails()
+            {
+                var option = Item as IFormatProvider;
+                return option?.FormatDetails() ?? Format(Item);
             }
 
-            public List<string> Build(params T[] options)
+            public override string ToString()
+            {
+                return Item.GetType().Name;
+            }
+        }
+
+        public class Menu<T1> : IMenu<T1>
+        {
+            private List<IFormatProvider> items = new List<IFormatProvider>();
+            public List<string> Build(params T1[] options)
             {
                 return Build(new List<string>(), options);
             }
-
-            public List<string> Build(List<string> menuText, params object[] options)
+            public List<string> Build(List<string> existingOptionsText, params T1[] options)
             {
-                return Build(null, menuText, options);
+                return Build(n=> null, options);
+            }
+            public List<string> Build<T2>(Func<T2, string> formatter, params T2[] options)
+            {
+                for (var i = 0; i < options.Length; i++)
+                {
+                    var opt = options[i] as IFormatProvider;
+                    if (formatter == null && opt == null)
+                    {
+                        items.Add(new MenuOption<object>()
+                        {
+                            Item = options[i],
+                            Format = (o) => $"{o}"
+                        });
+                        continue;
+                    }
+
+                    items.Add(new MenuOption<T2>() { Item = options[i], Format = formatter });
+                }
+                items.Sort((x, y) =>
+                {
+                    var result = string.Compare(x.ToString(), y.ToString());
+                    var typesEqual = result == 0;
+                    return typesEqual ? string.Compare(x.FormatDetails(), y.FormatDetails()) : result;
+                });
+
+                var menuText = new List<string>();
+                var curGroupName = string.Empty;
+                for(var i = 0; i < items.Count; i++)
+                {
+                    var groupName = items[i].ToString();
+                    var announceGroup = i == 0 || groupName != curGroupName;
+                    menuText.Add($"{(announceGroup ? $"{groupName}\n" : "")}    {i + 1,3} {items[i].FormatDetails()}");
+                    if (announceGroup) curGroupName = groupName;
+                }
+          /*
+          items.GroupBy(item => item.ToString())
+                    .ToList()
+                    .ForEach(grouping => {
+                        menuText.Add(grouping.Key);
+                        grouping.ToList()
+                        .ForEach(groupItem => menuText.Add($"    {items.IndexOf(groupItem) + 1,3} {groupItem.FormatDetails()}"));
+                    });
+                return menuText;
+          */
+                return items.Select(item => $"{items.IndexOf(item) + 1,3} {item} : {item.FormatDetails()}").ToList();
             }
         }
 
@@ -254,93 +148,101 @@ namespace Kata.Demos.E10Done
         {
             string FormatDetails();
         }
-        public abstract class Media<T> : IFormatProvider
+        public abstract class Media : IFormatProvider
         {
+            protected Media(string title)
+            {
+                Title = title;
+            }
+            protected string Title { get; }
             public abstract string FormatDetails();
         }
-        public class Book : Media<Book>
-        {
-            private string Author;
-            private string Title;
 
-            public Book(string title, string author)
+        public class Book : Media
+        {
+            protected string Author;
+            public Book( string title, string author) : base(title)
             {
                 Author = author;
-                Title = title;
             }
             public override string FormatDetails()
             {
                 return $"{Title} by {Author}";
             }
         }
-        public class CD : Media<CD>
-        {
-            private string Artist;
-            private string Title;
 
-            public CD(string title, string artist)
+        public class CD : Media
+        {
+            protected string Artist;
+            public CD(string artist, string title) : base(title)
             {
                 Artist = artist;
-                Title = title;
             }
             public override string FormatDetails()
             {
                 return $"{Artist} - {Title}";
             }
         }
-        public class DVD : Media<DVD>
+
+        public class DVD : Media
         {
-            private string Director;
-            private string Title;
-            public DVD(string title, string director)
+            protected string Director;
+            public DVD(string title, string director) : base(title)
             {
                 Director = director;
-                Title = title;
             }
-
             public override string FormatDetails()
             {
-                return $"{Title} - A {Director} Film";
+                return $"{Title} - A {Director} film";
             }
         }
 
-        public class Hammer
+        public class Hammer : IFormatProvider
         {
-            private string Style;
+            protected string Style { get; }
             public Hammer(string style)
             {
                 Style = style;
             }
-            public override string ToString()
+            public string FormatDetails()
             {
                 return $"{Style} hammer";
             }
         }
-        public class Shoes 
+        public class Shoes : IFormatProvider
         {
-            private string style;
-            private int size;
+            protected string Style { get; }
+            public int Size { get; }
             public Shoes(string style, int size)
             {
-                this.style = style;
-                this.size = size;
+                Style = style;
+                Size = size;
             }
             public string FormatDetails()
             {
-                return $"{style} shoes - size {size}";
+                return $"{Style} shoes - size {Size}";
             }
         }
-        public class FishingTackle 
+        public class Bicycle 
         {
-            private string tackle;
-            public FishingTackle(string tackle)
+            public Bicycle(string model)
             {
-                this.tackle = tackle;
+                Model = model;
             }
-            public string FormatDetails()
+
+            public string Model { get; }
+           
+        }
+
+        public class Detergent
+        {
+            public Detergent(string brand)
             {
-                return $"Fishing tackle - {tackle}";
+                Brand = brand;
             }
+
+            public string Brand { get; }
+
         }
     }
 }

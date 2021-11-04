@@ -36,19 +36,19 @@ namespace Kata.CustomTypes.EntUnitDemo
 
     public class VisualEntUnit : EntUnit
     {
-        private bool HasRemote;
+        private bool hasRemote;
 
         public VisualEntUnit(string name, bool hasRemote) : base(name)
         {
-            HasRemote = hasRemote;
+            this.hasRemote = hasRemote;
         }
 
         protected bool FoundRemote => new Random().Next(1, 10) % 2 == 0;
 
         public override void Play(string instr)
         {
-            Console.WriteLine($"{Name} {(HasRemote ? "has" : "does not have")} a remote control");
-            if (HasRemote)
+            Console.WriteLine($"{Name} {(hasRemote ? "has" : "does not have")} a remote control");
+            if (hasRemote)
             {
                 Console.WriteLine("Looking for remote...");
                 var foundRemote = FoundRemote;

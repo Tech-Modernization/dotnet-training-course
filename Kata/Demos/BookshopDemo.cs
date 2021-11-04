@@ -10,12 +10,7 @@ namespace Kata.Demos
         {
         }
 
-        public override void DisplayExplicit(SectionBase c)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void DisplayImplicit(SectionBase c)
+        public override void FillExplicit(SectionBase ac)
         {
             throw new NotImplementedException();
         }

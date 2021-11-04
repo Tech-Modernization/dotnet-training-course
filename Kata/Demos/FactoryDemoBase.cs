@@ -13,14 +13,47 @@ namespace Kata.Demos
         private string abstractCreatorName = typeof(TAbstractCreator).FullName;
         private string readonlyPropertyName;
         protected virtual string ReadOnlyPropertyName { get => readonlyPropertyName; }
+        protected Dictionary<Type, Type> TypeMap = new Dictionary<Type, Type>();
 
         public Placement PlacementMode { get; set; }
         public bool IgnoreMiddleTier { get; set; }
 
-        public virtual void FillExplicit(TAbstractCreator ac) { }
-        public virtual void FillImplicit(Type ct, Type ap) { }
+        public abstract void FillExplicit(TAbstractCreator ac);
+        public virtual void FillImplicit(Type ct, Type ap) 
+        {
+            foreach (var middleTier in ap.Assembly.DefinedTypes.Where(t => t.BaseType == ap))
+            {
+                foreach (var lowerTier in middleTier.Assembly.DefinedTypes.Where(t => t.IsSubclassOf(middleTier)))
+                {
+                    var middleTierPrefix = middleTier.Name.Replace("Base", "");
+                    var creatorSuffix = ct.Name.Replace(middleTierPrefix, "");
+                    var creatorPrefix = ct.Name.Replace(creatorSuffix, "");
+                    if (creatorPrefix == middleTierPrefix)
+                    {
+                        Console.WriteLine($"Mapping {(IgnoreMiddleTier ? lowerTier.Name : middleTier.Name)} to {ct.Name}");
+                        TypeMap.TryAdd(IgnoreMiddleTier ? lowerTier : middleTier, ct);
+                    }
+                }
+            }
+        }
         public virtual void DisplayExplicit(TAbstractCreator ac) { }
-        public virtual void DisplayImplicit(TAbstractCreator ac) { }
+        public virtual void DisplayImplicit(TAbstractCreator ac)
+        {
+            var apType = typeof(TAbstractProduct);
+            var acType = typeof(TAbstractCreator);
+            var middleTierPrefix = apType.Name.Replace("Base", "");
+            var creatorSuffix = acType.Name.Replace(middleTierPrefix, "");
+            var creatorPrefix = acType.Name.Replace(creatorSuffix, ""); 
+
+            Console.WriteLine($"{acType.Name} accepts: {apType.Name}");
+            foreach (var ap in acType.GetType().Assembly.GetTypes().Where(t => apType.IsAssignableFrom(t)))
+            {
+                if (ap.BaseType == apType)
+                {
+                    Console.WriteLine($"    {ap}");
+                }
+            }
+        }
 
         public FactoryDemoBase(params TAbstractCreator[] concreteCreators)
         {
@@ -37,8 +70,8 @@ namespace Kata.Demos
 
         public virtual void Run()
         {
-            Console.WriteLine($"Running {this.GetType().Name}\nPlacement: {PlacementMode}"
-                + $"\nMiddle tier: {(IgnoreMiddleTier ? "ignored" : "enabled")}");
+            Console.WriteLine($"Running {this.GetType().Name}\n-- Placement: {PlacementMode}"
+                + $"\n-- Middle tier: {(IgnoreMiddleTier ? "ignored" : "enabled")}");
 
             foreach (var c in creators)
             {

@@ -21,5 +21,10 @@ namespace Kata.Demos
         {
             throw new NotImplementedException();
         }
+
+        public override void FillExplicit(MenuItemBase ac)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

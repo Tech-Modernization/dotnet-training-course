@@ -21,5 +21,10 @@ namespace Kata.Demos
         {
             throw new NotImplementedException();
         }
+
+        public override void FillExplicit(MediaCollectionBase ac)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

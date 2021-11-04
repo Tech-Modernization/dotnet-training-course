@@ -96,6 +96,7 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\net
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.runtimeconfig.dev.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\CustomTypes.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Demos.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Helpers.dll

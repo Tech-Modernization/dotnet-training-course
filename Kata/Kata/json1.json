@@ -1,0 +1,32 @@
+{
+  "Level1Thing": "string value",
+  "Level1Thing2": 25,
+  "x": 2.5,
+  "y": true,
+  "names": [
+    "paul;",
+    "ross",
+    "lewis",
+    "dave"
+  ],
+  "addresses": [
+    {
+      "houseAndSt": "22 acacia avenue",
+      "area": "brentwood",
+      "city": "london",
+      "postcode": "sw6"
+    },
+    {
+      "houseAndSt": "229b baker st",
+      "area": "brentwood",
+      "city": "london",
+      "postcode": "sw1"
+    },
+    {
+      "houseAndSt": "1 pall mall",
+      "area": "brentwood",
+      "city": "london",
+      "postcode": "sw19"
+    }
+  ]
+}

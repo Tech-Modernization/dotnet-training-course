@@ -11,12 +11,7 @@ namespace Kata.Demos
         {
         }
 
-        public override void DisplayExplicit(HomeStereoBase c)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void DisplayImplicit(HomeStereoBase c)
+        public override void FillExplicit(HomeStereoBase ac)
         {
             throw new NotImplementedException();
         }

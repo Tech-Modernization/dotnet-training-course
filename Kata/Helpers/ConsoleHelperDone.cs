@@ -36,7 +36,7 @@ namespace Kata.Helpers
                     return false;
                 }
 
-                if (!v.IsValid(input))
+                if (!v.IsValid(validatedInput))
                     return false;
             }
             

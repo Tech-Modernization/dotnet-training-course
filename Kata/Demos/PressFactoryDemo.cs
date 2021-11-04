@@ -11,12 +11,7 @@ namespace Kata.Demos
         {
         }
 
-        public override void DisplayExplicit(PressBase c)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void DisplayImplicit(PressBase c)
+        public override void FillExplicit(PressBase ac)
         {
             throw new NotImplementedException();
         }

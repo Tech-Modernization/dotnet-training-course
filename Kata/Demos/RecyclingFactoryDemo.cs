@@ -9,28 +9,14 @@ namespace Kata.Demos
     {
         private List<ContainerBase> creators;
         private List<Type> botTypes = new List<Type>();
-        private Dictionary<Type, Type> binMap = new Dictionary<Type, Type>();
+        
 
         public RecyclingFactoryDemo(params ContainerBase[] concreteCreators) : base(concreteCreators)
         {
             creators = new List<ContainerBase>(concreteCreators);
         }
 
-        public override void FillImplicit(Type ct, Type ap)
-        {
-            foreach (var middleTier in ap.Assembly.DefinedTypes.Where(t => t.BaseType == ap))
-            {
-                foreach (var lowerTier in middleTier.Assembly.DefinedTypes.Where(t => t.IsSubclassOf(middleTier)))
-                {
-                    if (ct.Name.Replace("Container", "") == middleTier.Name.Replace("Base", ""))
-                    {
-                        Console.WriteLine($"Mapping {(IgnoreMiddleTier ? lowerTier.Name : middleTier.Name)} to {ct.Name}");
-                        binMap.TryAdd(IgnoreMiddleTier ? lowerTier : middleTier, ct);
-                    }
-                }
-            }
-        }
-
+       
         public override void DisplayExplicit(ContainerBase c)
         {
             Console.WriteLine($"{c.GetType().Name} - materials accepted:");
@@ -84,7 +70,7 @@ namespace Kata.Demos
         {
             var targetType = IgnoreMiddleTier ? materialChild : materialChild.BaseType;
             return PlacementMode == Placement.Implicit
-                ? binMap.ContainsKey(targetType) ? binMap[targetType] : null
+                ? TypeMap.ContainsKey(targetType) ? TypeMap[targetType] : null
                 : creators.SingleOrDefault(c => c.Materials.Any(m => targetType.IsAssignableFrom(m.GetType())))?.GetType();
         }
 
