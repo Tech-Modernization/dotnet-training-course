@@ -15,6 +15,52 @@ namespace Kata.Demos
                 new DVD("The Tudor Monastery Farm", "Ruth Goodman"),
                 new Hammer("Claw"), new Shoes("Brogues", 11), new FishingTackle("Hooks"));
             Console.WriteLine(string.Join("\n", menuText));
+
+
+
+            var bookColl = new Dictionary<string, List<Book>>();
+            var chartHistory = new Dictionary<DateTime, CD>();
+            var chartPosHistory = new Dictionary<int, Tuple<DateTime, CD>>();
+
+
+        }
+        public void Thing()
+        {
+            var bookColl = new CustomDictionary<string, List<Book>>();
+            var chartHistory = new CustomDictionary<DateTime, CD>();
+            var chartPosHistory = new CustomDictionary<int, Tuple<DateTime, CD>>();
+
+        }
+
+        public T Multiply<T>(T arg, int multiplier)
+        {
+            return arg;
+        }
+        public class DateAndCD
+        {
+            public DateTime Item1;
+            public CD Item2;
+        }
+
+        public interface IDictionaryDemo<TKey, TValue>
+        {
+            void Setup(TKey key, TValue val);
+            TValue Search(TKey key);
+        }
+
+
+        public class CustomDictionary<TKey, TValue> : IDictionaryDemo<TKey, TValue>
+        {
+            public TValue Search(TKey key)
+            {
+                TValue v = default;
+                return v;
+            }
+
+            public void Setup(TKey key, TValue val)
+            {
+                throw new NotImplementedException();
+            }
         }
         public void RunParts1To3()
         {

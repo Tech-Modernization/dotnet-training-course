@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Exercise11DemoDone.cs" />
     <Compile Remove="TrackListFactoryDemo.cs" />
   </ItemGroup>
 
