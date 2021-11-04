@@ -24,7 +24,5 @@ namespace Kata.Demos
                 starttime += slotLength + changeOver;
             }
         }
-
-       
     }
 }

@@ -262,8 +262,7 @@ namespace Kata.Demos
             Console.WriteLine("Time: {0}", DateTime.Now.ToLongTimeString());
         }
 
-        
-        public void RunAnon()
+        public void AnonPart1()
         {
             Func<int, int, int> addAnon = (n1, n2) => n1 + n2;
 
@@ -291,7 +290,46 @@ namespace Kata.Demos
             formatResult = CallFormatter(o => $"How dull.  Just been to Tesco's and got  {((Detergent) o).Brand}", new Detergent("Ariel"));
 
             Console.WriteLine(formatResult);
+
         }
+
+        public void Run()
+        {
+            
+            Action<int, string> myMethod = (arg, anotherArg) => Console.WriteLine($"the answer to {anotherArg} is {arg}");
+            myMethod(42, "life the universe and everything");
+
+            Func<DateTime, int> howOld = (birthday) => (int) DateTime.Now.Subtract(birthday).TotalDays / 365;
+            Console.WriteLine($"Dave was born on 9 April 1968 so he is {HowOld(DateTime.Parse("9/4/1968"))} years old");
+            Console.WriteLine($"James Dean was born on 8th February 1922 so he would be {howOld(DateTime.Parse("8/2/1922"))} years old");
+
+
+            var egg = new Egg();
+            egg.Prepare();
+            egg.Prepare(() => Console.WriteLine("Beating the egg"));
+
+        }
+
+        public interface IPrepare
+        {
+            void Prepare(Action altPrep = null);
+        }
+        public class Egg : IPrepare
+        {
+            public void Prepare(Action altPrep = null)
+            {
+                if (altPrep == null)
+                    Console.WriteLine("Frying the egg");
+                else
+                    altPrep();
+            }
+        }
+
+        int HowOld(DateTime birthday) 
+        { 
+            return (int) DateTime.Now.Subtract(birthday).TotalDays / 365; 
+        }
+
         public string CallFormatter<T>(Func<object, string> methodParam, T arg)
         {
             return methodParam(arg);
@@ -303,7 +341,7 @@ namespace Kata.Demos
             return (bike == null) ? $"not supporting {typeof(T).Name}" : $"called with a {bike.Model}";
         }
 
-        public void Run()
+        public void RunBuild()
         {
             var menu = new Menu<IFormatProvider>();
             var menuText = menu.Build(
