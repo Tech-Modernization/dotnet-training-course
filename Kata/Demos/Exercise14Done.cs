@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 
 namespace Kata.Demos
 {
-    public class Exercise14Done : IDemo
+    public class Exercise14Done : DemoBase
     {
         Action<object> CW = Console.WriteLine;
 
         List<Ingredient> ingreds;
-        public void Run()
+        public override void Run()
         {
             
             RunPart1();
@@ -83,18 +83,38 @@ namespace Kata.Demos
         }
         private void RunPart8()
         {
-            throw new NotImplementedException();
+            var r = new Recipe<SpagBol>();
+            CW(r);
         }
         private void RunPart9()
         {
-            throw new NotImplementedException();
+            var r = new Recipe<SpagBol>();
+            r.Follow();
         }
         private void RunPart10()
         {
-            throw new NotImplementedException();
+            var r = new Recipe<SpagBol>();
         }
         private void RunPart11()
         {
+
+
+            var emptyJsonObjectStr = "{}";
+            var emptyJObject = JsonConvert.DeserializeObject(emptyJsonObjectStr);
+
+            var recipes = new List<object>();
+            recipes.Add(new Recipe<SpagBol>());
+            recipes.Add(new Recipe<Salad>());
+            recipes.Add(new Recipe<FryUp>());
+
+            recipes.Add(new SpagBol());
+            recipes.Add(new Salad());
+            recipes.Add(new FryUp());
+
+            File.WriteAllText("e14p11.json", JsonConvert.SerializeObject(recipes));
+
+
+
             var jsonText = File.ReadAllText("../../../ingredients.json");
             var ingredients = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonText);
         }
@@ -104,7 +124,7 @@ namespace Kata.Demos
         public interface IPantry
         {
             Ingredient Measure(string name, string amount);
-            Ingredient Measure<TIngredient>(Func<TIngredient> instantiate) where TIngredient : Ingredient;
+            Ingredient Measure<TIngredient>(Func<Ingredient> instantiate);
         }
 
         public interface IIngredient
@@ -120,8 +140,12 @@ namespace Kata.Demos
                 return new Ingredient(name, amount);
             }
 
-            public Ingredient Measure<TIngredient>(Func<TIngredient> instantiate) where TIngredient : Ingredient
+            public Ingredient Measure<TIngredient>(Func<Ingredient> instantiate)
+            //public TIngredient Measure<TIngredient>(Func<TIngredient> instantiate)
+            //public TIngredient Measure<TIngredient>(Func<TIngredient> instantiate) where TIngredient : Ingredient
+            //public TIngredient Measure<TIngredient>(Func<TIngredient> instantiate) where TIngredient : new()
             {
+                //if (instantiate == null) instantiate = () => new TIngredient();
                 return instantiate();
             }
         }
@@ -157,9 +181,9 @@ namespace Kata.Demos
                         Prepared = true;
                         return;
                     }
-                }
 
-                if (flags.HasFlag(PreparationFlags.AppendToBasePrepare))
+                }
+                if (AltPrepare == null || flags.HasFlag(PreparationFlags.AppendToBasePrepare))
                 {
                     Console.WriteLine($"Preparing the {Name}");
                     Prepared = true;
@@ -257,16 +281,22 @@ namespace Kata.Demos
                 Add(pantry.Measure("Olive oil", "1 tbsp"));
                 Add(pantry.Measure("Salt", "a pinch"));
                 Add(pantry.Measure("Beef mince", "1/2lb"));
-                Add(pantry.Measure(() => new Tomato("half a dozen", () => Console.WriteLine("Soak in boiled water, peel and mash"))));
+                Add(pantry.Measure<Tomato>(() => new Tomato("half a dozen")));
+                Add(pantry.Measure<List<DateTime>>(() => new List<DateTime>());
 
+                var ldt = pantry.Measure<List<DateTime>>(() => new List<DateTime>());
             }
         }
 
         public class Recipe<TDish> : IRecipeFollower<TDish>
-                   where TDish : DishBase
+                   where TDish : DishBase, new()
         {
             TDish Dish;
 
+            public Recipe()
+            {
+                Dish = new TDish();
+            }
             public Recipe(TDish dish)
             {
                 Dish = dish;
@@ -279,7 +309,12 @@ namespace Kata.Demos
 
             public void Follow()
             {
-    
+                foreach (var i in Dish)
+                {
+                    i.Prepare();
+                    System.Threading.Thread.Sleep(2000);
+                }
+
             }
 
             public Stage Process(Func<Ingredient[], Stage> process, params Ingredient[] ingredients)
@@ -300,7 +335,7 @@ namespace Kata.Demos
                 DishName = "Cooked Breakfast";
             }
         }
-        public class Salad 
+        public class Salad : DishBase 
         {
             public string SaladName { get; }
             public Salad()

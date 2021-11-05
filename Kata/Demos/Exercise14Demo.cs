@@ -5,84 +5,17 @@ using System.Text;
 
 namespace Kata.Demos
 {
-    public class Exercise14Demo : IDemo
+    public class Exercise14Demo : DemoBase
     {
-        public void Run()
+        public override void Run()
         {
-            RunPart1();
-            RunPart2();
-            RunPart3();
-            RunPart4();
-            RunPart5();
-            RunPart6();
-            RunPart7();
-            RunPart8();
-            RunPart9();
-            RunPart10();
-            RunPart11();
+            var ingredients = new List<Ingredient>();
+            Func<string, string, Ingredient> measure = (name, amount) => new Ingredient(name, amount);
 
-        }
-
-        private void RunPart11()
-        {
-        }
-
-        private void RunPart10()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RunPart9()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RunPart8()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RunPart7()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RunPart6()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RunPart5()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RunPart4()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RunPart3()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RunPart2()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RunPart1()
-        {
-
-            /*var ingreds = new List<Ingredient>();
-            Func<string, string, Ingredient> measure = (nam, amt) => new Ingredient(nam, amt);
-            ingreds.Add(measure("egg", "5"));
-            ingreds.Add(measure("salt", "a pinch"));
-            ingreds.Add(measure("beef mince", "1/2lb"));
-            ingreds.Add(measure("spaghetti", "250g"));
-            ingreds.Add(new Tomato("half a dozen"));
-            */
+            ingredients.Add(measure("egg", "4"));
+            ingredients.Add(measure("salt", "a pinch"));
+            ingredients.Add(measure("beef mince", "1/2 lb"));
+            ingredients.Add(measure("spaghetti", "250g"));
         }
     }
 }

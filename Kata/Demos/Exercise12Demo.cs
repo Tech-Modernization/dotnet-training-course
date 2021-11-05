@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kata.Demos
 {
-    public class Exercise12Demo : IDemo
+    public class Exercise12Demo : DemoBase
     {
         public void Run()
         {

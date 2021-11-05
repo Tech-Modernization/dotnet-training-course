@@ -4,12 +4,9 @@ using System.Text;
 
 namespace Kata.Demos
 {
-    public class BadGenericTypeDemo : IDemo
+    public class BadGenericTypeDemo : DemoBase
     {
-        public void Run()
-        {
-            
-        }
+
     }
 
     public class BadKarmaCreator<T>

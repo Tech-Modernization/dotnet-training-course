@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kata.Demos
 {
-    public class DateTimeDemo : IDemo
+    public class DateTimeDemo : DemoBase
     {
         public void Run()
         {

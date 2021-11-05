@@ -148,7 +148,7 @@ output the group names and indent the items
 
 namespace Kata.Demos
 {
-    public class Exercise10Demo : IDemo
+    public class Exercise10Demo : DemoBase
     {
         private List<object> objetsDuh = new List<object>()
         {

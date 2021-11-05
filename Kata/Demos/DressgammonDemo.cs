@@ -54,7 +54,7 @@ Part 5 (You must be joking)
 
 namespace Kata.Demos
 {
-    public class DressgammonDemo : IDemo
+    public class DressgammonDemo : DemoBase
     {
         public void Run()
         {

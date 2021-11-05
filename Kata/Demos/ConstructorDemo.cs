@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kata.Demos
 {
-    public class ConstructorDemo : IDemo
+    public class ConstructorDemo : DemoBase
     {
         public void Run()
         {

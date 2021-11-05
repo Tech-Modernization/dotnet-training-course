@@ -163,7 +163,7 @@ update your program to achieve the same result using only the RSVP class.
 */
 namespace Kata.Demos
 {
-    public class Exercise13Demo : IDemo
+    public class Exercise13Demo : DemoBase
     {
         public void Run()
         {

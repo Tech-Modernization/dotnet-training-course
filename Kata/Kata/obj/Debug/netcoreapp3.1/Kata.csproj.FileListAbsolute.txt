@@ -94,6 +94,7 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\net
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfoInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfo.cs
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.CoreCompileInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.AssemblyReference.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.exe
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.deps.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.runtimeconfig.json
@@ -107,7 +108,6 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\net
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\CustomTypes.pdb
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Demos.pdb
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Helpers.pdb
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.AssemblyReference.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.CopyComplete
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.pdb

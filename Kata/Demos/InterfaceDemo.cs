@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Kata.Demos
 {
-    public class InterfaceDemo : IDemo
+    public class InterfaceDemo : DemoBase
     {
         public void Run()
         {

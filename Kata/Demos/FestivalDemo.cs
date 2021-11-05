@@ -6,7 +6,7 @@ using Kata.CustomTypes.FestivalFactory;
 
 namespace Kata.Demos
 {
-    public class FestivalDemo : IDemo
+    public class FestivalDemo : DemoBase
     {
         public void Run()
         {

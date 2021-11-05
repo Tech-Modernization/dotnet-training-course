@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Kata.Demos
 {
-    public class DictionaryDemo : IDemo
+    public class DictionaryDemo : DemoBase
     {
         public class Name
         {

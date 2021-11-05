@@ -5,7 +5,7 @@ using Kata.CustomTypes.AccommodationFactory;
 
 namespace Kata.Demos
 {
-    public class AccomondationFactoryDemo : IDemo
+    public class AccomondationFactoryDemo  
     {
         public void Run()
         {

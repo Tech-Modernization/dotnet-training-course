@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Kata.Demos.E10Done
 {
-    public class Exercise10DemoDone : IDemo
+    public class Exercise10DemoDone : DemoBase
     {
         public string Anon(object option)
         {

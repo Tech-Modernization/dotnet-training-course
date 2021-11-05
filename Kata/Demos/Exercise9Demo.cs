@@ -29,7 +29,7 @@ the method signatures are all you have to write.  the types named are abitrary a
 
 namespace Kata.Demos
 {
-    public class Exercise9Demo : IDemo
+    public class Exercise9Demo : DemoBase
     {
         public void Run()
         {

@@ -5,7 +5,7 @@ using System.Linq;
 namespace Kata.Demos
 {
     public enum Placement { Implicit, Explicit, Sample };
-    public abstract class FactoryDemoBase<TAbstractCreator, TAbstractProduct> : IDemo, IFactoryDemo<TAbstractCreator, TAbstractProduct>
+    public abstract class FactoryDemoBase<TAbstractCreator, TAbstractProduct> : DemoBase, IFactoryDemo<TAbstractCreator, TAbstractProduct>
     {
         private List<TAbstractCreator> creators = new List<TAbstractCreator>();
 
