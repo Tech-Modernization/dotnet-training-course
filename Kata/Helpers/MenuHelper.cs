@@ -12,6 +12,14 @@ namespace Kata.Helpers
         protected List<MenuItemBase> Options { get; }
         protected MenuSettings Settings { get; }
 
+        public static List<string> DescendantsOf<T>()
+        {
+            if (!typeof(T).IsAbstract)
+                return null;
+
+            return typeof(T).Assembly.DefinedTypes.Where(t => t.IsSubclassOf(typeof(T))).Select(t => t.Name).ToList();
+        }
+
         public MenuHelper()
         {
             Settings = new MenuSettings();

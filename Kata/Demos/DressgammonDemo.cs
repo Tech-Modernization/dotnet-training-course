@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Kata.CustomTypes.DressgammonFactory;
-using Kata.Demos;
+using Kata.Helpers;
 
 namespace Kata.Demos
 {
@@ -11,11 +11,27 @@ namespace Kata.Demos
     {
         public override void Run()
         {
-            var game = new DraughtsGame();
-            game.Display();
+            var menu = new MenuHelper();
+            menu.Init(() => MenuHelper.DescendantsOf<GameBase>());
 
-            var bgame = new BackgammonGame();
-            bgame.Display();
+            var sel = menu.SelectFromMenu("Choose your game: ");
+            var game = default(GameBase);
+
+            switch (sel)
+            {
+                case 1:
+                    game = new BackgammonGame();
+                    break;
+                case 2:
+                    game = new ChessGame();
+                    break;
+                case 3:
+                    game = new DraughtsGame();
+                    break;
+                default:
+                    return;
+            }
+            game.Display();
         }
     }
 }

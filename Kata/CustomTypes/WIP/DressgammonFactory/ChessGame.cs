@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Kata.CustomTypes.DressgammonFactory
 {
-    public class ChessGameBoard : GameBase
+    public class ChessGame : GameBase
     {
         protected override void CreatePieceSets()
         {
@@ -17,6 +17,7 @@ namespace Kata.CustomTypes.DressgammonFactory
         {
             Board = new ChessBoard();
             Board.Initialise(Sets);
+            Board.Reset();
         }
     }
 }
