@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+
+using Kata.CustomTypes.Extensions;
 
 namespace Kata.CustomTypes.DressgammonFactory
 {
@@ -16,33 +19,9 @@ namespace Kata.CustomTypes.DressgammonFactory
         protected override void CreateBoard()
         {
             Board = new BackgammonBoard();
+            Board.Initialise(Sets);
+            Board.Reset();
         }
-
-        public override void Display()
-        {
-            var sb = new StringBuilder();
-            var outerHoz = string.Format("+{0}+", new string('-', 22));
-            var innerHoz = outerHoz.Replace("+", "|").Replace("-", " ");
-            var rail = outerHoz.Replace("-", "=");
-            var board = Board as BackgammonBoard;
-            board.Reset();
-
-            for (var y = 1; y <= board.Length; y++)
-            {
-                sb.AppendLine(outerHoz);
-                sb.AppendLine(innerHoz);
-                for (var x = 1; x <= 8; x++)
-                {
-                    sb.Append(board[x, y] != null ? board[x, y].Colour == PieceColour.White ? "|  O  " : "|  X  " : "|     ");
-                }
-                sb.AppendLine("|");
-                sb.AppendLine(innerHoz);
-            }
-            sb.AppendLine(outerHoz);
-
-            Console.WriteLine(sb.ToString());
-        }
-
     }
 }
 

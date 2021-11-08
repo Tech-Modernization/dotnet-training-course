@@ -57,10 +57,6 @@ C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\De
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.csproj.CoreCompileInputs.cache
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.dll
 C:\Users\paulb\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.pdb
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.GeneratedMSBuildEditorConfig.editorconfig
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.AssemblyInfoInputs.cache
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.AssemblyInfo.cs
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\bin\Debug\netcoreapp3.1\Demos.deps.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\bin\Debug\netcoreapp3.1\Demos.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\bin\Debug\netcoreapp3.1\Demos.pdb
@@ -69,6 +65,10 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\bin\Debug\ne
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\bin\Debug\netcoreapp3.1\CustomTypes.pdb
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\bin\Debug\netcoreapp3.1\Helpers.pdb
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.csproj.AssemblyReference.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.GeneratedMSBuildEditorConfig.editorconfig
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.AssemblyInfoInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.AssemblyInfo.cs
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.csproj.CopyComplete
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.pdb

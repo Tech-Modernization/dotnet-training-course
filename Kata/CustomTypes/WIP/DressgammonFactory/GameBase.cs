@@ -17,6 +17,14 @@ namespace Kata.CustomTypes.DressgammonFactory
         protected abstract void CreatePieceSets();
         protected abstract void CreateBoard();
 
-        public abstract void Display();
+        public virtual void Display(bool reset = false)
+        {
+            if (reset)
+            {
+                Board.Reset();
+            }
+
+            Console.WriteLine(Board);
+        }
     }
 }

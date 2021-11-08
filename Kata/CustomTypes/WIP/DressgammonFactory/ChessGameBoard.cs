@@ -13,11 +13,6 @@ namespace Kata.CustomTypes.DressgammonFactory
             Sets.Add(new ChessPieceSet(PieceColour.Black));
         }
 
-        public override void Display()
-        {
-            throw new NotImplementedException();
-        }
-
         protected override void CreateBoard()
         {
             Board = new ChessBoard();

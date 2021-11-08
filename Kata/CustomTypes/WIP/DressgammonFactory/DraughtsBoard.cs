@@ -2,19 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
+using Kata.CustomTypes.Extensions;
+
 namespace Kata.CustomTypes.DressgammonFactory
 {
     public class DraughtsBoard : BoardBase, IGameBoard
     {
-        public override void Initialise(List<PieceSetBase> pieces)
-        {
-            base.Initialise();
-            foreach(var p in pieces)
-            {
-                Pieces.TryAdd(p[0].Colour, p);
-            }
-            WhoseMove = PieceColour.White;
-        }
         public override void Reset()
         {
             for (var y = 1; y <= Width; y++)
@@ -36,6 +29,28 @@ namespace Kata.CustomTypes.DressgammonFactory
                     piece?.MoveTo(this, x, y);
                 }
             }
+        }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            var outerHoz = $"+{new string('-', 5)}".Repeat(8) + "+";
+            var innerHoz = outerHoz.Replace("+", "|").Replace("-", " ");
+
+            for (var y = 1; y <= 8; y++)
+            {
+                sb.AppendLine(outerHoz);
+                sb.AppendLine(innerHoz);
+                for (var x = 1; x <= 8; x++)
+                {
+                    sb.Append(this[x, y] != null ? this[x, y].Colour == PieceColour.White ? "|  O  " : "|  X  " : "|     ");
+                }
+                sb.AppendLine("|");
+                sb.AppendLine(innerHoz);
+            }
+            sb.AppendLine(outerHoz);
+
+            return sb.ToString();
         }
     }
 }

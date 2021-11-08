@@ -29,14 +29,24 @@ namespace Kata.CustomTypes.DressgammonFactory
         public BoardBase(int width = 0, int length = 0)
         {
             Pieces = new Dictionary<PieceColour, PieceSetBase>();
-            width = width == 0 ? Width : width;
-            length = length == 0 ? Length : length;
+            this.width = width == 0 ? 8 : width;
+            this.length = length == 0 ? 8 : length;
+            this.Initialise();
         }
-        public virtual void Initialise(List<PieceSetBase> pieces = default)
+        public virtual void Initialise()
         {
             for (var h = 1; h <= Width; h++)
                 for (var v = 1; v <= Length; v++)
                     TryAdd(new PiecePosition(h, v), null);
+        }
+        public virtual void Initialise(List<PieceSetBase> pieces)
+        {
+            this.Initialise();
+            foreach (var p in pieces)
+            {
+                Pieces.TryAdd(p[0].Colour, p);
+            }
+            WhoseMove = PieceColour.White;
         }
         public abstract void Reset();
         public void Play()
