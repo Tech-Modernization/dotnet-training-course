@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Threading;
+using Kata.Helpers;
 
 using Newtonsoft.Json;
 
+using static Kata.Demos.Exercise14Done;
 
 namespace Kata.Demos
 {
     public class Exercise14Done : DemoBase
     {
         Action<object> CW = Console.WriteLine;
+        const string dbDir = "../../../../CustomTypes/WIP/RecipeDemo/";
 
         List<Ingredient> ingreds;
+
+               
         public override void Run()
         {
             
@@ -97,10 +104,10 @@ namespace Kata.Demos
         }
         private void RunPart11()
         {
-
-
+            var jsonFile = FileHelper.GetJsonPath(dbDir);
             var emptyJsonObjectStr = "{}";
-            var emptyJObject = JsonConvert.DeserializeObject(emptyJsonObjectStr);
+
+            var emptyJObject = JsonConvert.DeserializeObject<List<dynamic>>(File.ReadAllText(jsonFile));
 
             var recipes = new List<object>();
             recipes.Add(new Recipe<SpagBol>());
@@ -232,15 +239,19 @@ namespace Kata.Demos
             }
         }
 
-        public class Stage
+        public class Stage : List<Ingredient>, IIngredientIndexer
         {
             public bool Ready;
             public string Name;
+            public Func<bool> Process;
 
             public Stage(string name)
             {
                 Name = name;
+                Ready = false;
             }
+
+            public Ingredient this[string name] => this.SingleOrDefault(i => i.Name.ToLower() == name.ToLower());
 
             public override string ToString()
             {
@@ -248,11 +259,21 @@ namespace Kata.Demos
             }
         }
 
+        public interface IIngredientIndexer
+        {
+            Ingredient this[string name]
+            {
+                get;
+            }
+        }
+        public interface IRecipeBuilder
+        {
+            void AddStage(string name, Func<bool> process, params Ingredient[] ingredients);
+        }
         public interface IRecipeFollower<T>
         {
             void Follow();
-            Stage Process(Func<Ingredient[], Stage> process, params Ingredient[] ingredients);
-            T Assemble(List<Stage> stages, List<Ingredient> ingredients, Action<T>[] step);
+            void Assemble(params Action<T>[] steps);
         }
         public class Lettuce : Ingredient
         {
@@ -267,13 +288,53 @@ namespace Kata.Demos
             }
         }
 
-        public class DishBase : List<Ingredient>
+        public class DishBase : List<Ingredient>, IIngredientIndexer
         {
             protected Pantry pantry = new Pantry();
+
+            public Ingredient this[string name] => this.SingleOrDefault(i => i.Name.ToLower() == name.ToLower())
+                                                    ?? this.FirstOrDefault(i => i.Name.ToLower().StartsWith(name.ToLower()));
+
+
             public string DishName { get; set; }
+            public List<Stage> Stages { get; }
+            public DishBase()
+            {
+                Stages = new List<Stage>();
+            }
+
         }
-        public class SpagBol : DishBase
+
+        public class InterruptionService : IInterrupter
         {
+            Dictionary<string, int> interruptions;
+            Random rand = new Random();
+            public InterruptionService()
+            {
+                interruptions = JsonConvert.DeserializeObject<Dictionary<string, int>>(File.ReadAllText("../../../interruptions.json"));
+            }
+
+            public int MaxInterruptions => 5;
+
+            public int GetInterruption()
+            {
+                var next = rand.Next(0, interruptions.Count - 1);
+                if (next > 0)
+                {
+                    Console.WriteLine($"Drat!  And double drat!!  Interrupted by {interruptions.Keys.ToList()[next]}!  Delayed by {next} minutes!");
+                }
+                return next * 1000;
+            }
+
+          }
+        public interface IInterrupter
+        {
+            int GetInterruption();
+            int MaxInterruptions { get; }
+        }
+        public class SpagBol : DishBase, IRecipeBuilder
+        {
+            IInterrupter Interrupter = new InterruptionService();
             public SpagBol()
             {
                 DishName = "Spaghetti Bolognese";
@@ -282,29 +343,46 @@ namespace Kata.Demos
                 Add(pantry.Measure("Salt", "a pinch"));
                 Add(pantry.Measure("Beef mince", "1/2lb"));
                 Add(pantry.Measure<Tomato>(() => new Tomato("half a dozen")));
-                Add(pantry.Measure<List<DateTime>>(() => new List<DateTime>());
 
-                var ldt = pantry.Measure<List<DateTime>>(() => new List<DateTime>());
+                AddStage("Ragu", () => {
+                    Console.WriteLine($"Add seasoning and brown the {this["beef mince"]}");
+                    Console.WriteLine($"Stir {this["tomato"]} into the {this["beef mince"]}");
+                    return this.All(i => i.Prepared);
+                }, this["beef"], this["salt"], this["tomato"]);
+
+                AddStage("Pasta", () => {
+                    Console.WriteLine($"Boil the kettle and put the {this["spaghetti"]} in a saucepan with {this["olive oil"]}");
+                    Console.WriteLine($"Add {this["salt"]} and pour the boiling water over the {this["spaghetti"]}");
+                    return this.All(i => i.Prepared);
+                }, this["beef"], this["salt"], this["tomato"]);
             }
+
+            public void AddStage(string name, Func<bool> process, params Ingredient[] ingredients)
+            {
+                var stage = new Stage(name) { Process = process };
+                stage.AddRange(ingredients);
+                Stages.Add(stage);
+            }
+
         }
 
         public class Recipe<TDish> : IRecipeFollower<TDish>
                    where TDish : DishBase, new()
         {
             TDish Dish;
-
+            IInterrupter Interrupter = new InterruptionService();
+            private List<Stage> Stages = new List<Stage>();
             public Recipe()
             {
                 Dish = new TDish();
             }
-            public Recipe(TDish dish)
-            {
-                Dish = dish;
-            }
 
-            public TDish Assemble(List<Stage> stages, List<Ingredient> ingredients, Action<TDish>[] step)
+            public void Assemble(params Action<TDish>[] steps)
             {
-                throw new NotImplementedException();
+                foreach(var step in steps)
+                {
+                    step(Dish);
+                }
             }
 
             public void Follow()
@@ -312,14 +390,30 @@ namespace Kata.Demos
                 foreach (var i in Dish)
                 {
                     i.Prepare();
-                    System.Threading.Thread.Sleep(2000);
+                }
+                
+                foreach(var s in Dish.Stages)
+                {
+                    var attempts = 1;
+                    while (!s.Ready)
+                    {
+                        Console.WriteLine($"Attempt #{attempts} to complete the {s.Name} stage");
+                        var waitMillis = Interrupter == null ? 0 : Interrupter.GetInterruption();
+                        if (waitMillis > 0)
+                        {
+                            Thread.Sleep(waitMillis);
+                            attempts++;
+                            continue;
+                        }
+                        else if (attempts == 1)
+                        {
+                            Console.WriteLine($"Woohoo!  Completed the {s.Name} without interruption!");
+                        }
+                        s.Ready = s.Process();
+                    }
                 }
 
-            }
-
-            public Stage Process(Func<Ingredient[], Stage> process, params Ingredient[] ingredients)
-            {
-                return process(ingredients);
+                Assemble();
             }
 
             public override string ToString()
@@ -327,6 +421,7 @@ namespace Kata.Demos
                 var d = Dish as DishBase;
                 return $"Following recipe for {d.DishName}";
             }
+
         }
         public class FryUp : DishBase
         {

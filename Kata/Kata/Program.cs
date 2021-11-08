@@ -15,17 +15,51 @@ namespace Kata
         static void Main(string[] args)
         {
             IDemo demoInstance = default;
-            var demoMenu = MenuHelperDone<IDemo>.CreateMenu();
+            var mainMenu = new MenuHelper();
+            mainMenu.Init(() => new List<string> { "Demos", "Classes", "Interfaces"});
             do
             {
-                demoInstance = demoMenu.SelectFromMenu("Choose a demo: ");
-                demoInstance?.Run();
-                Console.ReadKey();
+                var selectedDemo = mainMenu.SelectFromMenu("> ");
+                switch (selectedDemo)
+                {
+                    case 1:
+                        demoMenu();
+                        continue;
+                    case 2:
+                        classMenu();
+                        continue;
+                    case 3:
+                        ifaceMenu();
+                        continue;
+                    default:
+                        break;
+                }
+
             }
-            while (demoInstance != null);
+            while (Console.ReadKey().Key != ConsoleKey.Escape);
+        }
+        static void demoMenu()
+        {
+            var demoMenu = new MenuHelper();
+            demoMenu.Init(() => MenuHelper.ImplementersOf<IDemo>());
+            do
+            {
+                demoMenu.SelectFromMenu("> ", o =>
+                {
+                    var inst = Activator.CreateInstance(typeof(IDemo).Assembly.FullName, o.Text);
+                    var demo = inst.Unwrap() as IDemo;
+                    demo?.Run();
+                });
+            }
+            while (Console.ReadKey().Key != ConsoleKey.Escape);
         }
 
-   
+        static void classMenu()
+        { }
+        static void ifaceMenu()
+        { }
+
+
         /*
         static void Main(string[] args)
         {
@@ -57,7 +91,7 @@ namespace Kata
             }
         }
 
-        
+
         static void loopDemoContext(RecyclingFactoryDemo demo)
         {
             for (var pm = Placement.Implicit; pm <= Placement.Sample; pm++)

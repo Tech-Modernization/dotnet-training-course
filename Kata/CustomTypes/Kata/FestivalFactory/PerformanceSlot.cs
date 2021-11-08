@@ -8,10 +8,9 @@ namespace Kata.CustomTypes.FestivalFactory
     {
         public DateTime StartTime { get; }
         public ActBase Act { get; }
-        public PerformanceSlot(DateTime startTime, ActBase act)
+        public PerformanceSlot(DateTime startTime)
         {
             StartTime = startTime;
-            Act = act;
         }
     }
 }

@@ -140,23 +140,28 @@ namespace Kata.CustomTypes.FestivalFactory
     Build returning void with no parameters
     OpenToApplications returning bool with no parameters
 
-
-    Create a factory pattern using FestivalBase and VenueBase as the creator and product.  
+    Create a factory pattern using FestivalBase and VenueBase as the creator and product.
+    
     Have FestivalBase implement IFestivalBuilder 
     Have FestivalBase implement IApplicationManager
     Have VenueBase implement IVenueManager
+    
     Have ActBase implement IActProfiler
     Have ActBase implement IRepertoireBuilder
+
     Add a List of FestivalApplication to FestivalBase
     Inherit from FestivalBase to create ClasstonburyFestival
     Have the Venue factory method create PerformanceSpaces as follows
     JazzVenue
     capacity: 50, maxperformers: 3, punters/p/m: 6
+    
     IndieVenue
     Cap: 500, maxperf: 6, punters: 50
     Cap: 100, maxpef: 2, punters 5
+    
     FolkVenue
     Cap: 100, maxperf 4, punters: 10
+    
     ProgRockVenue
     capacity : 1200, maxperf 8, punters 50
 

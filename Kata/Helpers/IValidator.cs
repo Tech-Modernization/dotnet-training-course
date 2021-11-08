@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kata.Helpers
 {
-    public interface IValidatorDone
+    public interface IValidator
     {
         bool IsValid(string input);
         bool IsValid(int input);

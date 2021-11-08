@@ -60,6 +60,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Kata\FestivalFactory\211103-Answers\" />
     <Folder Include="WIP\MenuFactoryDic\" />
     <Folder Include="WIP\MenuFactoryRecursive\" />
     <Folder Include="WIP\WIP-TrackListAbstractFactory\" />

@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Kata.Helpers
 {
-    public class RangeValidatorDone : IValidatorDone
+    public class RangeValidator : IValidator
     {
         private int lowerBound;
         private int upperBound;
 
-        public RangeValidatorDone(int lowerBound, int upperBound)
+        public RangeValidator(int lowerBound, int upperBound)
         {
             this.lowerBound = lowerBound;
             this.upperBound = upperBound;

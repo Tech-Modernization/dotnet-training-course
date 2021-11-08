@@ -56,10 +56,13 @@ namespace Kata.Demos
 {
     public class DressgammonDemo : DemoBase
     {
-        public void Run()
+        public override void Run()
         {
             var game = new DraughtsGame();
             game.Display();
+
+            var bgame = new BackgammonGame();
+            bgame.Display();
         }
     }
 }

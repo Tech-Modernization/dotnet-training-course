@@ -9,10 +9,5 @@ namespace Kata.CustomTypes.FestivalFactory
         public ProgRockVenue(string name) : base(name)
         {
         }
-
-        protected override void CreateSpaces()
-        {
-            // AddPerformanceSpace...
-        }
     }
 }

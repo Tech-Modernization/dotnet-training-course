@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Kata.Helpers
 {
-    public class KeyRangeValidatorDone : RangeValidatorDone
+    public class KeyRangeValidator : RangeValidator
     {
         private Dictionary<ConsoleKey, int> map = new Dictionary<ConsoleKey, int>();
-        public KeyRangeValidatorDone(int lowerBound, int upperBound) : base(lowerBound, upperBound)
+        public KeyRangeValidator(int lowerBound, int upperBound) : base(lowerBound, upperBound)
         {
             for(var i = lowerBound; i <= upperBound; i++)
             {

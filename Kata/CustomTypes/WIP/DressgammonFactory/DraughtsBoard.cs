@@ -29,9 +29,10 @@ namespace Kata.CustomTypes.DressgammonFactory
                     var isValidSquare = isWhite
                         ? isMiddle ? x % 2 == 0 : x % 2 == 1
                         : isMiddle ? x % 2 == 1 : x % 2 == 0;
-                    var placePiece = isValidSquare && colour == PieceColour.White ? y < 4 : y > 5;
+                    var placePiece = isValidSquare && (colour == PieceColour.White ? y < 4 : y > 5);
                     if (!placePiece) continue;
                     var piece = Pieces[colour][idx++];
+                    Console.WriteLine($"Placing {colour} at {x},{y}");
                     piece?.MoveTo(this, x, y);
                 }
             }

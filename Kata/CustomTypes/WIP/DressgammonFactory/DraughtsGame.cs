@@ -22,7 +22,7 @@ namespace Kata.CustomTypes.DressgammonFactory
         public override void Display()
         {
             var sb = new StringBuilder();
-            var outerHoz = string.Format("+{0}+{0}+{0}+{0}+{0}+{0}+{0}+{0}+", new string('-', 3));
+            var outerHoz = string.Format("+{0}+{0}+{0}+{0}+{0}+{0}+{0}+{0}+", new string('-', 5));
             var innerHoz = outerHoz.Replace("+", "|").Replace("-", " ");
             var board = Board as DraughtsBoard;
             board.Reset();
@@ -32,8 +32,7 @@ namespace Kata.CustomTypes.DressgammonFactory
                 sb.AppendLine(innerHoz);
                 for (var x = 1; x <= 8; x++)
                 {
-                    var pos = new PiecePosition(x, y);
-                    sb.Append(board[pos] != null ? "| O " : "|   ");
+                    sb.Append(board[x, y] != null ? board[x, y].Colour == PieceColour.White ? "|  O  " : "|  X  " : "|     ");
                 }
                 sb.AppendLine("|");
                 sb.AppendLine(innerHoz);

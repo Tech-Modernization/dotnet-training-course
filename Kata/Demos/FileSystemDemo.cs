@@ -167,7 +167,7 @@ namespace Kata.Demos
 
             // display contents
             Console.WriteLine($"Preview of {fileSelected}:");
-            for(var i = 0; i < (10 > lineByLine.Length ? lineByLine.Length : 10); i++)
+            for(i = 0; i < (10 > lineByLine.Length ? lineByLine.Length : 10); i++)
             {
                 Console.WriteLine(lineByLine[i]);
             }
@@ -270,6 +270,13 @@ namespace Kata.Demos
             {
                 if (string.IsNullOrEmpty(dir))
                     continue;
+
+                // test if directory exists
+                if (!Directory.Exists(dir))
+                    continue;
+
+                // file access in a try-catch.  anything involving i/o should have this as devices can go offline etc.
+                // strictly speaking the code above should also be wrapped in try-catch...
                 try
                 {
                     var filesInMyRoot = Directory.GetFiles(dir);
@@ -334,7 +341,7 @@ namespace Kata.Demos
                 }
 
                 int selection;
-                var gotSelection = ConsoleHelperDone.GetInteger("> ", out selection, new RangeValidatorDone(1, options.Length));
+                var gotSelection = ConsoleHelper.GetInteger("> ", out selection, new RangeValidator(1, options.Length));
                 if (gotSelection)
                 {
                     return options[selection - 1];

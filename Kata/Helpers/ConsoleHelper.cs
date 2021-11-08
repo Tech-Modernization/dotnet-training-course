@@ -5,16 +5,16 @@ using System.Linq;
 
 namespace Kata.Helpers
 {
-    public class ConsoleHelperDone
+    public class ConsoleHelper
     {
-        public static bool GetInteger(string prompt, out int validatedInput, params IValidatorDone[] validators)
+        public static bool GetInteger(string prompt, out int validatedInput, params IValidator[] validators)
         {
             ConsoleKey k = default;
             string input = default;
             validatedInput = default;
 
             Console.Write(prompt);
-            var getWithReadKey = validators.Any(v => v is KeyRangeValidatorDone);
+            var getWithReadKey = validators.Any(v => v is KeyRangeValidator);
             if (getWithReadKey)
                 k = Console.ReadKey().Key;
             else
@@ -26,9 +26,9 @@ namespace Kata.Helpers
 
             foreach (var v in validators)
             {
-                if (v is KeyRangeValidatorDone)
+                if (v is KeyRangeValidator)
                 {
-                    if (((KeyRangeValidatorDone) v).IsValid(k))
+                    if (((KeyRangeValidator) v).IsValid(k))
                     {
                         validatedInput = (int)k - 48;
                         continue;

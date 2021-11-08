@@ -1,21 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Kata.CustomTypes.DressgammonFactory
 {
     public abstract class BoardBase : Dictionary<PiecePosition<int, int>, PieceBase>, IGameBoard
     {
-        protected int Width = 8;
-        protected int Length = 8;
+        private int width;
+        public int Width => width;
+        private int length;
+        public int Length => length;
         protected Dictionary<PieceColour, PieceSetBase> Pieces { get; set; }
         protected PieceColour WhoseMove { get; set; }
 
+        public PieceBase this[int x, int y]
+        {
+            get
+            {
+                var key = this.Keys.SingleOrDefault(k => k.AxisX == x && k.AxisY == y);
+                if (key == null)
+                    return null;
+
+                return this.ElementAt(Keys.ToList().IndexOf(key)).Value;
+
+            }
+        }
         public BoardBase(int width = 0, int length = 0)
         {
             Pieces = new Dictionary<PieceColour, PieceSetBase>();
-            this.Width = width == 0 ? Width : width;
-            this.Length = length == 0 ? Length : length;
+            width = width == 0 ? Width : width;
+            length = length == 0 ? Length : length;
         }
         public virtual void Initialise(List<PieceSetBase> pieces = default)
         {

@@ -31,7 +31,8 @@
       },
       "Helpers/1.0.0": {
         "dependencies": {
-          "CustomTypes": "1.0.0"
+          "CustomTypes": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "Helpers.dll": {}

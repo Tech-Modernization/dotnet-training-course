@@ -2,18 +2,73 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.EntUnitDemo
+namespace Kata.Demos.EntUnitDemo
 {
-    public class EntUnitDemo
+    public class EntUnitDemo : DemoBase
     {
-        public void Run()
+        public override void Run()
         {
+            var aud = new AudioEntUnit("turntable");
+            cw(aud.Name);
+            var i = aud as IEntUnit;
+            i.Play("meh");
+            var ent = i as EntUnit;
+            cw(ent.Name);
+        }
 
+        public void RunPart01()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RunPart02()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RunPart03()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RunPart04()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RunPart05()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RunPart06()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RunPart07()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RunPart08()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RunPart09()
+        {
+            throw new NotImplementedException();
         }
     }
-    public abstract class EntUnit
+
+    public interface IEntUnit
     {
-        protected string Name { get; }
+        void Play(string instr);
+    }
+    public abstract class EntUnit : IEntUnit
+    {
+        public string Name { get; }
 
         protected EntUnit(string name)
         {
@@ -28,7 +83,6 @@ namespace Kata.CustomTypes.EntUnitDemo
 
     public class AudioEntUnit : EntUnit
     {
-
         public AudioEntUnit(string name = default) : base(name)
         {
         }

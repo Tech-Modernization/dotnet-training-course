@@ -10,9 +10,5 @@ namespace Kata.CustomTypes.FestivalFactory
         {
         }
 
-        protected override void CreateSpaces()
-        {
-            // Spaces.Add()
-        }
     }
 }

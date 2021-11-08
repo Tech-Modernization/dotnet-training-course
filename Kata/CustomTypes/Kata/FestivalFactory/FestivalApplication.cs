@@ -6,12 +6,13 @@ namespace Kata.CustomTypes.FestivalFactory
 {
     public class FestivalApplication
     {
-        public ActBase Act { get; }
+        public ActBase Act { get; set; }
 
-        public List<TimeSlot> PreferredSlots { get; }
-        public string PreferredVenueName { get; }
-        public string PreferredPerformanceSpace { get; }
+        public List<int> PreferredDays { get; set; }
+        public List<TimeSlot> PreferredSlots { get; set; }
+        public string PreferredVenueName { get; set; }
+        public string PreferredPerformanceSpace { get; set; }
 
-        public bool StandbyWilling { get; }
+        public bool StandbyWilling { get; set; }
     }
 }

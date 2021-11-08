@@ -8,21 +8,43 @@ namespace Kata.Demos
 {
     public class FestivalDemo : DemoBase
     {
-        public void Run()
+        public override void Run()
         {
-            //var festival = new ClasstonburyFestival();
+            var blueNote = new JazzVenue("The Blue Note");
+            var ronnies = new JazzVenue("Ronnie Scott's");
 
-            var slotLength = new TimeSpan(0, 45, 0);
-            var starttime = new DateTime(2021, 10, 30, 12, 30, 00);
+            var bigRoom = blueNote.AddPerformanceSpace("the Big room", 300, 10, 15);
+            var hogeys = blueNote.AddPerformanceSpace("Hogey's Hideaway", 100, 3, 10);
+            var lounge = ronnies.AddPerformanceSpace("Ronnie's Lounge", 400, 12, 20);
+            var upstairs = ronnies.AddPerformanceSpace("Upstairs", 150, 6, 10);
+
             var changeOver = new TimeSpan(0, 30, 0);
+            var setLength = new TimeSpan(0, 45, 0);
 
-            var bands = new List<string> { "ozric tentacles", "gong", "yes", "genesis", "van der graaf generator", "hawkwind", "led zeppelin", "jimi hendrix" };
-            bands.Sort();
-            foreach(var b in bands)
+            var bigRoomSched = blueNote.CreateSchedule(bigRoom, DateTime.Parse("29/10/2021 12:30"), new TimeSpan(23, 30, 0),
+                setLength, changeOver);
+            var hogeySched = blueNote.CreateSchedule(hogeys, DateTime.Parse("29/10/2021 12:30"), new TimeSpan(23, 00, 0),
+                setLength, changeOver);
+            var loungeSched = ronnies.CreateSchedule(lounge, DateTime.Parse("29/10/2021 12:30"), new TimeSpan(1, 30, 0),
+                setLength, changeOver);
+            var upstairsSched = ronnies.CreateSchedule(upstairs, DateTime.Parse("29/10/2021 12:30"), new TimeSpan(2, 30, 0),
+                setLength, changeOver);
+
+            var venues = new List<VenueBase> { blueNote, ronnies };
+            foreach (var v in venues)
             {
-                Console.WriteLine($"{starttime:t}-{starttime+slotLength:t}:    {b}");
-                starttime += slotLength + changeOver;
+                Console.WriteLine($"Venue: {v.Name}");
+                foreach (var s in v.Spaces)
+                {
+                    Console.WriteLine($"    Performance space: {s.Name}");
+                    foreach (var slot in s.Schedule)
+                    {
+                        Console.WriteLine($"        {slot.StartTime:g}: {(slot.Act == null ? "TBA" : slot.Act.Name)}");
+
+                    }
+                }
             }
         }
+
     }
 }
