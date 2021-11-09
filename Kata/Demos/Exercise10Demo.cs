@@ -273,6 +273,13 @@ namespace Kata.Demos
             var namedName = nameNamed();
             var anonName = nameAnon();
 
+            Action<string> singleArg = (s) =>
+            {
+                cw(s);
+            };
+
+            singleArg("hello");
+
             Action wossTheTimeAnon = () =>
             {
                 Console.WriteLine("Date: {0}", DateTime.Now.ToLongDateString());
@@ -293,9 +300,8 @@ namespace Kata.Demos
 
         }
 
-        public void Run()
+        public override void Run()
         {
-            
             Action<int, string> myMethod = (arg, anotherArg) => Console.WriteLine($"the answer to {anotherArg} is {arg}");
             myMethod(42, "life the universe and everything");
 
@@ -303,6 +309,7 @@ namespace Kata.Demos
             Console.WriteLine($"Dave was born on 9 April 1968 so he is {HowOld(DateTime.Parse("9/4/1968"))} years old");
             Console.WriteLine($"James Dean was born on 8th February 1922 so he would be {howOld(DateTime.Parse("8/2/1922"))} years old");
 
+            AnonPart1();
 
             var egg = new Egg();
             egg.Prepare();

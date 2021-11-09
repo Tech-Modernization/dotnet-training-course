@@ -6,8 +6,25 @@ namespace Kata.Demos
 {
     public class DateTimeDemo : DemoBase
     {
-        public void Run()
+        public List<int> FindAllxDaysInMonth(DayOfWeek dow, string month)
         {
+            var listOfDD = new List<int>();
+            var firstOfMonth = DateTime.Parse($"1 {month:mmm}");
+            var done = false;
+            for(var d = 1; !done; d++)
+            {
+                var newDate = firstOfMonth.AddDays(d);
+                if (newDate.DayOfWeek == dow)
+                    listOfDD.Add(d);
+                done = newDate.Month != firstOfMonth.Month;
+            }
+
+            return listOfDD;
+        }
+        public override void Run()
+        {
+            var mondaysInDecember = FindAllxDaysInMonth(DayOfWeek.Monday, "Dec");
+
             var dt = new DateTime(1969, 2, 8, 22, 32, 0);
             var myBirthday = dt.ToLongDateString();
             myBirthday = dt.ToShortDateString();
@@ -17,7 +34,8 @@ namespace Kata.Demos
             var msg = $".pd. is {exactAge.Days} days, {exactAge.Hours} hours and {exactAge.Minutes} minutes old";
             var mins = $"so he's been aroun dfor {exactAge.TotalSeconds}";
 
-            var hurdles = new List<int>(); for (var d = 10; d < 110; d += 10)
+            var hurdles = new List<int>(); 
+            for (var d = 10; d < 110; d += 10)
             {
                 hurdles.Add(d);
             }
