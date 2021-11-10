@@ -6,8 +6,8 @@ namespace Kata.Demos
 {
     public class Ingredient
     {
-        public string Name { get; }
-        public string Amount { get; }
+        protected string Name { get; }
+        protected string Amount { get; }
         public Ingredient(string name, string amount)
         {
             Name = name;

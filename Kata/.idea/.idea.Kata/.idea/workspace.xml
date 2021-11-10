@@ -2,77 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d9cea69-07da-480b-b785-ffbf3627f3eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../DemoKata/.vs/DemoKata/v16/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Kata/DesignTimeBuild/.dtbcache.v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Kata/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Kata/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Kata/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Kata/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Kata/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Kata/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomTypes/WIP/WIP-RecipeDemo/00-Exercise14-Brief.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomTypes/WIP/WIP-RecipeDemo/00-Exercise14-Brief.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomTypes/AccommodationFactory/AccommodationUnitBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomTypes/AccommodationFactory/CamperVan.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomTypes/AccommodationFactory/CaravanPark.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomTypes/AccommodationFactory/EnclosureBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomTypes/AccommodationFactory/Field.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomTypes/AccommodationFactory/Tent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomTypes/Kata/FestivalFactory/FestivalBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomTypes/Kata/FestivalFactory/FestivalBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomTypes/bin/Debug/netcoreapp3.1/CustomTypes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomTypes/bin/Debug/netcoreapp3.1/CustomTypes.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomTypes/bin/Debug/netcoreapp3.1/CustomTypes.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomTypes/bin/Debug/netcoreapp3.1/CustomTypes.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomTypes/obj/Debug/netcoreapp3.1/CustomTypes.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomTypes/obj/Debug/netcoreapp3.1/CustomTypes.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CustomTypes/obj/Debug/netcoreapp3.1/CustomTypes.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomTypes/obj/Debug/netcoreapp3.1/CustomTypes.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CustomTypes/obj/Debug/netcoreapp3.1/CustomTypes.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomTypes/obj/Debug/netcoreapp3.1/CustomTypes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomTypes/obj/Debug/netcoreapp3.1/CustomTypes.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomTypes/obj/Debug/netcoreapp3.1/CustomTypes.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomTypes/obj/Debug/netcoreapp3.1/CustomTypes.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/AccomondationFactoryDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/AccomondationFactoryDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/BadGenericTypeDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/BadGenericTypeDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/ConstructorDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/ConstructorDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/DateTimeDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/DateTimeDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/Demos.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/Demos.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/DictionaryDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/DictionaryDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/DressgammonDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/DressgammonDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/Exercise10Demo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/Exercise10Demo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/Exercise10DemoDone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/Exercise10DemoDone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/Exercise12Demo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/Exercise12Demo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/Exercise13Demo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/Exercise13Demo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/Exercise14Demo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/Exercise14Demo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/Exercise14Done.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/Exercise14Done.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/Exercise9Demo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/Exercise9Demo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/FactoryDemoBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/FactoryDemoBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/FestivalDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/FestivalDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/FileSystemDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/FileSystemDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/IDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/IDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/InterfaceDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/InterfaceDemo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/MenuItemFactoryBasic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/MenuItemFactoryBasic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/bin/Debug/netcoreapp3.1/CustomTypes.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/bin/Debug/netcoreapp3.1/CustomTypes.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/bin/Debug/netcoreapp3.1/Demos.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/bin/Debug/netcoreapp3.1/Demos.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/bin/Debug/netcoreapp3.1/Demos.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/bin/Debug/netcoreapp3.1/Helpers.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/bin/Debug/netcoreapp3.1/Helpers.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demos/AnonMethodDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/AnonMethodDemo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Demos/obj/Debug/netcoreapp3.1/Demos.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/obj/Debug/netcoreapp3.1/Demos.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/obj/Debug/netcoreapp3.1/Demos.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/obj/Debug/netcoreapp3.1/Demos.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/obj/Debug/netcoreapp3.1/Demos.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/obj/Debug/netcoreapp3.1/Demos.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Demos/obj/Debug/netcoreapp3.1/Demos.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/obj/Debug/netcoreapp3.1/Demos.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demos/obj/Debug/netcoreapp3.1/Demos.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Helpers/bin/Debug/netcoreapp3.1/CustomTypes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/bin/Debug/netcoreapp3.1/CustomTypes.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helpers/bin/Debug/netcoreapp3.1/CustomTypes.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/bin/Debug/netcoreapp3.1/CustomTypes.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helpers/bin/Debug/netcoreapp3.1/Helpers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/bin/Debug/netcoreapp3.1/Helpers.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helpers/bin/Debug/netcoreapp3.1/Helpers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/bin/Debug/netcoreapp3.1/Helpers.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helpers/obj/Debug/netcoreapp3.1/Helpers.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/obj/Debug/netcoreapp3.1/Helpers.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/obj/Debug/netcoreapp3.1/Helpers.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/obj/Debug/netcoreapp3.1/Helpers.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helpers/obj/Debug/netcoreapp3.1/Helpers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/obj/Debug/netcoreapp3.1/Helpers.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helpers/obj/Debug/netcoreapp3.1/Helpers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/obj/Debug/netcoreapp3.1/Helpers.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Kata.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/CustomTypes.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/CustomTypes.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Demos.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Demos.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Helpers.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Helpers.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.runtimeconfig.dev.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/CustomTypes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/CustomTypes.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/CustomTypes.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/CustomTypes.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Helpers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Helpers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Helpers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Helpers.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/bin/Debug/netcoreapp3.1/Kata.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Kata/obj/Debug/netcoreapp3.1/Kata.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recipe/.vs/Recipe/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Recipe/.vs/Recipe/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recipe/Recipe/obj/Debug/netcoreapp3.1/Recipe.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../Recipe/Recipe/obj/Debug/netcoreapp3.1/Recipe.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recipe/Recipe/obj/Debug/netcoreapp3.1/Recipe.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Recipe/Recipe/obj/Debug/netcoreapp3.1/Recipe.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recipe/Recipe/obj/Recipe.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Recipe/Recipe/obj/Recipe.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recipe/Recipe/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Recipe/Recipe/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recipe/Recipe/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Recipe/Recipe/obj/project.nuget.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +55,7 @@
     <option name="x" value="1070" />
     <option name="y" value="5" />
     <option name="width" value="1855" />
-    <option name="height" value="1424" />
+    <option name="height" value="1425" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -131,11 +99,12 @@
       <workItem from="1635172534251" duration="602000" />
       <workItem from="1635240153472" duration="6000" />
       <workItem from="1636113356627" duration="199000" />
+      <workItem from="1636539956441" duration="68000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="807000" />
+    <option name="totallyTimeSpent" value="875000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -147,9 +116,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="856" y="4" width="1484" height="1139" extended-state="0" />
+    <frame x="856" y="4" width="1484" height="1140" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25632024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25983146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />

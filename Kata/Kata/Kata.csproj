@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,6 +9,18 @@
     <ProjectReference Include="..\CustomTypes\CustomTypes.csproj" />
     <ProjectReference Include="..\Demos\Demos.csproj" />
     <ProjectReference Include="..\Helpers\Helpers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ingredients.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="sampleArray.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="sampleObject.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,46 @@
+[
+  {
+    "firstname": "Paul",
+    "surname": "Dennis",
+    "address": [
+      "22, acacia ave",
+      "brentford",
+      "london",
+      "sw2"
+    ],
+    "age": {
+      "currentAge": 52,
+      "dob": "8/2/1969"
+    },
+    "hourlyRate": 4.2,
+    "level1": {
+      "level2": {
+        "level3": {
+
+        }
+      }
+    }
+  },
+  {
+    "firstname": "Paul",
+    "surname": "Dennis",
+    "address": [
+      "22, acacia ave",
+      "brentford",
+      "london",
+      "sw2"
+    ],
+    "age": {
+      "currentAge": 52,
+      "dob": "8/2/1969"
+    },
+    "hourlyRate": 4.2,
+    "level1": {
+      "level2": {
+        "level3": {
+
+        }
+      }
+    }
+  }
+]

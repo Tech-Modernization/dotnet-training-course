@@ -146,7 +146,7 @@ namespace Kata.Demos
 {
     public class FileSystemDemo : DemoBase
     {
-        public override void Run()
+        public void RunH()
         {
             // get a list of files to select from 
             var files = Directory.GetFiles("/h/");
@@ -193,7 +193,7 @@ namespace Kata.Demos
             
         }
 
-        public void FileBasics()
+        public override void Run()
         {
             // create a text file and write to it
             var outFile = File.CreateText("e14p11.txt");

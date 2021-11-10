@@ -47,3 +47,4 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\De
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\CustomTypes\obj\Debug\netcoreapp3.1\CustomTypes.csproj.AssemblyReference.cache

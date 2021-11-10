@@ -299,7 +299,6 @@ steps:
 
 -- work thru these code snippets, one comment at a time, keeping the file e14p11.txt open in VS2019 or another editor so can you can see it changing as you add more things.
 
-      
                 Action<object> CW = Console.WriteLine;
 
             // create a text file and write to it

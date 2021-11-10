@@ -19,8 +19,6 @@ namespace Kata.CustomTypes.FestivalFactory
             Venues = new List<VenueBase>();
         }
 
-
-
         public int Announce(NotificationType notification)
         {
             throw new NotImplementedException();

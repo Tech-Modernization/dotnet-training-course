@@ -111,7 +111,7 @@ namespace Kata.Demos
 
             voidWith3Params(22, "beer", new List<decimal> { 2.3M, 3.3M, 4.5M, 9.5M });
 
-            // 5. anonymous methods can return values.  they do with the Func keyword
+            // 5. anonymous methods can return values.  they do that with the Func keyword
             //a.            b.             c.
             Func<string> returnSomething = () =>
             // d.
@@ -188,6 +188,16 @@ namespace Kata.Demos
         {
             Console.WriteLine("Calling the method...");
             voidMethodWithNoParams();
+        }
+
+        public void ListOfAction(params Action<string>[] actions)
+        {
+            var actionNumber = 1;
+            foreach (var a in actions)
+            {
+                a($"Doing action number {actionNumber}");
+                    
+            }
         }
     }
 }

@@ -12,3 +12,17 @@ E:\000000\00-tech\00-Contino\source\repos\Recipe\Recipe\obj\Debug\netcoreapp3.1\
 E:\000000\00-tech\00-Contino\source\repos\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.pdb
 E:\000000\00-tech\00-Contino\source\repos\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.genruntimeconfig.cache
 E:\000000\00-tech\00-Contino\source\repos\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.csproj.AssemblyReference.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\bin\Debug\netcoreapp3.1\Recipe.exe
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\bin\Debug\netcoreapp3.1\Recipe.deps.json
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\bin\Debug\netcoreapp3.1\Recipe.runtimeconfig.json
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\bin\Debug\netcoreapp3.1\Recipe.runtimeconfig.dev.json
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\bin\Debug\netcoreapp3.1\Recipe.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\bin\Debug\netcoreapp3.1\Recipe.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.csproj.AssemblyReference.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.GeneratedMSBuildEditorConfig.editorconfig
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.AssemblyInfoInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.AssemblyInfo.cs
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.csproj.CoreCompileInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Recipe\Recipe\obj\Debug\netcoreapp3.1\Recipe.genruntimeconfig.cache

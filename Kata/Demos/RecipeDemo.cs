@@ -7,11 +7,11 @@ using Kata.Helpers;
 
 using Newtonsoft.Json;
 
-using static Kata.Demos.Exercise14Done;
+using static Kata.Demos.RecipeDemo;
 
 namespace Kata.Demos
 {
-    public class Exercise14Done : DemoBase
+    public class RecipeDemo : DemoBase
     {
         Action<object> CW = Console.WriteLine;
         const string dbDir = "../../../../CustomTypes/WIP/RecipeDemo/";
@@ -21,16 +21,15 @@ namespace Kata.Demos
                
         public override void Run()
         {
-            
             RunPart1();
             RunPart2();
             RunPart3();
             RunPart4();
             RunPart5();
-            RunPart6();
-            RunPart7();
-            RunPart8();
-            RunPart9();
+        //    RunPart6();
+        //    RunPart7();
+        //    RunPart8();
+        //    RunPart9();
             RunPart10();
             RunPart11();
 
@@ -77,8 +76,6 @@ namespace Kata.Demos
             */
 
         }
-
-
         private void RunPart7()
         {
             /*
@@ -96,7 +93,6 @@ namespace Kata.Demos
         private void RunPart9()
         {
             var r = new Recipe<SpagBol>();
-            r.Follow();
         }
         private void RunPart10()
         {
@@ -104,26 +100,8 @@ namespace Kata.Demos
         }
         private void RunPart11()
         {
-            var jsonFile = FileHelper.GetJsonPath(dbDir);
-            var emptyJsonObjectStr = "{}";
-
-            var emptyJObject = JsonConvert.DeserializeObject<List<dynamic>>(File.ReadAllText(jsonFile));
-
-            var recipes = new List<object>();
-            recipes.Add(new Recipe<SpagBol>());
-            recipes.Add(new Recipe<Salad>());
-            recipes.Add(new Recipe<FryUp>());
-
-            recipes.Add(new SpagBol());
-            recipes.Add(new Salad());
-            recipes.Add(new FryUp());
-
-            File.WriteAllText("e14p11.json", JsonConvert.SerializeObject(recipes));
-
-
-
-            var jsonText = File.ReadAllText("../../../ingredients.json");
-            var ingredients = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonText);
+            var spagBol = new Recipe<SpagBol>();
+            spagBol.Follow();
         }
 
 
