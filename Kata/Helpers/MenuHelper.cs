@@ -12,14 +12,6 @@ namespace Kata.Helpers
         protected List<MenuItemBase> Options { get; }
         protected MenuSettings Settings { get; }
 
-        public static List<string> DescendantsOf<T>()
-        {
-            if (!typeof(T).IsAbstract)
-                return null;
-
-            return typeof(T).Assembly.DefinedTypes.Where(t => t.IsSubclassOf(typeof(T))).Select(t => t.Name).ToList();
-        }
-
         public MenuHelper()
         {
             Settings = new MenuSettings();
@@ -52,14 +44,6 @@ namespace Kata.Helpers
             var optionText = baseTypes.Select(t => t.Name).ToList();
             optionText.AddRange(iTypes.Select(t => t.Name).ToList());
             return optionText;
-        }
-
-        public static List<string> ImplementersOf<T>()
-        {
-            if (!typeof(T).IsInterface)
-                return null;
-
-            return typeof(T).Assembly.DefinedTypes.Where(t => t.ImplementedInterfaces.Contains(typeof(T))).Select(t => t.FullName).ToList();
         }
 
         public void DisplayMenu()

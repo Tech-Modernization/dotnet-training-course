@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.WIP.FestivalBookerWalkThru
+namespace Kata.CustomTypes.FestivalBookerWalkThru
 {
     public class IndieVenue : VenueBase
     {
@@ -10,6 +10,7 @@ namespace Kata.CustomTypes.WIP.FestivalBookerWalkThru
         public IndieVenue()
         {
             Genre = MusicGenre.Indie;
+            Characteristics.Add("Something cool about an indie venue");
         }
     }
 }

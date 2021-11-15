@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.WIP.FestivalBookerWalkThru
+namespace Kata.CustomTypes.FestivalBookerWalkThru
 {
     public class FolkVenue : VenueBase
     {
@@ -12,6 +12,7 @@ namespace Kata.CustomTypes.WIP.FestivalBookerWalkThru
         public FolkVenue()
         {
             Genre = MusicGenre.Folk;
+            Characteristics.Add("Something cool about a folk venue");
         }
     }
 }

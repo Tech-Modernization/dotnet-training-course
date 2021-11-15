@@ -1,20 +1,81 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-using Kata.CustomTypes.WIP.FestivalBookerWalkThru;
+using Kata.CustomTypes.FestivalBookerWalkThru;
+
+using Newtonsoft.Json;
 
 namespace Kata.Demos
 {
     public class FestivalBookerWalkThruDemo : DemoBase
     {
+        List<Venue> venuesV1;
+        List<VenueBase> venuesV2;
         public override void Run()
-        { 
+        {
+            AddPart(RunSection2, "Create a performance schedule");
+            AddPart(RunSection3, "Initialise and traverse the object hierarchy");
+            AddPart(RunSection4, "Convert old Venue list into new hierarchy");
+            AddPart(RunQuestion4p2, "Demo base methods");
+            base.Run();
+        }
+
+        public void RunQuestion4p2()
+        {
+            var thing = new ConcreteThing();
+            thing.Run();
+        }
+
+        public void RunSection4()
+        {
+            var jsonVenues = JsonConvert.SerializeObject(venuesV1);
+            //venuesV2 = JsonConvert.DeserializeObject<List<VenueBase>>(jsonVenues);
+            venuesV2 = new List<VenueBase>
+            {
+                new JazzVenue()
+                {
+                    Name = "The Blue Note",
+                    Acts = new List<Act>()
+                    {
+                        new Act(){Name = "Wynton Marsalis"},
+                        new Act(){Name = "Miles Davies"},
+                        new Act(){Name = "Dave Brubeck"}
+                    },
+                    Spaces = new List<PerformanceSpace>()
+                    {
+                        new PerformanceSpace()
+                        {
+                            Name = "The Big Room",
+                            Schedule = new List<PerformanceSlot>()
+                        }
+                    }
+                }
+            };
+
+            foreach (var v in venuesV2)
+            {
+                dbg($"Venue: {v.Name}");
+                foreach (var s in v.Spaces)
+                {
+                    dbg($"    Space: {s.Name}");
+                    if (s.Schedule.Count == 0)
+                    {
+                        dbg("Schedule to be announced but the following acts are rumoured to appear:\n        ");
+                        dbg(string.Join("\n        ", v.Acts.Select(a => a.Name).ToList()));
+                    }
+                    else
+                        foreach (var slot in s.Schedule)
+                        {
+                            dbg($"        Start: {slot.StartTime}, Act: {slot.Act.Name}");
+                        }
+                }
+            }
+
         }
         public void RunSection3()
         {
-            var venues = new List<Venue>
+            venuesV1 = new List<Venue>
             {
                 new Venue() 
                 {
@@ -78,20 +139,20 @@ namespace Kata.Demos
                 },
             };
 
-            foreach (var v in venues)
+            foreach (var v in venuesV1)
             {
-                cw($"Venue: {v.Name}");
+                dbg($"Venue: {v.Name}");
                 foreach (var s in v.Spaces)
                 {
-                    cw($"    Space: {s.Name}");
+                    dbg($"    Space: {s.Name}");
                     if (s.Schedule.Count == 0)
                     {
-                        cw("Schedule to be announced but the following acts are rumoured to appear:\n        ");
-                        cw(string.Join("\n        ", v.Acts.Select(a => a.Name).ToList()));
+                        dbg("Schedule to be announced but the following acts are rumoured to appear:\n        ");
+                        dbg(string.Join("\n        ", v.Acts.Select(a => a.Name).ToList()));
                     }
                     else foreach (var slot in s.Schedule)
                     {
-                        cw($"        Start: {slot.StartTime}, Act: {slot.Act.Name}");
+                        dbg($"        Start: {slot.StartTime}, Act: {slot.Act.Name}");
                     }
                 }
             }
@@ -100,12 +161,36 @@ namespace Kata.Demos
         public abstract class AbstractThing
         {
             public abstract void DoSomething();
+            public virtual void SaySomething(string message)
+            {
+                Console.WriteLine(message);
+            }
+            public void SaySomethingFixed(string message)
+            {
+                Console.WriteLine("fixed: " + message);
+            }
+
         }
         public class ConcreteThing : AbstractThing
         {
+            public void Run()
+            {
+                SaySomething("this calls the override");
+                SaySomethingFixed("this calls the base method");
+
+            }
             public override void DoSomething()
             {
                 Console.WriteLine("Doing summat");
+            }
+
+            public override void SaySomething(string message)
+            {
+                // this calls the original version of the method
+                base.SaySomething(message);
+
+                // but our version can either not bother or build on it
+                Console.WriteLine("I called the base method");
             }
         }
 
@@ -134,10 +219,10 @@ namespace Kata.Demos
             var perfSlots = new List<PerformanceSlot>();
 
             foreach (var v in venues)
-                cw(v.Name);
+                dbg(v.Name);
 
             foreach (var a in acts)
-                cw(a.Name);
+                dbg(a.Name);
 
             var showsFromTime = new TimeSpan(12, 30, 00);
             var festivalStartDate = new DateTime(2021, 10, 29);

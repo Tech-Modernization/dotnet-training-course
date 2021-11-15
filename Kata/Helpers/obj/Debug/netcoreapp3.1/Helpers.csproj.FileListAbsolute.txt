@@ -63,3 +63,5 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CopyComplete
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\bin\Debug\netcoreapp3.1\DataServices.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\bin\Debug\netcoreapp3.1\DataServices.pdb

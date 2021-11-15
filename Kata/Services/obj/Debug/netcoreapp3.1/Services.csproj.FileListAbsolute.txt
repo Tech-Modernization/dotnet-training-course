@@ -1,0 +1,12 @@
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\bin\Debug\netcoreapp3.1\Services.deps.json
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\bin\Debug\netcoreapp3.1\Services.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\bin\Debug\netcoreapp3.1\Services.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\bin\Debug\netcoreapp3.1\CustomTypes.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\bin\Debug\netcoreapp3.1\CustomTypes.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfoInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfo.cs
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.csproj.CoreCompileInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.csproj.CopyComplete
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.pdb

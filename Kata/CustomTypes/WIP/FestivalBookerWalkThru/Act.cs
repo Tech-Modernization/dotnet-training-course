@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.WIP.FestivalBookerWalkThru
+namespace Kata.CustomTypes.FestivalBookerWalkThru
 {
     public class Act
     {

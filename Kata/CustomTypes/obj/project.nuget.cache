@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kepnO+CNnms4KMmUcUzq+D3efk85qzNlmRksgL2JPwGh2NCNMHymJ9TxG8Hvh1dr00Qnofb8vxrmqiaAzuktqw==",
+  "dgSpecHash": "JiAngmv20sHRoj8+B1w92v5gZrnax0YtjqfVVECLTTf4MHIGy5UBRLT0ql/q6FzsJfidRybdqhPYe5osEtWXTA==",
   "success": true,
   "projectFilePath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\paulb\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

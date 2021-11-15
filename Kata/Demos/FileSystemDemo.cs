@@ -51,7 +51,7 @@ using Newtonsoft.Json;
                     while (!oldStream.EndOfStream)
                     {
                         buf = oldStream.ReadLine();
-                        CW($"line {i++}: {buf}");
+                        dbg($"line {i++}: {buf}");
                     }
                 }
             }
@@ -80,9 +80,9 @@ conceptual objective:
             var filesInRoot = Directory.GetFiles("/");
 
             foreach (var f in files)
-                CW(f);
+                dbg(f);
             foreach (var f in filesInRoot)
-                CW(f);
+                dbg(f);
 
             // get a list of files from directories stored in an environment  variable
             var env = Environment.GetEnvironmentVariable("PATH");
@@ -96,11 +96,11 @@ conceptual objective:
                     var filesInMyRoot = Directory.GetFiles(dir);
 
                     foreach (var f in filesInMyRoot)
-                        CW(f);
+                        dbg(f);
                 }
                 catch
                 {
-                    CW($"problem with {dir}");
+                    dbg($"problem with {dir}");
                     continue;
                 }
             }
@@ -237,7 +237,7 @@ namespace Kata.Demos
                     while (!oldStream.EndOfStream)
                     {
                         buf = oldStream.ReadLine();
-                        cw($"line {i++}: {buf}");
+                        dbg($"line {i++}: {buf}");
                     }
                 }
             }
@@ -259,9 +259,9 @@ namespace Kata.Demos
             var filesInRoot = Directory.GetFiles("/");
 
             foreach (var f in files)
-                cw(f);
+                dbg(f);
             foreach (var f in filesInRoot)
-                cw(f);
+                dbg(f);
 
             // get a list of files from directories stored in an environment  variable
             var env = Environment.GetEnvironmentVariable("PATH");
@@ -282,11 +282,11 @@ namespace Kata.Demos
                     var filesInMyRoot = Directory.GetFiles(dir);
 
                     foreach (var f in filesInMyRoot)
-                        cw(f);
+                        dbg(f);
                 }
                 catch
                 {
-                    cw($"problem with {dir}");
+                    dbg($"problem with {dir}");
                     continue;
                 }
             }

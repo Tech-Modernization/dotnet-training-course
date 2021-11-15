@@ -9,7 +9,7 @@ namespace Kata.Demos
     {
         public void DoSomething()
         {
-            cw("doing something");
+            dbg("doing something");
         }
 
         public string Do2()
@@ -31,11 +31,11 @@ namespace Kata.Demos
 
             // 2. a method can return a value.  see Do2 above
             var returnValue = Do2();
-            cw(returnValue);
+            dbg(returnValue);
 
             // 3. a method can have parameters.  see do3 above
             returnValue = Do3("all lower case");
-            cw(returnValue);
+            dbg(returnValue);
 
             // variables
             // 1. a variable is declared in 3 sections.
@@ -92,7 +92,7 @@ namespace Kata.Demos
             Action<int> voidMethodwithIntParam = (intParam) =>
             {
                 for (var i = 0; i < intParam; i++)
-                    cw(i);
+                    dbg(i);
             };
 
             // 3. anonymous methods are called in exactly the same way as normal methods
@@ -106,7 +106,7 @@ namespace Kata.Demos
             // 4. anonymous methods can take parameters (see above and also...)
             Action<int, string, List<decimal>> voidWith3Params = (number, name, listOfPrices) => 
             {
-                cw($"Item {number} - Our {name}s \n    {string.Join("\n    ", listOfPrices.Select(d => d.ToString("C")))}");
+                dbg($"Item {number} - Our {name}s \n    {string.Join("\n    ", listOfPrices.Select(d => d.ToString("C")))}");
             };
 
             voidWith3Params(22, "beer", new List<decimal> { 2.3M, 3.3M, 4.5M, 9.5M });
@@ -169,7 +169,7 @@ namespace Kata.Demos
             // 7.1. in the case of Func, that also means you can omit "return".
             // 
             // e.g.
-            voidWith3Params = (number, name, listOfPrices) => cw($"Item {number} - Our {name}s \n    {string.Join("\n    ", listOfPrices.Select(d => d.ToString("C")))}");
+            voidWith3Params = (number, name, listOfPrices) => dbg($"Item {number} - Our {name}s \n    {string.Join("\n    ", listOfPrices.Select(d => d.ToString("C")))}");
             voidWith3Params(78, "eddie", new List<decimal> { 222M, 44.4M, 349834589.33M });
 
             returnsStringwith2IntParams = (intArg1, intArg2) => $"{intArg1} + {intArg2} = {intArg1 + intArg2}";

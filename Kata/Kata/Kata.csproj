@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="dishes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="ingredients.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

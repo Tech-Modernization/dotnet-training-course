@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.IO;
+
+using Kata.DataServices;
+
 
 namespace Kata.CustomTypes.RecipeDemo
 {
     public class DishBase : List<Ingredient>
     {
-        protected Pantry Pantry { get; }
         public string DishName { get; }
-        public DishBase(string dishName)
+        protected IPantry Pantry { get; }
+        public DishBase()
+        {
+        }
+        public DishBase(string dishName, IPantry pantry)
         {
             DishName = dishName;
-            Pantry = new Pantry();
+            Pantry = pantry;
         }
     }
 }

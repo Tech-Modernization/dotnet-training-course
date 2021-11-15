@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "eu+GepGzDHqz9/7Je6sDti+qzPZqXX0QkfvcJLlYqptrUVRCpXCDEElqsBqUnHM9yzM72JrkJ4cCL3tSUOMtIw==",
+  "success": true,
+  "projectFilePath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Services\\Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\paulb\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

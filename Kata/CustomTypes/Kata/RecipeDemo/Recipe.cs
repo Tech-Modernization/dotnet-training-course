@@ -16,7 +16,11 @@ namespace Kata.CustomTypes.RecipeDemo
 
         public void Follow()
         {
-            Console.WriteLine("Starting to follow the {} recipe");
+            Console.WriteLine(this);
+            foreach(var i in Dish)
+            {
+                i.Prepare();
+            }
         }
 
         public Stage Process(Func<Ingredient[], Stage> anonProcess, params Ingredient[] ingredients)

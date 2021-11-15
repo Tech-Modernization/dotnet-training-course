@@ -25,8 +25,20 @@
         }
       },
       "CustomTypes/1.0.0": {
+        "dependencies": {
+          "DataServices": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
         "runtime": {
           "CustomTypes.dll": {}
+        }
+      },
+      "DataServices/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "DataServices.dll": {}
         }
       },
       "Helpers/1.0.0": {
@@ -54,6 +66,11 @@
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "CustomTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataServices/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

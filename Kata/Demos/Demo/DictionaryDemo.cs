@@ -7,6 +7,19 @@ namespace Kata.Demos
 {
     public class DictionaryDemo : DemoBase
     {
+        public override void Run()
+        {
+            var d = new Dictionary<string, string>();
+            d.Add("tomato", "1");
+            d.Add("oil", "2");
+            d.Add("bread", "3");
+            d.Add("fish", "4");
+            d.Add("bicycles", "4");
+
+            var numberOfFish = d["fish"];
+        }
+
+
         public class Name
         {
             public int Id;
@@ -17,7 +30,7 @@ namespace Kata.Demos
                 return $"{Id}: {First} {Last}";
             }
         }
-        public void Run()
+        public void Run1()
         {
             var dic = new Dictionary<int, string>();
             var rand = new Random();

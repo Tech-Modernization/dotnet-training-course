@@ -3,36 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using static Kata.Demos.E10Done.Exercise10DemoDone;
 
 namespace Kata.Demos.E10Done
 {
     public class Exercise10DemoDone : DemoBase
     {
-        public string Anon(object option)
+        public override void Run()
         {
-            // same as: option => option.GetType().Name
-            return option.GetType().Name;
+            AddPart(Part1, "Simple type generic menu");
+            AddPart(Part2, "Book menu");
+            AddPart(Part3, "Mixed media menu");
+            AddPart(Part4, "IFormatProvider menu");
+            AddPart(Part5, "IFormatProvider menu with custom provider");
+            base.Run();
         }
-
-        public void Run()
-        {
-            var menu = new Menu<Media>();
-            var menuText = menu.Build(new Book("Kipper's Birthday", "Mick Inkpen"),
-                new Book("The Dark Side Of The Sun", "Terry Pratchett"));
-            menuText = menu.Build(menuText,
-                new CD("Queen", "Greatest Hits"),
-                new CD("Mike Oldfield", "Tubular Bells"));
-            menuText = menu.Build(menuText, new DVD("Dances With Wolves", "Kevin Costner"), new DVD("Leon", "Luc Besson"));
-            menuText = menu.Build<Exception>(e => e.Message,
-                new Exception("Something's gone horribly right!"));
-            menuText = menu.Build<Bicycle>(b => $"{b.Model} bike", new Bicycle("Mountain"), new Bicycle("Hybrid"));
-            menuText = menu.Build<Detergent>(d => $"Detergent {d.Brand}", new Detergent("Daz"), new Detergent("The Leading Brand"));
-            menuText = menu.Build<decimal>(d => $"{d:C}", 123.45M);
-                
-
-            Console.WriteLine(string.Join("\n", menuText));
-        }
-        public void OldRun()
+        public void Part1()
         {
 
             var intMenu = new Menu<int>();
@@ -44,23 +30,50 @@ namespace Kata.Demos.E10Done
             Console.WriteLine(string.Join("\n", menuText));
             menuText = decMenu.Build(1.2M, 2.3M, 3.4M, 4.5M, 5.6M);
             Console.WriteLine(string.Join("\n", menuText));
+              }
+        public void Part2()
+        {      var menu = new Menu<Book>();
+            var menuText = menu.Build(new Book("Kipper's Birthday", "Mick Inkpen"),
+                new Book("The Dark Side Of The Sun", "Terry Pratchett"));
+            Console.WriteLine(string.Join("\n", menuText));
 
-            var bookMenu = new Menu<Book>();
-            menuText = bookMenu.Build(new Book("The Stand", "Stephen King"), new Book("Only Forward", "Michael Marshall Smith"));
+    
+        }
+        public void Part3()
+        {
+            var menu = new Menu<Media>();
+            var menuText = menu.Build(
+                new CD("Queen", "Greatest Hits"),
+                new CD("Mike Oldfield", "Tubular Bells"));
+            menuText = menu.Build(menuText, new DVD("Dances With Wolves", "Kevin Costner"), new DVD("Leon", "Luc Besson"));
             Console.WriteLine(string.Join("\n", menuText));
-            var cdMenu = new Menu<CD>();
-            menuText = cdMenu.Build(
-                new CD("Blaze Of Glory", "Joe Jackson"),
-                new CD("The Bends", "Radiohead"),
-                new CD("Best of (lewis's guilty pleasure)", "Steps"));
-            Console.WriteLine(string.Join("\n", menuText));
-            var dvdMenu = new Menu<DVD>();
-            menuText = dvdMenu.Build(new DVD("Total Recall", "Paul Verhoeven"),
-                new DVD("Dead Poet's Society", "Peter Weir"),
-                new DVD("Jaws", "Steven Spielberg"));
+        }
+        public void Part4()
+        {
+            var menu = new Menu<IFormatProvider>();
+            var menuText = menu.Build(
+                new CD("Queen", "Greatest Hits"),
+                new CD("Mike Oldfield", "Tubular Bells"),
+                new Hammer("Claw"), new Shoes("Brogues", 12),
+                new DVD("Dances With Wolves", "Kevin Costner"), new DVD("Leon", "Luc Besson"));
+     
             Console.WriteLine(string.Join("\n", menuText));
 
         }
+        public void Part5()
+        {
+
+            var menu = new Menu<IFormatProvider>();
+            var menuText = menu.Build<Exception>(e => e.Message,
+                 new Exception("Something's gone horribly right!"));
+            menuText = menu.Build<Bicycle>(b => $"{b.Model} bike", new Bicycle("Mountain"), new Bicycle("Hybrid"));
+            menuText = menu.Build<Detergent>(d => $"Detergent {d.Brand}", new Detergent("Daz"), new Detergent("The Leading Brand"));
+            menuText = menu.Build<decimal>(d => $"{d:C}", 123.45M);
+            Console.WriteLine(string.Join("\n", menuText));
+
+
+        }
+
 
         public interface IMenu<T>
         {

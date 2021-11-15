@@ -49,5 +49,10 @@ namespace Kata.CustomTypes.Extensions
             return lengthGuide.Overwrite(startPos, source);
         }
 
+        public static Tuple<string> Wrap(this string source)
+        {
+            return new Tuple<string>(source);
+        }
+
     }
 }

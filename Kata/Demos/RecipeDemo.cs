@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using Kata.Helpers;
 
-using Newtonsoft.Json;
+using Microsoft.VisualBasic;
 
-using static Kata.Demos.RecipeDemo;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+using static Kata.Demos.GenericMenu;
 
 namespace Kata.Demos
 {
     public class RecipeDemo : DemoBase
     {
-        Action<object> CW = Console.WriteLine;
+        Action<object> dbg = Console.WriteLine;
         const string dbDir = "../../../../CustomTypes/WIP/RecipeDemo/";
 
         List<Ingredient> ingreds;
@@ -21,17 +25,19 @@ namespace Kata.Demos
                
         public override void Run()
         {
-            RunPart1();
-            RunPart2();
-            RunPart3();
-            RunPart4();
-            RunPart5();
-        //    RunPart6();
-        //    RunPart7();
-        //    RunPart8();
-        //    RunPart9();
-            RunPart10();
-            RunPart11();
+            AddPart(RunPart1, "encapsulate the smallest units of data");
+            AddPart(RunPart2, "practice using an anonymous method in isolation");
+            AddPart(RunPart3, "encapsulate the functionality to prepare an ingredient\n" +
+                "- practice coding interfaces");
+
+            AddPart(RunPart4, "- practice overriding a virtual method" +
+                "- practice providing a parameterless constructor while satisfying the requirements of the base constructor");
+            AddPart(RunPart5, "provide a means of reflecting the milestones in the preparation of a meal");
+            AddPart(RunPart10, "- using generic types with anonymous methods"+
+                "- practice inline anonymous methods");
+            AddPart(RunPart11, "Introduce deserialization from a JSON  file" +
+                "Enforce single responsibility principle"+
+                "Introduce D in SOLID - Dependency Inversion Principle");
 
         }
         private void RunPart1()
@@ -59,7 +65,7 @@ namespace Kata.Demos
         }
         private void RunPart5()
         {
-            CW(new Stage("make the bed"));
+            dbg(new Stage("make the bed"));
         }
         private void RunPart6()
         {
@@ -68,9 +74,9 @@ namespace Kata.Demos
             r.Process(ingreds =>
             {
                 var s = new Stage("fake stage");
-                CW(s);
+                dbg(s);
                 s.Ready = true;
-                CW(s);
+                dbg(s);
                 return s;
             }, ingreds[0], ingreds[1]);
             */
@@ -88,7 +94,7 @@ namespace Kata.Demos
         private void RunPart8()
         {
             var r = new Recipe<SpagBol>();
-            CW(r);
+            dbg(r);
         }
         private void RunPart9()
         {

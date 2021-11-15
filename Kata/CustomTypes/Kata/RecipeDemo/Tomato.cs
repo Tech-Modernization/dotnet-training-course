@@ -9,6 +9,9 @@ namespace Kata.CustomTypes.RecipeDemo
         public Tomato(string amount) : base("tomato", amount)
         {
         }
+        public Tomato(string amount, Action altPrepMethod) : base("Tomato", amount, altPrepMethod)
+        {
+        }
 
         public override void Prepare()
         {

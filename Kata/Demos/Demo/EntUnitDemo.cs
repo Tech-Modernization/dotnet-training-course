@@ -9,11 +9,11 @@ namespace Kata.Demos.EntUnitDemo
         public override void Run()
         {
             var aud = new AudioEntUnit("turntable");
-            cw(aud.Name);
+            dbg(aud.Name);
             var i = aud as IEntUnit;
             i.Play("meh");
             var ent = i as EntUnit;
-            cw(ent.Name);
+            dbg(ent.Name);
         }
 
         public void RunPart01()

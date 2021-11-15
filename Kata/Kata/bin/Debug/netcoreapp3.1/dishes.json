@@ -1,0 +1,98 @@
+{
+  "ingredients": {
+    "avocado": "spagbol",
+    "egg": [ "friedBreakfast", "salad" ],
+    "salt": [ "friedBreakfast", "spagBol" ],
+    "pepper": [ "friedBreakfast", "spagBol" ],
+    "tomato": [ "friedBreakfast", "spagbol", "salad" ],
+    "spaghetti": [ "spagbol" ],
+    "sausage": [
+      { "fried breakfast": [ "welsh", "english" ] }
+    ],
+    "bacon": [ "friedBreakfast" ],
+    "baked beans": [ "friedBreakfast" ],
+    "bread n butter": [ "friedBreakfast" ],
+    "cucumber": [ "salad" ],
+    "radish": [ "salad" ],
+    "spring onions": [ "salad" ],
+    "olive oil": [ "salad", "spagbol" ],
+    "balsamic vinegar": [ "salad" ],
+    "beef mince": [ "spagbol" ],
+    "tofu": [
+      {
+        "spagbol": [ "vegan" ]
+      }
+    ],
+    "haggis": {
+      "friedBreakfast": [ "scottish" ]
+    },
+    "tatty scones": {
+      "friedBreakfast": [ "scottish" ]
+    },
+    "lavabread": {
+      "friedBreakfast": [ "welsh" ]
+    },
+    "cockles": {
+      "friedBreakfast": [ "welsh" ]
+    }
+  },
+  "dishes": {
+    "spagbol": {
+      "spaghetti": "125g",
+      "olive oil": "1 tbsp",
+      "mushrooms": {
+        "amount": "8",
+        "prep": [ "Slice", "SauteeGarlic" ]
+      },
+      "tomatoes": {
+        "amount": "a dozen",
+        "defaultPreparation": false
+      },
+      "beef mince": "1/2 lb",
+      "salt": "a good pinch",
+      "pepper": "1 tsp",
+      "vegan": { "tofu": "1/2 lb" }
+    },
+    "friedBreakfast": {
+      "egg": {
+        "amount": "2",
+        "defaultPrep": false
+      },
+      "bacon": "3",
+      "baked beans": "1/2 can",
+      "bread n butter": "2 slices",
+      "welsh": {
+        "lavabread": "1 cup",
+        "cockles": "half a cup",
+        "sausage": "2"
+      },
+      "scottish": {
+        "haggis": "1 scoop",
+        "square sausage": "1",
+        "tatty scones": "a handful"
+      },
+      "english": {
+        "black pudding": "2 slices",
+        "mushrooms": {
+          "amount": "a good handful",
+          "prep": [ "SauteeBaconFat" ]
+        },
+        "plum tomatoes": "1/2 a tin",
+        "sausage": "2"
+      }
+    },
+    "salad": {
+      "lettuce": "half",
+      "tomato": "2",
+      "spring onions": 2,
+      "radish": "3",
+      "cucumber": "2 inches",
+      "avocado": "half",
+      "beetroot": "3 baby beets",
+      "egg" {
+        "amount": "1",
+        "prep": [ "Boil", "Shell", "Slice" ]
+      }
+    }
+  }
+}

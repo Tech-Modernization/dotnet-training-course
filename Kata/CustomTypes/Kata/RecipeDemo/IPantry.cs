@@ -8,5 +8,6 @@ namespace Kata.CustomTypes.RecipeDemo
     {
         Ingredient Measure(string name, string amount);
         TIngredient Measure<TIngredient>(Func<TIngredient> instantiate);
+        Ingredient Measure(string strIngredient);
     }
 }

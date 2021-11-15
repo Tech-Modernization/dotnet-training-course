@@ -12,7 +12,7 @@ namespace Kata.Demos
         public override void Run()
         {
             var menu = new MenuHelper();
-            menu.Init(() => MenuHelper.DescendantsOf<GameBase>());
+            menu.Init(() => TypeHelper.ChildrenOf<GameBase>());
 
             var sel = menu.SelectFromMenu("Choose your game: ");
             var game = default(GameBase);

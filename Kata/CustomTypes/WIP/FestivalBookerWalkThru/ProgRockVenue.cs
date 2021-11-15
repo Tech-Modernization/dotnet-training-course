@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.WIP.FestivalBookerWalkThru
+namespace Kata.CustomTypes.FestivalBookerWalkThru
 {
     public class ProgRockVenue : VenueBase
     {
-        public Func<bool> IsHairLengthOkay;
         public ProgRockVenue()
         {
             Genre = MusicGenre.ProgRock;
+            Characteristics.Add("stuff unique to a prog rock venue");
         }
     }
 }

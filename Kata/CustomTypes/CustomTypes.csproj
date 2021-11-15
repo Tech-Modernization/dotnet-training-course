@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Kata\RecipeDemo\Exercise14Demo.cs" />
     <Compile Remove="WIP\MenuFactoryDic\BeerVariant.cs" />
     <Compile Remove="WIP\MenuFactoryDic\CocaColaMenuItem.cs" />
     <Compile Remove="WIP\MenuFactoryDic\CocaColaVariant.cs" />
@@ -49,21 +50,29 @@
     <Compile Remove="WIP\MenuFactoryRecursive\TeaVariant.cs" />
     <Compile Remove="WIP\MenuFactoryRecursive\WineMenuItem.cs" />
     <Compile Remove="WIP\MenuFactoryRecursive\WineVariant.cs" />
-    <Compile Remove="WIP\WIP-TrackListAbstractFactory\AbstractFactoryTemplate.cs" />
-    <Compile Remove="WIP\WIP-TrackListAbstractFactory\AlbumFactoryBase.cs" />
-    <Compile Remove="WIP\WIP-TrackListAbstractFactory\CompactDiscAlbum.cs" />
-    <Compile Remove="WIP\WIP-TrackListAbstractFactory\CompactDiscTrackList.cs" />
-    <Compile Remove="WIP\WIP-TrackListAbstractFactory\TrackDetail.cs" />
-    <Compile Remove="WIP\WIP-TrackListAbstractFactory\TrackListBase.cs" />
-    <Compile Remove="WIP\WIP-TrackListAbstractFactory\VinylAlbum.cs" />
-    <Compile Remove="WIP\WIP-TrackListAbstractFactory\VinylTrackList.cs" />
+    <Compile Remove="WIP\TrackListAbstractFactory\AbstractFactoryTemplate.cs" />
+    <Compile Remove="WIP\TrackListAbstractFactory\AlbumFactoryBase.cs" />
+    <Compile Remove="WIP\TrackListAbstractFactory\CompactDiscAlbum.cs" />
+    <Compile Remove="WIP\TrackListAbstractFactory\CompactDiscTrackList.cs" />
+    <Compile Remove="WIP\TrackListAbstractFactory\TrackDetail.cs" />
+    <Compile Remove="WIP\TrackListAbstractFactory\TrackListBase.cs" />
+    <Compile Remove="WIP\TrackListAbstractFactory\VinylAlbum.cs" />
+    <Compile Remove="WIP\TrackListAbstractFactory\VinylTrackList.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Kata\FestivalFactory\211103-Answers\" />
     <Folder Include="WIP\MenuFactoryDic\" />
     <Folder Include="WIP\MenuFactoryRecursive\" />
-    <Folder Include="WIP\WIP-TrackListAbstractFactory\" />
+    <Folder Include="WIP\TrackListAbstractFactory\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataServices\DataServices.csproj" />
   </ItemGroup>
 
 </Project>

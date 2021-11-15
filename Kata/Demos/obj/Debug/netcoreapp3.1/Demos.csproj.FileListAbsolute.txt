@@ -72,3 +72,5 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\bin\Debug\ne
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.csproj.CopyComplete
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\obj\Debug\netcoreapp3.1\Demos.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\bin\Debug\netcoreapp3.1\DataServices.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Demos\bin\Debug\netcoreapp3.1\DataServices.pdb

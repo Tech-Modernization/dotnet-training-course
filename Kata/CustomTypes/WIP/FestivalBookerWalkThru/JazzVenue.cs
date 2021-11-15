@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.WIP.FestivalBookerWalkThru
+namespace Kata.CustomTypes.FestivalBookerWalkThru
 {
     public class JazzVenue : VenueBase
     {
-        public Action StageAccess;
         public JazzVenue()
         {
             Genre = MusicGenre.Jazz;
+            Characteristics.Add("Has a piano on stage");
         }
     }
 }

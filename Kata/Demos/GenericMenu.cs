@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-using Kata.CustomTypes.MenuFactory;
+using Kata.CustomTypes;
 
 /*
 * part 1
@@ -148,7 +148,7 @@ output the group names and indent the items
 
 namespace Kata.Demos
 {
-    public class Exercise10Demo : DemoBase
+    public class GenericMenu : DemoBase
     {
         private List<object> objetsDuh = new List<object>()
         {
@@ -171,12 +171,7 @@ namespace Kata.Demos
 
         public void RunE12to13()
         {
-            var multiplier = new Multiplier();
-            multiplier.Multiply(22, 4);
-            multiplier.Multiply(2.2M, 5);
-            multiplier.Multiply("22", 7);
-            multiplier.Multiply(new Hammer("Claw"), 5);
-            multiplier.Multiply(new Shoes("Docs", 10), 8);
+
 
 
             var intRef = new CrossRef<int>(1, 2, 3, 6, 77, 54, 56, 567, 4, 64);
@@ -246,108 +241,6 @@ namespace Kata.Demos
                 }
             }
         }
-        int addNamed(int n1, int n2)
-        {
-            return n1 + n2;
-        }
-
-        string nameNamed()
-        {
-            return "paul";
-        }
-
-        void wossTheTimeNamed()
-        {
-            Console.WriteLine("Date: {0}", DateTime.Now.ToLongDateString());
-            Console.WriteLine("Time: {0}", DateTime.Now.ToLongTimeString());
-        }
-
-        public void AnonPart1()
-        {
-            Func<int, int, int> addAnon = (n1, n2) => n1 + n2;
-
-            var namedResult = addNamed(3, 4);
-            var anonResult = addAnon(3, 4);
-
-            Func<string> nameAnon = () => "paul";
-            var namedName = nameNamed();
-            var anonName = nameAnon();
-
-            Action<string> singleArg = (s) =>
-            {
-                cw(s);
-            };
-
-            singleArg("hello");
-
-            Action wossTheTimeAnon = () =>
-            {
-                Console.WriteLine("Date: {0}", DateTime.Now.ToLongDateString());
-                Console.WriteLine("Time: {0}", DateTime.Now.ToLongTimeString());
-            };
-
-            wossTheTimeNamed();
-            wossTheTimeAnon();
-
-            Console.WriteLine(Call(new Bicycle("Mountain bike")));
-
-            var bike = new Bicycle("mountain bike");
-
-            var formatResult = CallFormatter(o => $"Hip hooray, I've got a new {((Bicycle) o).Model}", bike);
-            formatResult = CallFormatter(o => $"How dull.  Just been to Tesco's and got  {((Detergent) o).Brand}", new Detergent("Ariel"));
-
-            Console.WriteLine(formatResult);
-
-        }
-
-        public override void Run()
-        {
-            Action<int, string> myMethod = (arg, anotherArg) => Console.WriteLine($"the answer to {anotherArg} is {arg}");
-            myMethod(42, "life the universe and everything");
-
-            Func<DateTime, int> howOld = (birthday) => (int) DateTime.Now.Subtract(birthday).TotalDays / 365;
-            Console.WriteLine($"Dave was born on 9 April 1968 so he is {HowOld(DateTime.Parse("9/4/1968"))} years old");
-            Console.WriteLine($"James Dean was born on 8th February 1922 so he would be {howOld(DateTime.Parse("8/2/1922"))} years old");
-
-            AnonPart1();
-
-            var egg = new Egg();
-            egg.Prepare();
-            egg.Prepare(() => Console.WriteLine("Beating the egg"));
-
-        }
-
-        public interface IPrepare
-        {
-            void Prepare(Action altPrep = null);
-        }
-        public class Egg : IPrepare
-        {
-            public void Prepare(Action altPrep = null)
-            {
-                if (altPrep == null)
-                    Console.WriteLine("Frying the egg");
-                else
-                    altPrep();
-            }
-        }
-
-        int HowOld(DateTime birthday) 
-        { 
-            return (int) DateTime.Now.Subtract(birthday).TotalDays / 365; 
-        }
-
-        public string CallFormatter<T>(Func<object, string> methodParam, T arg)
-        {
-            return methodParam(arg);
-        }
-
-        public string Call<T>(T arg)
-        {
-            var bike = arg as Bicycle;
-            return (bike == null) ? $"not supporting {typeof(T).Name}" : $"called with a {bike.Model}";
-        }
-
         public void RunBuild()
         {
             var menu = new Menu<IFormatProvider>();
@@ -427,23 +320,6 @@ namespace Kata.Demos
             Console.WriteLine(string.Join("\n", menuText));
         }
 
-        public void RunTypeFormatter()
-        {
-            var menuTypeFormatter = new TypeNameFormatter<MenuBase>();
-            var factoryTypeFormatter = new TypeNameFormatter<MenuItemBase>();
-
-            var upperMenuBase = menuTypeFormatter.UpperCaseTypeName();
-            var pathMenuBase = menuTypeFormatter.MakePathFromTypeName();
-            var upperFactoryDemoBase = factoryTypeFormatter.UpperCaseTypeName();
-            var pathFactoryDemoBase = factoryTypeFormatter.MakePathFromTypeName();
-
-            var drinksUpper = menuTypeFormatter.UpperCaseTypeName<DrinksMenu>();
-            var drinksPath = menuTypeFormatter.MakePathFromTypeName<DrinksMenu>();
-
-
-
-        }
-
         public object GetRandomObject()
         {
             var randIdx = new Random().Next(0, objetsDuh.Count - 1);
@@ -467,28 +343,7 @@ namespace Kata.Demos
         string FormatDetails();
     }
 
-    public class TypeNameFormatter<T>
-    {
-        public string UpperCaseTypeName()
-        {
-            return typeof(T).FullName.ToUpper();
-        }
 
-        public string MakePathFromTypeName()
-        {
-            return typeof(T).FullName.Replace(".", "/");
-        }
-
-        public string UpperCaseTypeName<T2>()
-        {
-            return typeof(T2).FullName.ToUpper();
-        }
-
-        public string MakePathFromTypeName<T2>()
-        {
-            return typeof(T2).FullName.Replace(".", "/");
-        }
-    }
 
 
 
@@ -652,110 +507,8 @@ namespace Kata.Demos
         }
     }
 
-    public class Multiplier
-    {
-        public void Multiply<T>(T arg, int multiplier)
-        {
-            if (arg is int)
-            {
-                multiplyNumber(Convert.ToInt32(arg), multiplier);
-                return;
-            }
-            if (arg is decimal)
-            {
-                multiplyNumber(Convert.ToDecimal(arg), multiplier);
-                return;
-            }
-
-            var str = arg as string;
-            if (!string.IsNullOrEmpty(str))
-            {
-                multiplyString(str, multiplier);
-                return;
-            }
-            var hammer = arg as Hammer;
-            if (hammer != null)
-            {
-                multiplyHammer(hammer, multiplier);
-                return;
-            }
-
-            Console.WriteLine($"Sorry.  Multiplier does not support the {typeof(T).FullName} type");
-        }
 
 
-        private void multiplyHammer(Hammer hammer, int multiplier)
-        {
-            var list = new List<Hammer>();
-            var hammerStr = hammer.FormatDetails();
-            for(var i = 0; i < multiplier; i++)
-            {
-                list.Add(new Hammer($"{hammerStr} #{i + 1} of {multiplier}"));
-            }
 
-            foreach(var h in list)
-            Console.WriteLine(h.FormatDetails());
-        }
-
-        private void multiplyString(string str, int multiplier)
-        {
-            for (var i = 1; i < multiplier; i++)
-            {
-                Console.WriteLine($"{i}: {str}");
-            }
-        }
-
-        private void multiplyNumber(int arg, int multiplier)
-        {
-            Console.WriteLine($"{multiplier} x {arg} = {multiplier * arg}");
-        }
-        private void multiplyNumber(decimal arg, int multiplier)
-        {
-            Console.WriteLine($"{multiplier} x {arg} = {multiplier * arg}");
-        }
-    }
-
-    public class CrossRef<T>
-    {
-        private List<T> items;
-        public string Band;
-        public CrossRef(params T[] items)
-        {
-            this.items = new List<T>(items);
-        }
-
-        public bool Find(T item)
-        {
-            return items.Contains(item);
-        }
-    }
-
-    public class RSVP : CrossRef<string>
-    {
-        private Dictionary<string, bool> responses = new Dictionary<string, bool>();
-
-        public RSVP(params string[] names) : base(names)
-        {
-            foreach(var n in names)
-            {
-                if (n[0] % 2 == 1)
-                {
-                    Console.WriteLine($"Adding response from {n}");
-                    responses.TryAdd(n, n.ToCharArray().Sum(c => c) % 2 == 0);
-                    Console.WriteLine($"{n}'s {(responses[n] ? "" : "not ")} coming");
-                }
-            }
-        }
-
-        public bool? WillBeAttending(string name)
-        {
-            return responses.ContainsKey(name) ? responses[name] : false;
-        }
-        public bool? WillBeAttending(string name, out bool invited)
-        {
-            invited = Find(name);
-            bool? retval = null;
-            return invited ? responses.ContainsKey(name) ? responses[name] : retval : false;
-        }
-    }
+    
 }

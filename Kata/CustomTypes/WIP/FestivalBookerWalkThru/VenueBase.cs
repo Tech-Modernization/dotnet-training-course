@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.WIP.FestivalBookerWalkThru
+namespace Kata.CustomTypes.FestivalBookerWalkThru
 {
     public abstract class VenueBase
     {
@@ -10,5 +10,6 @@ namespace Kata.CustomTypes.WIP.FestivalBookerWalkThru
         public string Name;
         public List<Act> Acts;
         public List<PerformanceSpace> Spaces;
+        public List<string> Characteristics = new List<string>();
     }
 }
