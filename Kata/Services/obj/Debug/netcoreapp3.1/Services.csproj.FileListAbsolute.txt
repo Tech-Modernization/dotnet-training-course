@@ -10,3 +10,6 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.csproj.CopyComplete
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\bin\Debug\netcoreapp3.1\DataServices.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\bin\Debug\netcoreapp3.1\DataServices.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Services\obj\Debug\netcoreapp3.1\Services.csproj.AssemblyReference.cache
