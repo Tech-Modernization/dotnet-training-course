@@ -6,7 +6,7 @@ namespace Kata.CustomTypes.Kata.Recipe.Part10
 {
     public interface IPantry
     {
-        public TIngredient Measure<TIngredient>(string searchName, Func<TIngredient> instantiate)
+        TIngredient Measure<TIngredient>(string searchName, Func<TIngredient> instantiate)
             where TIngredient : Ingredient;
     }
 }

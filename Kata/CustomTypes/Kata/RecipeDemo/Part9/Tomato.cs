@@ -14,7 +14,6 @@ namespace Kata.CustomTypes.Kata.Recipe.Part9
             AltPrepMethod = altPrepMethod;
         }
 
-
         public override void Prepare()
         {
             base.Prepare();

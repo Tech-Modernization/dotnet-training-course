@@ -8,6 +8,10 @@ namespace Kata.DataServices
 {
     public class FileDataService : IFileDataService
     {
+        public FileDataService()
+        {
+
+        }
         public List<string> GetLines(string path)
         {
             try

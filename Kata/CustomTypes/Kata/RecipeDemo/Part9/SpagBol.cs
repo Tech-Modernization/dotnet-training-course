@@ -10,7 +10,12 @@ namespace Kata.CustomTypes.Kata.Recipe.Part9
         {
             Add(Pantry.Measure("spaghetti", "125g"));
             Add(Pantry.Measure("beef mince", "1/2 lb"));
-            Add(Pantry.Measure(() => new Tomato("half a dozen", () => Console.WriteLine("soak in boiled water, skin and mash"))));
+            Add(Pantry.Measure(() => new Tomato("half a dozen", () => PrepTomatoes())));
+        }
+
+        private void PrepTomatoes()
+        {
+            Console.WriteLine("soak in boiled water, skin and mash");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Kata.CustomTypes.Kata.Recipe.Part11
 {
     public class DishBase : List<Ingredient>
     {
-        protected Pantry Pantry;
+        protected IPantry Pantry;
         public string DishName { get; }
 
         public DishBase(string dishName)

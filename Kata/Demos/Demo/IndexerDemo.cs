@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
+
+using Newtonsoft.Json.Linq;
 
 namespace Kata.Demos
 {
@@ -12,6 +17,7 @@ namespace Kata.Demos
         {
             AddPart(Part1, "Simple indexer to 'normalise' array references");
             AddPart(Part2, "Simple indexer to receive and return different types");
+            AddPart(Part3, "Indexer with multiple parameters");
             base.Run();
         }
 
@@ -38,8 +44,42 @@ namespace Kata.Demos
         {
             // 4. you can use an indexer to return an element based on a different type
             var stringExt = new Stringable("the quick brown fox jumps over the lazy dog");
-            var indexesOfO = stringExt["o"];
+            var indexesOfO = stringExt['o'];
             dbg($"The letter O appears {indexesOfO.Count} times, at positions: {string.Join(",", indexesOfO)}");
+}
+
+
+        public void Part3()
+        {
+            // 5. you can pass more than one argument to an indexer
+            // 
+            // e.g. in this example i'm simulating what, as a database query would look 
+            // like this (denormalised) sql
+            //
+            //    select lyric from songs where title = "she loves you"
+            //                              and section = "verse"
+            //                              and lyric like "%love%"
+            //
+            var lyrics = new LyricSheet();
+            // 
+         //   var loveRefsInVerses = lyrics["love", "verse"];
+
+        }
+
+        public class LyricSheet
+        {
+            Dictionary<string, List<string>> song = new Dictionary<string, List<string>>();
+            public LyricSheet()
+            {
+                var jsonObject = JObject.Parse(File.ReadAllText("she-loves-you.json"));
+                foreach(var jprop in jsonObject.Properties())
+                {
+                    song.Add(jprop.Name, jprop.Type == JTokenType.Property 
+                        ? new List<string>() { jprop.Value<string>() } 
+                        : jprop.Value<List<string>>());
+                }
+            }
+
         }
 
         public class Stringable
@@ -50,9 +90,9 @@ namespace Kata.Demos
                 str = val;
             }
 
-            public List<int> this[string tgt]
+            public List<int> this[char tgt]
             {
-                get => str.Where(c => c == tgt[0]).Select(c => str.IndexOf(c)).ToList();
+                get => str.Where(c => c == tgt).Select(c => str.IndexOf(c)).ToList();
             }
         }
 

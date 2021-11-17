@@ -8,8 +8,8 @@ namespace Kata.CustomTypes.Kata.Recipe.Part9
     {
         public string Name { get; }
         public string Amount { get; set; }
-        
-        public Action AltPrepMethod;
+
+        protected Action AltPrepMethod;
         public Ingredient(string name, string amount)
         {
             Name = name;

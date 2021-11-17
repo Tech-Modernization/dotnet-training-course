@@ -12,7 +12,6 @@ namespace Kata.CustomTypes.Kata.Recipe.Part10
             Add(Pantry.Measure<Ingredient>("b e e f m"));
             Add(Pantry.Measure("tom", () => new Tomato("half a dozen", () => PrepTomatoes())));
             Add(Pantry.Measure("MUSHro   om", () => new Ingredient("closed cup mushrooms", "one small punnet", PrepMushrooms)));
-
         }
 
         private void PrepMushrooms()

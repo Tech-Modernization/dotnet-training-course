@@ -15,4 +15,6 @@ namespace Kata.Helpers
         public int Index { get; }
         public string Text { get; }
     }
+
+
 }
