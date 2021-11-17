@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
+
+using Kata.Helpers;
+
+using Newtonsoft.Json;
 
 using Part1 = Kata.CustomTypes.OnlineShop.Part1;
 using Part2 = Kata.CustomTypes.OnlineShop.Part2;
 using Part3 = Kata.CustomTypes.OnlineShop.Part3;
 using Part4 = Kata.CustomTypes.OnlineShop.Part4;
-//using Part5 = Kata.CustomTypes.OnlineShop.Part5;
-//using Part6 = Kata.CustomTypes.OnlineShop.Part6;
+using Part5 = Kata.CustomTypes.OnlineShop.Part5;
+using Part6 = Kata.CustomTypes.OnlineShop.Part6;
 
 namespace Kata.Demos
 {
@@ -20,6 +25,8 @@ namespace Kata.Demos
             AddPart(Part2, "Enable the shop to load an inventory, create orders and take payments");
             AddPart(Part3, "Try to resolve SRP violation");
             AddPart(Part4, "Violate ISP and DIP, then resolve SRP, ISP and DIP violations");
+            AddPart(Part5, "Demonstrate violation of DIP");
+            AddPart(Part6, "Resolve violation of DIP with InventoryService and CsvDataService");
             base.Run();
         }
         public void Part1()
@@ -69,8 +76,8 @@ namespace Kata.Demos
             }
         }
         public void Part4()
-{
-            var invManager = new Part4.LocalInventoryManager();
+        {
+            var invManager = new Part4.InventoryManager();
             var payManager = new Part4.PayPalPaymentManager();
             var orderManager = new Part4.LocalOrderManager();
 
@@ -80,6 +87,41 @@ namespace Kata.Demos
             shop.Orders.Add(new Part4.OnlineOrder() { ProductName = "beanie", Price = 14.00M, Paid = true });
 
             shop.Run();
+        }
+
+        public void Part5()
+        {
+            var invManager = new Part5.InventoryManager();
+            invManager.Load();
+            var products = invManager.Get();
+
+            var menu = new MenuHelper();
+            menu.Init(() => products.Select(p => p.ToString()).ToList());
+            var productToAdd = menu.SelectFromMenu("Product selection: ");
+        }
+        public void Part6()
+        {
+            var dataService = new Part6.FileDataService();
+            var invService = new Part6.CsvInventoryService(dataService);
+            var invManager = new Part6.InventoryManager(invService);
+            invManager.Load();
+            var products = invManager.Get();
+
+            var menu = new MenuHelper();
+            menu.Init(() => products.Select(p => p.ToString()).ToList());
+            var productToAdd = menu.SelectFromMenu("Product selection: ");
+        }
+        public void Part7()
+        {
+            var dataService = new Part6.FileDataService();
+            var invService = new Part6.CsvInventoryService(dataService);
+            var invManager = new Part6.InventoryManager(invService);
+            invManager.Load();
+            var products = invManager.Get();
+
+            var menu = new MenuHelper();
+            menu.Init(() => products.Select(p => p.ToString()).ToList());
+            var productToAdd = menu.SelectFromMenu("Product selection: ");
         }
     }
 }

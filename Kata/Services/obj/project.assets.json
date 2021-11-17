@@ -11,20 +11,6 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "CustomTypes/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "DataServices": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/CustomTypes.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CustomTypes.dll": {}
-        }
-      },
       "DataServices/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -68,11 +54,6 @@
         "packageIcon.png"
       ]
     },
-    "CustomTypes/1.0.0": {
-      "type": "project",
-      "path": "../CustomTypes/CustomTypes.csproj",
-      "msbuildProject": "../CustomTypes/CustomTypes.csproj"
-    },
     "DataServices/1.0.0": {
       "type": "project",
       "path": "../DataServices/DataServices.csproj",
@@ -81,7 +62,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "CustomTypes >= 1.0.0"
+      "DataServices >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -116,8 +97,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj": {
-              "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj"
+            "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\DataServices.csproj": {
+              "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\DataServices.csproj"
             }
           }
         }

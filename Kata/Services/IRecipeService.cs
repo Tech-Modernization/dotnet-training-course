@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Kata.Services
 {
-    public class IRecipeService
+    public interface IRecipeService
     {
+        Dictionary<string, string> LoadPantry();
     }
 }

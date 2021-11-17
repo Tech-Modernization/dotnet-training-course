@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Part7\Salad.cs~RFc387cc2.TMP" />
+  </ItemGroup>
+
 </Project>

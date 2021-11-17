@@ -2,11 +2,11 @@
 
 namespace Recipe
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            var wrapper = new Exercise14Demo();
+            var wrapper = new RecipeDemo();
             wrapper.Run();
         }
     }

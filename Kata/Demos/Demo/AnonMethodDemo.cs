@@ -175,7 +175,40 @@ namespace Kata.Demos
             returnsStringwith2IntParams = (intArg1, intArg2) => $"{intArg1} + {intArg2} = {intArg1 + intArg2}";
             var v110 = returnsStringwith2IntParams(43, 67);
 
-            List<Func<int>> steps;
+            // 8. Actions and Funcs can be used in collections just like any other type
+            var steps = new List<Func<string>>();
+            steps.Add(() => "check you've got your house keys");
+            steps.Add(() => "check you've got your car keys");
+            steps.Add(() => "leave the house");
+            steps.Add(() => "go back in get your phone");
+            steps.Add(() => "drive to tesco's and realise you forgotten to bring bags");
+            steps.Add(() => "do the shop and drive home without receiving a single call or notification");
+            dbg("How to do the weekly shop:");
+            var i = 1;
+            foreach(var getStep in steps)
+            {
+                dbg($"{i++} - {getStep()}");
+            }
+
+            // 9. Actions and Funcs can be specified as either anonymous methods or formal methods
+            Action anonAction = () => Console.WriteLine("Console.WriteLine was called as specified in anonAction");
+            anonAction();
+            // But formal methods can also be substituted
+            anonAction = WriteToConsole;
+            anonAction();
+
+            // but we can only call the overload that matches the type declaration
+            // anonAction("if you uncomment this, it won't compile");
+            Action<string> anonActionArg = WriteToConsole;
+            anonActionArg("but you can create the idea of overloads with them...if it became necessary, I suppose");
+        }
+        public void WriteToConsole(string arg)
+        {
+            Console.WriteLine(arg);
+        }
+        public void WriteToConsole()
+        {
+            Console.WriteLine("Now the action needs arguments otherwise console writeline doesn't know what to write");
         }
 
         public string ReturnsStringWith2IntParams(Func<int, int, string> returnsStringwith2IntParams)

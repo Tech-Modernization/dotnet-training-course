@@ -1,7 +1,6 @@
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\bin\Debug\netcoreapp3.1\DataServices.deps.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\bin\Debug\netcoreapp3.1\DataServices.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\bin\Debug\netcoreapp3.1\DataServices.pdb
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\obj\Debug\netcoreapp3.1\DataServices.csproj.AssemblyReference.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\obj\Debug\netcoreapp3.1\DataServices.GeneratedMSBuildEditorConfig.editorconfig
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\obj\Debug\netcoreapp3.1\DataServices.AssemblyInfoInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\obj\Debug\netcoreapp3.1\DataServices.AssemblyInfo.cs

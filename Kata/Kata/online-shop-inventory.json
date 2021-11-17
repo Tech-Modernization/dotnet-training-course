@@ -1,0 +1,38 @@
+[
+  {
+    "Name": "t-shirt",
+    "Price": 10.50
+  },
+  {
+    "Name": "jeans",
+    "Price": 30.99
+  },
+  {
+    "Name": "beanie",
+    "Price": 14.0
+  },
+  {
+    "Name": "belt",
+    "Price": 5.79
+  },
+  {
+    "Name": "cardigan",
+    "Price": 34.0
+  },
+  {
+    "Name": "socks",
+    "Price": 8.0
+  },
+  {
+    "Name": "boxers",
+    "Price": 4.49
+  },
+  {
+    "Name": "leather jacket",
+    "Price": 129.99
+  },
+  {
+    "Name": "weatherproof jacket",
+    "Price": 87.50
+  }
+]
