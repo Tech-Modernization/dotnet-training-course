@@ -7,4 +7,3 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\obj\D
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\obj\Debug\netcoreapp3.1\DataServices.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\obj\Debug\netcoreapp3.1\DataServices.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\obj\Debug\netcoreapp3.1\DataServices.pdb
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\DataServices\obj\Debug\netcoreapp3.1\DataServices.csproj.AssemblyReference.cache

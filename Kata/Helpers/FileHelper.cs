@@ -14,7 +14,7 @@ namespace Kata.Helpers
         public static string GetJsonPath(string dbDir)
         {
             var m = new MenuHelper();
-            m.Init(() => FileHelper.FindByExtension(dbDir, ".json"));
+            m.Build(() => FileHelper.FindByExtension(dbDir, ".json").Select(f => new MenuItemBase { Text = f }).ToList());
             var selected = m.SelectFromMenu("Select JSON file: ");
             return m[selected - 1].Text;
         }

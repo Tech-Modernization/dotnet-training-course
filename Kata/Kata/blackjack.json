@@ -1,0 +1,16 @@
+{
+  "dealers": [
+    { "babs": 5 },
+    { "dave": 10 },
+    { "jabba": 5 },
+    { "phoebe": 10 }
+  ],
+  "players": [
+    { "alice": 100 },
+    { "benny": 200 },
+    { "candice": 500 },
+    { "dave": 20 },
+    { "elise": 10000 },
+    { "frankie": 1000}
+  ]
+}

@@ -96,7 +96,7 @@ namespace Kata.Demos
             var products = invManager.Get();
 
             var menu = new MenuHelper();
-            menu.Init(() => products.Select(p => p.ToString()).ToList());
+            menu.Build(() => products.Select(p => new MenuItemBase { Index = products.IndexOf(p), Text = p.ToString() }).ToList());
             var productToAdd = menu.SelectFromMenu("Product selection: ");
         }
         public void Part6()
@@ -108,7 +108,7 @@ namespace Kata.Demos
             var products = invManager.Get();
 
             var menu = new MenuHelper();
-            menu.Init(() => products.Select(p => p.ToString()).ToList());
+            menu.Build(() => products.Select(p => new MenuItemBase { Index = products.IndexOf(p), Text = p.ToString() }).ToList());
             var productToAdd = menu.SelectFromMenu("Product selection: ");
         }
         public void Part7()
@@ -120,7 +120,7 @@ namespace Kata.Demos
             var products = invManager.Get();
 
             var menu = new MenuHelper();
-            menu.Init(() => products.Select(p => p.ToString()).ToList());
+            menu.Build(() => products.Select(p => new MenuItemBase { Index = products.IndexOf(p), Text = p.ToString() }).ToList());
             var productToAdd = menu.SelectFromMenu("Product selection: ");
         }
     }

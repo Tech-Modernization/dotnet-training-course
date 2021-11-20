@@ -1,31 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Kata.Helpers
 {
     public class TypeHelper
     {
-        public static List<string> ImplementersOf<T>()
+        public static T New<T>(Type t)
         {
-            var t = typeof(T);
+            return (T) New(t, typeof(T));
+        }
+        public static object New(Type concreteType, Type abstractType)
+        {
+            return abstractType.IsAssignableFrom(concreteType) ? concreteType.Assembly.CreateInstance(concreteType.FullName) : default;
+        }
+        public static List<Type> ImplementersOf<T>()
+        {
+            return ImplementersOf(typeof(T));
+        }
+        public static List<Type> ImplementersOf(Type t)
+        {
             if (!t.IsInterface)
                 return null;
 
             return t.Assembly.DefinedTypes
                 .Where(c => c.ImplementedInterfaces.Contains(t) && !c.IsAbstract)
-                .Select(c => c.FullName)
-                .OrderBy(c => c)
+                .Select(dt => dt.AsType())
+                .OrderBy(c => c.Name)
                 .ToList();
         }
-        public static List<string> ChildrenOf<T>()
+        public static List<Type> ChildrenOf<T>()
         {
-            var t = typeof(T);
+            return ChildrenOf(typeof(T));
+        }
+        public static List<Type> ChildrenOf(Type t)
+        {
             if (!t.IsClass)
                 return null;
 
-            return t.Assembly.DefinedTypes.Where(t => t.IsSubclassOf(t) && !t.IsAbstract).Select(t => t.FullName).ToList();
+            return t.Assembly.DefinedTypes.Where(dt => dt.IsSubclassOf(t) && !dt.IsAbstract).Select(dt => dt.AsType()).ToList();
         }
     }
 }

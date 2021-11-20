@@ -10,7 +10,7 @@ namespace Kata.Helpers
     public class MenuHelper
     {
         protected List<MenuItemBase> Options { get; }
-        protected MenuSettings Settings { get; }
+        public MenuSettings Settings { get; }
 
         public MenuHelper()
         {
@@ -18,12 +18,14 @@ namespace Kata.Helpers
             Options = new List<MenuItemBase>();
         }
 
-        public void Init(Func<List<string>> generateOptions)
+        public void Build(Func<List<MenuItemBase>> optionGenerator, Action<Type> itemRunner = null)
         {
-            var options = generateOptions();
-            for (var o = 1; o <= options.Count; o++)
+            var options = optionGenerator();
+            for (var o = 0; o < options.Count; o++)
             {
-                Options.Add(new MenuItemBase(o, options[o - 1]));
+                var opt = options[o];
+                opt.Run = itemRunner;
+                Options.Add(opt);
             }
         }
 
@@ -33,17 +35,9 @@ namespace Kata.Helpers
             set => Options[i - 1] = value;
         }
 
-        public static List<string> BuildTypeMenu(Assembly ass)
+        public static List<MenuItemBase> GetTypedMenuItems(List<Type> types)
         {
-            var typesInAssembly = ass.DefinedTypes.Where(t => !t.IsAbstract);
-
-            var iTypes = typesInAssembly.Where(t => t.IsInterface).ToList();
-            var baseTypes = typesInAssembly.Where(t => t.Name.EndsWith("Base") || t.BaseType == typeof(object));
-            var mib = typeof(MenuItemBase).BaseType;
-
-            var optionText = baseTypes.Select(t => t.Name).ToList();
-            optionText.AddRange(iTypes.Select(t => t.Name).ToList());
-            return optionText;
+            return types.Select(t => new MenuItemBase() { Index = types.IndexOf(t) + 1, Text = t.FullName, ImplementedAs = t }).ToList();
         }
 
         public void DisplayMenu()
@@ -67,25 +61,18 @@ namespace Kata.Helpers
                 }
                 else
                 {
-                    Console.WriteLine($"{Options.Count + 1,-3} - Exit");
+                    Settings.ExitOption = Options.Count + 1;
+                    Console.WriteLine($"{Settings.ExitOption,-3} - Exit");
                 }
             }
             Console.WriteLine();
         }
 
-        public int SelectFromMenu(string prompt, Action<MenuItemBase> runMethod)
+        public int SelectFromMenu(string prompt=            null)
         {
-            var sel = SelectFromMenu(prompt);
-            if (sel > 0)
-            {
-                if (runMethod != null)
-                    runMethod(Options[sel - 1]);
-            }
-            return sel;
-        }
+            if (prompt == null)
+                prompt = Settings.Prompt;
 
-        public int SelectFromMenu(string prompt)
-        {
             DisplayMenu();
 
             var selection = 0;
@@ -94,7 +81,13 @@ namespace Kata.Helpers
                 ? ConsoleHelper.GetInteger(prompt, out selection, new KeyRangeValidator(1, Options.Count))
                 : ConsoleHelper.GetInteger(prompt, out selection, new RangeValidator(1, Options.Count));
 
-            return gotSelection ? selection : default;
+            if (gotSelection)
+            {
+                var opt = this[selection];
+                if (opt.Run != null)
+                    opt.Run(opt.ImplementedAs);
+            }
+            return gotSelection ? selection : Settings.DefaultOption;
         }
 
         public void Configure(MenuFlags flags, string prompt, int defaultOption)

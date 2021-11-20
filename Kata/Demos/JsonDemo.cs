@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-using Kata.CustomTypes.RecipeDemo;
+using Recipe.Part1;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;

@@ -102,6 +102,7 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\net
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\online-shop-inventory.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\sampleArray.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\sampleObject.json
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\she-loves-you.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.deps.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.runtimeconfig.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\Kata.runtimeconfig.dev.json
@@ -139,4 +140,4 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\net
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.pdb
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.genruntimeconfig.cache
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\she-loves-you.json
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\snakes-n-ladders.json

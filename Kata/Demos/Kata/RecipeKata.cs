@@ -30,8 +30,8 @@ namespace Kata.Demos
             AddPart(Part6, "Create a means of following the recipe");
             AddPart(Part7, "Allow the recipe to instantiate the dish and protect it from abuse of generics");
             AddPart(Part8, "Create a data source for the Dish by introducing the Pantry");
-            AddPart(Part9, "Provide a way to specify an alternate preparation method for ingredients"); 
-            AddPart(Part10, "Load the ingredients from a JSON file"); */
+            AddPart(Part9, "Provide a way to specify an alternate preparation method for ingredients"); */
+            AddPart(Part10, "Load the ingredients from a JSON file"); 
             AddPart(Part11, "Decouple the data source and load from CSV instead");
             AddPart(Part12, "Write a JsonRecipeService and witness the beauty of Dependency Inversion!");
             base.Run();

@@ -24,12 +24,12 @@ namespace Kata.CustomTypes.Extensions
         {
             var result = new List<string>();
             var savedPos = 0;
-            for(var c = 0; c < source.Length; c++)
+            for(var pos = 0; pos < source.Length; pos++)
             {
-                if (splitter(source[c]))
+                if (splitter(source[pos]))
                 {
-                    result.Add(source.Substring(savedPos, c - savedPos));
-                    savedPos = c;
+                    result.Add(source.Substring(savedPos, pos - savedPos));
+                    savedPos = pos + 1; // skip the delimiter
                 }
             }
             result.Add(source.Substring(savedPos));

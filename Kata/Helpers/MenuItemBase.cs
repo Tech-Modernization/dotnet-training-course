@@ -6,15 +6,9 @@ namespace Kata.Helpers
 {
     public class MenuItemBase 
     {
-        public MenuItemBase(int index, string text)
-        {
-            Index = index;
-            Text = text;
-        }
-
-        public int Index { get; }
-        public string Text { get; }
+        public int Index;
+        public string Text;
+        public Type ImplementedAs;
+        public Action<Type> Run;
     }
-
-
 }

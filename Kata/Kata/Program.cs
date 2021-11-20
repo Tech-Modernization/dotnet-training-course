@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+
 using Kata.Demos;
 using Kata.Helpers;
 
@@ -10,44 +12,29 @@ namespace Kata
 
         static void Main(string[] args)
         {
-            IDemo demoInstance = default;
-            var mainMenu = new MenuHelper();
-            mainMenu.Init(() => new List<string> { "Demos", "Classes", "Interfaces"});
-            var exit = false;
-            do
-            {
-                var selectedDemo = mainMenu.SelectFromMenu("> ");
-                switch (selectedDemo)
-                {
-                    case 1:
-                        demoMenu();
-                        continue;
-                    case 2:
-                        classMenu();
-                        continue;
-                    case 3:
-                        ifaceMenu();
-                        continue;
-                    default:
-                        exit = true;
-                        break;
-                }
-            }
-            while (!exit);
+            runMenu(typeof(IDemo));
         }
-        static void demoMenu()
+        static void runMenu(Type sourceType)
         {
-            var demoMenu = new MenuHelper();
-            demoMenu.Init(TypeHelper.ImplementersOf<IDemo>);
+            var thisMenu = new MenuHelper();
+            if (sourceType.IsInterface)
+                thisMenu.Build(() => MenuHelper.GetTypedMenuItems(TypeHelper.ImplementersOf(sourceType)), t => runMenu(t));
+            else if (sourceType.IsAbstract)
+                thisMenu.Build(() => MenuHelper.GetTypedMenuItems(TypeHelper.ChildrenOf(sourceType)), t => runMenu(t));
+            else
+            {
+                var inst = sourceType.Assembly.CreateInstance(sourceType.FullName);
+                sourceType.GetMethod("Run").Invoke(inst, null);
+                return;
+            }
+
             var keystroke = default(ConsoleKey);
             do
             {
-                demoMenu.SelectFromMenu("> ", type =>
-                {
-                    var inst = Activator.CreateInstance(typeof(IDemo).Assembly.FullName, type.Text);
-                    var demo = inst.Unwrap() as IDemo;
-                    demo?.Run();
-                });
+                var selection = thisMenu.SelectFromMenu();
+                if (selection == thisMenu.Settings.ExitOption)
+                    break;
+
                 keystroke = Console.ReadKey().Key;
             }
             while (keystroke != ConsoleKey.Escape);

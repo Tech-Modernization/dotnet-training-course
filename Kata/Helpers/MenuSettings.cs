@@ -10,6 +10,7 @@ namespace Kata.Helpers
         public bool SelectWithReadKey;
         public ConsoleKey ExitKey;
         public int DefaultOption;
+        public int ExitOption;
         public bool GenerateExitOption;
         public string Prompt;
         public bool ClearScreenFirst;
@@ -25,6 +26,7 @@ namespace Kata.Helpers
             SelectWithReadKey = selectWithReadKey;
             ExitKey = exitKey;
             DefaultOption = defaultOption;
+            ExitOption = defaultOption;
             GenerateExitOption = generateExitOption;
             Prompt = prompt;
             ClearScreenFirst = clearScreenFirst;

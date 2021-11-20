@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Kata\RecipeDemo\Exercise14Demo.cs" />
+    <Compile Remove="Kata\Recipe\Exercise14Demo.cs" />
     <Compile Remove="WIP\MenuFactoryDic\BeerVariant.cs" />
     <Compile Remove="WIP\MenuFactoryDic\CocaColaMenuItem.cs" />
     <Compile Remove="WIP\MenuFactoryDic\CocaColaVariant.cs" />
@@ -61,6 +61,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Demo\BlackJackDealer\" />
     <Folder Include="Kata\FestivalFactory\211103-Answers\" />
     <Folder Include="WIP\MenuFactoryDic\" />
     <Folder Include="WIP\MenuFactoryRecursive\" />
