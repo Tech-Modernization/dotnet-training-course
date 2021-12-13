@@ -15,7 +15,7 @@ namespace Kata.CustomTypes.Kata.Recipe.Part8
         public void Follow()
         {
             Console.WriteLine($"Following {this}");
-            foreach(var ing in Dish)
+            foreach(var ing in Dish.Ingredients)
             {
                 ing.Prepare();
             }

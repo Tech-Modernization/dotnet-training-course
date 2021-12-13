@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Demo\BlackJackDemo.cs" />
+    <Compile Remove="Demo\GamependiumDemo.cs" />
     <Compile Remove="Exercise11DemoDone.cs" />
     <Compile Remove="TrackListFactoryDemo.cs" />
   </ItemGroup>

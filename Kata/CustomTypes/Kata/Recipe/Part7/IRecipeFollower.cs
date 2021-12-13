@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kata.CustomTypes.Kata.Recipe.Part7
 {
-    public interface IRecipeFollower<T>
+    public interface IRecipeFollower
     {
         void Follow();
     }

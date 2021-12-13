@@ -189,7 +189,8 @@
       },
       "Services/1.0.0": {
         "dependencies": {
-          "DataServices": "1.0.0"
+          "DataServices": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "Services.dll": {}

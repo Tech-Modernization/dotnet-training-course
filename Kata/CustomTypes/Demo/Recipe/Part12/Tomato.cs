@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kata.CustomTypes.Kata.Recipe.Part12
+namespace Kata.CustomTypes.Demo.Recipe.Part12
 {
     public class Tomato : Ingredient
     {

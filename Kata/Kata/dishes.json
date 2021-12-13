@@ -89,7 +89,7 @@
       "cucumber": "2 inches",
       "avocado": "half",
       "beetroot": "3 baby beets",
-      "egg" {
+      "egg" : {
         "amount": "1",
         "prep": [ "Boil", "Shell", "Slice" ]
       }

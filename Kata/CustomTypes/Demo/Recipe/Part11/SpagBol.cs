@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kata.CustomTypes.Kata.Recipe.Part11
+namespace Kata.CustomTypes.Demo.Recipe.Part11
 {
     public class SpagBol : DishBase
     {

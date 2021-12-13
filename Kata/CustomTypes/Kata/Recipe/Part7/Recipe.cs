@@ -2,7 +2,7 @@
 
 namespace Kata.CustomTypes.Kata.Recipe.Part7
 {
-    public class Recipe<TDish> : IRecipeFollower<TDish>
+    public class Recipe<TDish> : IRecipeFollower
         where TDish : DishBase, new()
     {
         private TDish Dish;

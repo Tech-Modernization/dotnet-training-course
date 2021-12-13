@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-
-using Newtonsoft.Json;
+﻿using System.Collections.Generic;
 
 using Kata.DataServices;
+
+using Newtonsoft.Json;
 
 namespace Kata.Services
 {

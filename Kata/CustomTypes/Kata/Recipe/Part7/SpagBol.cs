@@ -8,8 +8,8 @@ namespace Kata.CustomTypes.Kata.Recipe.Part7
     {
         public SpagBol() : base("Spaghetti Bolognese")
         {
-            Add(new Ingredient("spaghetti", "125g"));
-            Add(new Ingredient("lloyd grossman sauce", "1 jar"));
+            ingreds.Add(new Ingredient("spaghetti", "125g"));
+            ingreds.Add(new Ingredient("lloyd grossman sauce", "1 jar"));
         }
     }
 }

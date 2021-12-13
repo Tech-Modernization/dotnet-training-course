@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.Demo.Recipe.Part11
+namespace Kata.CustomTypes.Kata.Recipe.Part11
 {
-    public interface IRecipeFollower<T>
+    public interface IRecipeFollower
     {
         void Follow();
     }

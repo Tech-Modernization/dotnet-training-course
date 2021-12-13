@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using Kata.Services;
 
-namespace Kata.CustomTypes.Kata.Recipe.Part11
+namespace Kata.CustomTypes.Demo.Recipe.Part11
 {
     public class Pantry : IPantry
     {

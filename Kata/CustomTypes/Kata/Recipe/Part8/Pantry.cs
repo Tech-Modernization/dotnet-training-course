@@ -11,9 +11,9 @@ namespace Kata.CustomTypes.Kata.Recipe.Part8
             return new Ingredient(name, amount);
         }
 
-        public TIngredient Measure<TIngredient>(Func<TIngredient> instantiate) where TIngredient : Ingredient
+        public TIngredient Measure<TIngredient>(Func<TIngredient> instantiator) where TIngredient : Ingredient
         {
-            return instantiate();
+            return instantiator();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Kata.Demos
         public override void Run()
         {
             AddPart(Part1, "Set up a basic ingredient");
-            AddPart(Part2, "Use an anon method to create a list of ingredients");
+          /*  AddPart(Part2, "Use an anon method to create a list of ingredients");
             AddPart(Part3, "Create an interface to prepare the ingredients");
             AddPart(Part4, "Add a child ingredient to the list");
             AddPart(Part5, "Introduce an intermediate stage of meal preparation");
@@ -31,7 +31,7 @@ namespace Kata.Demos
             AddPart(Part7, "Allow the recipe to instantiate the dish and protect it from abuse of generics");
             AddPart(Part8, "Create a data source for the Dish by introducing the Pantry");
             AddPart(Part9, "Provide a way to specify an alternate preparation method for ingredients");
-           // AddPart(Part10, "Load the ingredients from a JSON file");
+            AddPart(Part10, "Load the ingredients from a JSON file"); */
 
             base.Run();
         }

@@ -8,9 +8,9 @@ namespace Kata.CustomTypes.Kata.Recipe.Part9
     {
         public SpagBol() : base("Spaghetti Bolognese")
         {
-            Add(Pantry.Measure("spaghetti", "125g"));
-            Add(Pantry.Measure("beef mince", "1/2 lb"));
-            Add(Pantry.Measure(() => new Tomato("half a dozen", () => Console.WriteLine("chop tomatoes"))));
+            Ingreds.Add(Pantry.Measure("spaghetti", "125g"));
+            Ingreds.Add(Pantry.Measure(() => new Ingredient("lloyd grossman sauce", "1 jar", () => Console.WriteLine("open the jar"))));
+            Ingreds.Add(Pantry.Measure(() => new Tomato("half a dozen", () => Console.WriteLine("Chopping the tomatoes"))));
         }
     }
 }

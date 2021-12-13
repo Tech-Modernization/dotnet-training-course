@@ -6,7 +6,7 @@ using System.Text;
 
 using Newtonsoft.Json;
 
-namespace Kata.CustomTypes.Kata.Recipe.Part10
+namespace Kata.CustomTypes.Demo.Recipe.Part10
 {
     public class Pantry : IPantry
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Kata.CustomTypes.Kata.Recipe.Part10
+namespace Kata.CustomTypes.Demo.Recipe.Part10
 {
     public class SpagBol : DishBase
     {

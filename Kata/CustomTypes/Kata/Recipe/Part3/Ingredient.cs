@@ -24,6 +24,5 @@ namespace Kata.CustomTypes.Kata.Recipe.Part3
             Console.WriteLine($"Preparing the {Name}");
         }
     }
-
-   
+  
 }

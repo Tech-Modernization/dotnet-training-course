@@ -9,5 +9,10 @@ namespace Kata.CustomTypes.Kata.Recipe.Part4
         public Tomato(string amount) : base("tomato", amount)
         {
         }
+
+        public override void Prepare()
+        {
+            Console.WriteLine($"Slicing the tomatoes");
+        }
     }
 }

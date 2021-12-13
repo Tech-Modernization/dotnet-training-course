@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Kata.CustomTypes.Demo.Recipe.Part11
+namespace Kata.CustomTypes.Kata.Recipe.Part11
 {
-    public class Recipe<TDish> : IRecipeFollower<TDish>
+    public class Recipe<TDish> : IRecipeFollower
         where TDish : DishBase, new()
     {
         private TDish Dish;
@@ -15,7 +15,7 @@ namespace Kata.CustomTypes.Demo.Recipe.Part11
         public void Follow()
         {
             Console.WriteLine($"Following {this}");
-            foreach(var ing in Dish)
+            foreach(var ing in Dish.Ingredients)
             {
                 ing.Prepare();
             }

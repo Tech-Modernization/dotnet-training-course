@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kata.CustomTypes.Kata.Recipe.Part10
+namespace Kata.CustomTypes.Demo.Recipe.Part10
 {
     public class Recipe<TDish> : IRecipeFollower<TDish>
         where TDish : DishBase, new()

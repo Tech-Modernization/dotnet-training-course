@@ -1,40 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
-using Newtonsoft.Json;
-
-namespace Kata.CustomTypes.Demo.Recipe.Part10
+namespace Kata.CustomTypes.Kata.Recipe.Part10
 {
     public class Pantry : IPantry
     {
-        private Dictionary<string, string> stock;
+        private List<string> pantrydb;
+
         public Pantry()
         {
-            stock = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText("ingredients.json"));
+            var jsonText = File.ReadAllText("cookbook.json");
+            var jsonObject = JObject.Parse(jsonText);
+            pantrydb = jsonObject.GetValue("ingredients").ToObject<List<string>>();
+ 
+            // nothing wrong with this :-)
+            //     var temp = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(jsonText);
+            //     pantrydb = temp["ingredients"];
         }
+
         private Ingredient Measure(string name, string amount)
         {
             return new Ingredient(name, amount);
         }
 
-        public TIngredient Measure<TIngredient>(string searchName, Func<TIngredient> instantiate = null) where TIngredient : Ingredient
+        public Ingredient Measure(string strIngredient, string amount, Func<Ingredient> instantiator = null)
         {
-            var collapsed = searchName.ToLower().Replace(" ", "");
-            var matches = stock.Keys.Where(k => k.ToLower().Replace(" ", "").StartsWith(collapsed)).ToList();
-            switch (matches.Count)
+            var ingredientQueryCollapsed = strIngredient.Replace(" ", "").ToLower();
+            var matches = pantrydb.Where(key => key.Replace(" ", "").ToLower().StartsWith(ingredientQueryCollapsed)).ToList();
+
+            switch(matches.Count)
             {
                 case 0:
-                    throw new Exception($"No ingredients matching \"{searchName}\" were found");
+                    throw new Exception("Unrecognised ingredient specified");
                 case 1:
-                    if (instantiate == null)
-                        return Measure(matches.First(), stock[matches.First()]) as TIngredient;
-                    return instantiate();
+                    var key = matches.First();
+                    return instantiator == null ? Measure(key, amount) : instantiator();
                 default:
-                    throw new Exception($"Ambiguous ingredient \"{searchName}\" specified");
+                    throw new Exception("Ambiguous ingredient specified");
             }
+
+            /*
+
+            var manualMatches = new List<string>();    // var matches = 
+            foreach(var key in stock.Keys)  // stock.Keys.Where
+            {
+                var removeSpaces = key.Replace(" ", "");  // key.Replace(" ", "")
+                var lowercase = removeSpaces.ToLower();   // .ToLower()
+                var collapsedMatchesFirstFewCharsOfKey = lowercase.StartsWith(ingredientQueryCollapsed); // .StartWith(...)
+                if (collapsedMatchesFirstFewCharsOfKey) // LINQ does this internally
+                {
+                    manualMatches.Add(key);             // LINQ does this internally
+                }
+            }
+            // .ToList()
+
+            if (stock.ContainsKey(strIngredient))
+            {
+                return Measure(strIngredient, stock[strIngredient]);
+            }
+            */
         }
     }
 }

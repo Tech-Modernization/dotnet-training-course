@@ -6,7 +6,7 @@ using System.Text;
 using Kata.Services;
 using Kata.DataServices;
 
-namespace Kata.CustomTypes.Kata.Recipe.Part11
+namespace Kata.CustomTypes.Demo.Recipe.Part11
 {
     public class DishBase : List<Ingredient>
     {

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Kata.Demos
 {
@@ -135,6 +137,20 @@ namespace Kata.Demos
             this.sentence = sentence;
         }
 
+        public Dictionary<string, int> Analyse()
+        {
+            var detail = new Dictionary<string, int>();
+            detail.Add("length", sentence.Length);
+            detail.Add("letters", sentence.Count(c => char.IsLetter(c)));
+            detail.Add("numbers", sentence.Count(c => char.IsDigit(c)));
+            detail.Add("punc", sentence.Count(c => char.IsPunctuation(c)));
+            sentence.ToList().ForEach(c => detail.Add("${c}", sentence.Count(next => next == c)));
+            return detail;
+        }
+        public JObject AnalyseToJson()
+        {
+            return new JObject(Analyse());
+        }
         public List<int> this[char letter]
         {
             get
@@ -150,6 +166,16 @@ namespace Kata.Demos
                 }
                 return indexes;
             }
+        }
+
+        public string ToString(char c)
+        {
+            var sb = new StringBuilder();
+            foreach(var kvp in Analyse())
+            {
+                sb.AppendLine($"{kvp.Key}: {kvp.Value}");
+            }
+            return sb.ToString();
         }
     }
 

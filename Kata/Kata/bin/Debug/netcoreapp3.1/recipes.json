@@ -1,0 +1,36 @@
+{
+  "dishes": [
+    {
+      "DishName": "Fish pie",
+      "Stages": [
+        {
+          "Name": "Roux",
+          "Composition": [
+            { "flour": "200g" },
+            { "butter": "50g" },
+            { "milk": "a pint" },
+            { "white pepper": "a teaspoon" }
+          ]
+        },
+        {
+          "Name": "Filling",
+          "Composition": [
+            { "cod": "250g" },
+            { "prawns": "100g" },
+            { "salmon": "250g" },
+            { "mushrooms": "a punnet" }
+          ]
+        },
+        {
+          "Name": "Topping",
+          "Composition": [
+            { "cheese": "200g" },
+            { "potatoes": "1/2 lb" },
+            { "salt": "a pinch" }
+          ]
+        }
+      ]
+    }
+  ]
+
+}
