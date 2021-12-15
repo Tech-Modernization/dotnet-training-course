@@ -58,8 +58,8 @@ namespace Kata.CustomTypes.Demo.LyricAnalyser
                         var wordNum = 0;
                         line.SplitByAny(splitter).ToList().ForEach(w =>
                         {
-                                // splitting by punctuation will often lead to blank tokens
-                                if (w.Length == 0)
+                            // splitting by punctuation will often lead to blank tokens
+                            if (w.Length == 0)
                                 return;
 
                             wordNum++;
@@ -74,8 +74,8 @@ namespace Kata.CustomTypes.Demo.LyricAnalyser
                             if (qflags == MatchQualityFlags.None)
                                 return;
 
-                                // we got a match - save the detail 
-                                var wo = new WordOccurrence();
+                            // we got a match - save the detail 
+                            var wo = new WordOccurrence();
                             wo.MatchQuality = qflags;
                             wo.Word = w;
                             wo.Section = kvp.Key;

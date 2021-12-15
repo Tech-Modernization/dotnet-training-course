@@ -15,13 +15,16 @@ namespace Kata.CustomTypes.Charades
 
         private List<Team> teams;
 
+        private Scoreboard Scores = new Scoreboard();
+
         public CharadesGame()
         {
             var jsonText = File.ReadAllText("charades.json");
             var jobject = JObject.Parse(jsonText);
             clues = jobject["charades"].ToObject<List<Clue>>();
-
             teams = jobject["teams"].ToObject<List<Team>>();
+
+            
         }
 
         public void ShowClues()

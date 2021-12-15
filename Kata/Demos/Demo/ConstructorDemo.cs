@@ -6,12 +6,26 @@ namespace Kata.Demos
 {
     public class ConstructorDemo : DemoBase
     {
-        public void Run()
+        public override void Run()
+        {
+            AddPart(Part2, "Moving animals");
+            base.Run();
+        }
+
+        public void Part1()
         {
             var ff = new FlyingFish("Flying fish");
             ff.MakeNoise("splash");
             var d = new Dog("Dog");
             d.MakeNoise("Woof!");
+        }
+
+        public void Part2()
+        {
+            var dog = new Dog();
+            var whale = new Whale("willy");
+            dog.Move();
+            whale.Move();
         }
     }
 
@@ -28,6 +42,8 @@ namespace Kata.Demos
             Console.WriteLine($"{Name} goes {noise}");
         }
 
+        public abstract void Move();
+
         public override string ToString()
         {
             return Name;
@@ -39,6 +55,31 @@ namespace Kata.Demos
         protected Mammal(string name) : base(name)
         {
         }
+        public Mammal() : this("Unknown")
+        {
+        }
+        public override void Move()
+        {
+            Console.WriteLine($"{this.GetType().FullName} Moves by using legs");
+        }
+    }
+
+    public class Dog : Mammal
+    {
+        public Dog() : base("Dog")
+        {
+        }
+        public Dog(string name) : this()
+        {
+            Name = name;
+        }
+
+        public override void Move()
+        {
+            base.Move();
+
+            Console.WriteLine($"{this.GetType().FullName} can also swim");
+        }
     }
 
     public class Fish : Animal
@@ -46,19 +87,27 @@ namespace Kata.Demos
         protected Fish(string name) : base(name)
         {
         }
-    }
 
+        public override void Move()
+        {
+            Console.WriteLine("Swims");
+        }
+    }
     public class FlyingFish : Fish
     {
         public FlyingFish(string name) : base(name)
         {
         }
     }
-
-    public class Dog : Mammal
+    public class Whale : Mammal
     {
-        public Dog(string name = null) : base("Dog")
+        public Whale(string name) : base(name)
         {
+        }
+
+        public override void Move()
+        {
+            Console.WriteLine("Whales move by swimming");
         }
     }
 

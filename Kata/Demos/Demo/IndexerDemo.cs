@@ -9,19 +9,21 @@ using Newtonsoft.Json.Linq;
 
 namespace Kata.Demos
 {
+    public class SomeClass { }
     public class IndexerDemo : DemoBase
     {
         public override void Run()
         {
+            AddPart(Part2, "Work thru a basic indexer");
             base.Run();
         }
 
         public void Part1()
         {
-            // 1. an indexer another "special method" you can set up in a class
+            // 1. an indexer is another "special method" you can set up in a class
             // 2. the purpose of an indexer is to enable the use of array reference
             //    syntax (i.e. using square brackets to directly access a particular
-            //    element - []) and define how that reference is interpretted.
+            //    element - []) and define how that reference is interpreted.
             var charArray = new char[] { 'a', 'b', 'c', 'd', 'e' };
 
             // array references start from 0 so to get the 3rd element, we have to subtract 1 from 
@@ -29,18 +31,99 @@ namespace Kata.Demos
             var thirdLetter = charArray[2];
 
             // 3. an indexer could be used to provide a "normalised" way to reference array elements
+            //    e.g. we want to be able to say var thirdLetter = charArray[3] and it return 'c' not 'd'.
 
+            // 4. so we create a class that can receive a list of chars to be put in an array
             var normCharArr = new NormalisedCharArray('a', 'b', 'c', 'd', 'e');
-            // before you knew about indexers you'd have done it this way.
-            var charAtReal0 = normCharArr.GetAndSetChars(2);
-            var changeDtoZ = normCharArr.GetAndSetChars(4, 'Z');
 
-            var charAtReal3 = normCharArr[4];
+            // before you knew about indexers you'd have done it this way.
+            var charAtNormalPos2 = normCharArr.GetAndSetChars(2);
+            // returns 'b'
+
+            var changeDtoZ = normCharArr.GetAndSetChars(4, 'Z');
+            // return 'Z'
+
+            // with an indexer, we don't need as many arguments to the method, cuz an indexer
+            // works more like a property in that it has a getter and setter.
+
+            var charAtNormal4 = normCharArr[4];
             normCharArr[4] = 'Q';
 
         }
-
         public void Part2()
+        {
+
+        }
+        public void Part2a()
+        {
+            // 5. indexers don't have to use the same data types as are associated with the
+            //    collections of data they provide access to.
+            //
+            // let's say we want to find all the occurrences of a given character in a string
+            // we could create a class that has a string in it and then write a method to 
+            // return a list of the indexes where a given character appears.
+            //
+            // public class Stringable 
+            // {
+            //     private string sentence;
+            //     public Stringable(string _sentence)
+            //     {
+            //         sentence = _sentence;
+            //     }
+            //     public List<int> GetIndexesOf(char letter) 
+            //     {
+            //         ...
+            //     }
+            // }
+
+            var stran = new StringAnalyser("the quick brown fox jumps over the lazy dog");
+            var indexesOfEByMethod = stran.GetIndexesOf('e');
+
+            // but you could do this more succinctly with an indexer
+            //var indexesOfE = stran['e'];
+
+            // but this approach would need to be consistent with the class's responsibility
+            // if this was the only purpose of the method, it would probably be better *not* to use
+            // an indexer.   but, let's say we want to replace the characters at certain positions 
+            // with another character.
+            //
+            // if a 
+
+            // but what if we wanted to replace that char with another char?  we could add more parameters
+            // to the method of course.
+            //
+            //     public List<int> GetIndexesOf(char letter, char? replacementLetter) 
+            //     {
+            //             find letter...
+            //             if (replacementLetter.HasValue) ...do replacement
+            //     }
+            //
+            // it's a bit fiddly and cumbersome when there is a more elegant way of achieving the same thing.
+            // 
+            // below, the setter of the indexer finds each occurrence of 'o' and replaces it with '0' with
+            // this simple assignment syntax.
+
+//            stran['o'] = '0';
+        }
+
+        public void Part3()
+        {
+            // 6.  indexers can have more than one parameter
+            //
+            // after doing the assignment above, we might still want to know where the indexes were
+            // below, all occurrences of 'e' are replaced with '3' *and* the indexes of E are return in the argument list.
+            //
+            // NOTE: you can't use ref or out with indexer parameters.
+            //
+            var indexesOfE = new List<int>();
+            var stringExt = new StringAnalyser("the quick brown fox jumps over the lazy dog");
+            stringExt['e', indexesOfE] = '3';
+
+            // 7. let's say
+        }
+
+
+        public void Part12()
         {
             // 4. the class you put an indexer on doesn't need to have an array or any other kind of collection.
             var contactPage = new ContactPage();
@@ -49,12 +132,12 @@ namespace Kata.Demos
             var error = contactPage["Measurements"];
         }
 
-        public void Part3()
+        public void Part13()
         {
             // 5. you can use an indexer to return an element based on a different type
-            var stringExt = new Stringable("the quick brown fox jumps over the lazy dog");
-            var indexesOfO = stringExt['o'];
-            dbg($"The letter O appears {indexesOfO.Count} times, at positions: {string.Join(",", indexesOfO)}");
+            var stringExt = new StringAnalyser("the quick brown fox jumps over the lazy dog");
+          //  var indexesOfO = stringExt['o'];
+           // dbg($"The letter O appears {indexesOfO.Count} times, at positions: {string.Join(",", indexesOfO)}");
         }
 
 
@@ -128,11 +211,11 @@ namespace Kata.Demos
         }
     }
 
-    public class Stringable
+    public class StringAnalyser
     {
         private string sentence;
 
-        public Stringable(string sentence)
+        public StringAnalyser(string sentence)
         {
             this.sentence = sentence;
         }
@@ -151,11 +234,42 @@ namespace Kata.Demos
         {
             return new JObject(Analyse());
         }
-        public List<int> this[char letter]
+        public List<int> GetIndexesOf(char letter)
+        {
+            var indexes = new List<int>();
+            for (var i = 0; i < sentence.Length; i++)
+            {
+                var c = sentence[i];
+                if (c == letter)
+                {
+                    indexes.Add(i);
+                }
+            }
+            return indexes;
+        }
+
+        public List<int> ReplaceChar(char original, char replacement)
+        {
+            var indexes = new List<int>();
+            var sentenceArray = sentence.ToArray();
+            for (var i = 0; i < sentenceArray.Length; i++)
+            {
+                var c = sentenceArray[i];
+                if (c == original)
+                {
+                    indexes.Add(i);
+                    sentenceArray[i] = replacement;
+                }
+            }
+            sentence = string.Join("", sentenceArray);
+            return indexes;
+        }
+
+        public char this[char letter, List<int> indexes]
         {
             get
             {
-                var indexes = new List<int>();
+                indexes.Clear();
                 for(var i = 0; i < sentence.Length; i++)
                 {
                     var c = sentence[i];
@@ -164,7 +278,22 @@ namespace Kata.Demos
                         indexes.Add(i);
                     }
                 }
-                return indexes;
+                return letter;
+            }
+            set
+            {
+                indexes.Clear();
+                var charList = new List<char>();
+                for (var i = 0; i < sentence.Length; i++)
+                {
+                    var c = sentence[i];
+                    charList.Add(c == letter ? value : c);
+                    if (c == letter)
+                    {
+                        indexes.Add(i);
+                    }
+                }
+                sentence = string.Join("", charList);
             }
         }
 
@@ -221,7 +350,16 @@ namespace Kata.Demos
             this.chars = chars;
         }
 
+        // method signature components
+        // 1. access level
+        // 2. return type 
+        // 3. name
+        // 4. parameter list
+        // 5. body
+
+        //1.     2.     3.          4.
         public char GetAndSetChars(int element, char newChar = '?')
+        // 5.
         {
             if (newChar != '?')
                 chars[element - 1] = newChar;
@@ -229,12 +367,32 @@ namespace Kata.Demos
             return chars[element - 1];
         }
 
+        // declare the indexer like a method
+        // the components of a method signature are:
+        // 
+        // 1. access level
+        // 2. return type 
+        // 3. name
+        // 4. parameter list
+        // 5. body
+        // 
+        // so the name of the indexer method is "this"
+        // 
+        // presumably for making the syntax relatable, the authors of the compiler
+        // decided that rather than wrapping the method parameter declarations in 
+        // parentheses, it would be better to use square bracker as an intuitive 
+        // indication of the syntax it makes possible.
+
+        // 1.   2.   3.   4.
         public char this[int element]
+        // 5.
         {
+            // getter method, just like a property, now
             get
             {
                return chars[element - 1];
             }
+            // setter method, just like a property, now
             set
             {
                 chars[element - 1] = value;

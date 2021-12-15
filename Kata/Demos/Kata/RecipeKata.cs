@@ -12,7 +12,7 @@ using Part8 = Kata.CustomTypes.Kata.Recipe.Part8;
 using Part9 = Kata.CustomTypes.Kata.Recipe.Part9;
 using Part10 = Kata.CustomTypes.Kata.Recipe.Part10;
 using Part11 = Kata.CustomTypes.Kata.Recipe.Part11;
-//using Part12 = Kata.CustomTypes.Kata.Recipe.Part12;
+using Part12 = Kata.CustomTypes.Kata.Recipe.Part12;
 using Newtonsoft.Json;
 using System.IO;
 //using Part13 = Kata.CustomTypes.Kata.Recipe.Part13;
@@ -24,18 +24,19 @@ namespace Kata.Demos
     {
         public override void Run()
         {
-          //  AddPart(Part1, "Set up a basic ingredient");
-         //   AddPart(Part2, "Use an anon method to create a list of ingredients");
-          //  AddPart(Part3, "Create an interface to prepare the ingredients");
-         //  AddPart(Part4, "Add a child ingredient to the list");
-          // AddPart(Part5, "Introduce an intermediate stage of meal preparation");
-         //  AddPart(Part6, "Create a means of following the recipe");
-         //  AddPart(Part7, "Allow the recipe to instantiate the dish and protect it from abuse of generics");
-         //   AddPart(Part9, "Create a data source for the Dish by introducing the Pantry");
-          //  AddPart(Part9, "Provide a way to specify an alternate preparation method for ingredients"); 
-          //  AddPart(Part10A, "Load the ingredients from a JSON file"); 
-          //  AddPart(Part11, "Decouple the data source and load from CSV instead");
-            //AddPart(Part12, "Move to a data-driven model including stages of dish prep"); 
+            //  AddPart(Part1, "Set up a basic ingredient");
+            //   AddPart(Part2, "Use an anon method to create a list of ingredients");
+            //  AddPart(Part3, "Create an interface to prepare the ingredients");
+            //  AddPart(Part4, "Add a child ingredient to the list");
+            // AddPart(Part5, "Introduce an intermediate stage of meal preparation");
+            //  AddPart(Part6, "Create a means of following the recipe");
+            //  AddPart(Part7, "Allow the recipe to instantiate the dish and protect it from abuse of generics");
+            //   AddPart(Part9, "Create a data source for the Dish by introducing the Pantry");
+            //  AddPart(Part9, "Provide a way to specify an alternate preparation method for ingredients"); 
+            //  AddPart(Part10A, "Load the ingredients from a JSON file"); 
+            //  AddPart(Part11, "Decouple the data source and load from CSV instead");
+            AddPart(Part12, "Allow custom dishes to be built on the fly");
+            //AddPart(Part15, "Move to a data-driven model including stages of dish prep"); 
             base.Run();
         }
 
@@ -146,6 +147,13 @@ namespace Kata.Demos
         public void Part11()
         {
             var r = new Part11.Recipe<Part11.SpagBol>();
+            r.Follow();
+        }
+
+        public void Part12()
+        {
+            var spagBol = new Part12.SpagBol();
+            var r = new Part12.Recipe<Part12.SpagBol>(spagBol);
             r.Follow();
         }
 

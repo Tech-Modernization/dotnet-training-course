@@ -4,11 +4,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+// Part A - Analysis
+//
 // 1. think about each concept in turn and tell its story
 // 2. identify abstract ideas to combine details 
 // 3. assess impact of events in story (always ask "what if")
 // 4. evaluate ideas in ascending order of complexity
 // 5. identify all the possible implications of each objective 
+//
+// Part B - Enrichment
+// 
+// 6. identify the data items for each concept
+// 7. identify the process for resolving the unknowns
+// 
 
 /*
  * objectives:
@@ -57,6 +65,7 @@ using System.Text;
  * Z. possible extensions
  *    - point stealing 
  *      (only the performing team can guess and if timer expires, other teams can guess)
+ *    - give the players a choice of whether to timebox the game or play to a max or "best of" point limit
  *      
  */
 namespace Kata.Demos.Kata

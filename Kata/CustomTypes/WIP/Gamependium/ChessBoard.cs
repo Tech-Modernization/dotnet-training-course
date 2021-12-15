@@ -72,7 +72,7 @@ namespace Kata.CustomTypes.Gamependium
                         continue;
                     }
 
-                    sb.Append(this[x, y].Name.SplitByAny(c => char.IsUpper(c)).Last().Centre(emptySquare));
+                    sb.Append(this[x, y].Name.SplitByAny(c => char.IsUpper(c)).Last().Centre(emptySquare.Length));
                 }
                 sb.AppendLine("|");
                 sb.AppendLine(innerHoz);

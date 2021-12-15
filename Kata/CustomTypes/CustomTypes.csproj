@@ -5,14 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Demo\BlackJackDealer\**" />
     <Compile Remove="FixedValues\**" />
     <Compile Remove="MenuFactoryRecursiveApproach\**" />
     <Compile Remove="MenuFactoryVariantApproach\**" />
     <Compile Remove="Validation\**" />
+    <EmbeddedResource Remove="Demo\BlackJackDealer\**" />
     <EmbeddedResource Remove="FixedValues\**" />
     <EmbeddedResource Remove="MenuFactoryRecursiveApproach\**" />
     <EmbeddedResource Remove="MenuFactoryVariantApproach\**" />
     <EmbeddedResource Remove="Validation\**" />
+    <None Remove="Demo\BlackJackDealer\**" />
     <None Remove="FixedValues\**" />
     <None Remove="MenuFactoryRecursiveApproach\**" />
     <None Remove="MenuFactoryVariantApproach\**" />
@@ -20,22 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Demo\BlackJackDealer\AcePlayingCard.cs" />
-    <Compile Remove="Demo\BlackJackDealer\AceValueVariant.cs" />
-    <Compile Remove="Demo\BlackJackDealer\BlackJackDeck.cs" />
-    <Compile Remove="Demo\BlackJackDealer\BlackJackPlayer.cs" />
-    <Compile Remove="Demo\BlackJackDealer\Card.cs" />
-    <Compile Remove="Demo\BlackJackDealer\Deck.cs" />
-    <Compile Remove="Demo\BlackJackDealer\Face.cs" />
-    <Compile Remove="Demo\BlackJackDealer\Hand.cs" />
-    <Compile Remove="Demo\BlackJackDealer\IBlackJackDealer.cs" />
-    <Compile Remove="Demo\BlackJackDealer\IBlackJackPlayer.cs" />
-    <Compile Remove="Demo\BlackJackDealer\ICard.cs" />
-    <Compile Remove="Demo\BlackJackDealer\IChuteManager.cs" />
-    <Compile Remove="Demo\BlackJackDealer\PlayerState.cs" />
-    <Compile Remove="Demo\BlackJackDealer\PlayingCard.cs" />
-    <Compile Remove="Demo\BlackJackDealer\Suit.cs" />
-    <Compile Remove="Demo\BlackJackDealer\TarotDeck.cs" />
     <Compile Remove="Kata\Recipe.WIP\Exercise14Demo.cs" />
     <Compile Remove="WIP\MenuFactoryDic\BeerVariant.cs" />
     <Compile Remove="WIP\MenuFactoryDic\CocaColaMenuItem.cs" />
@@ -77,10 +64,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Demo\BlackJackDealer\" />
     <Folder Include="Kata\FestivalFactory\211103-Answers\" />
     <Folder Include="WIP\MenuFactoryDic\" />
     <Folder Include="WIP\MenuFactoryRecursive\" />
+    <Folder Include="WIP\Indexcellence\" />
     <Folder Include="WIP\TrackListAbstractFactory\" />
   </ItemGroup>
 

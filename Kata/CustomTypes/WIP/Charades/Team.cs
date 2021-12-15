@@ -13,7 +13,5 @@ namespace Kata.CustomTypes.Charades
             TeamName = teamName;
             Players = players;
         }
-
-
     }
 }

@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <None Update="charades.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="cookbook.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
