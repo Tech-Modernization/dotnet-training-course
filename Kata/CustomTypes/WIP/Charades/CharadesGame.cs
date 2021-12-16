@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace Kata.CustomTypes.Charades
 {
@@ -23,8 +22,6 @@ namespace Kata.CustomTypes.Charades
             var jobject = JObject.Parse(jsonText);
             clues = jobject["charades"].ToObject<List<Clue>>();
             teams = jobject["teams"].ToObject<List<Team>>();
-
-            
         }
 
         public void ShowClues()

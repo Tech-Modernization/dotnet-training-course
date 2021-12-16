@@ -26,7 +26,7 @@ namespace Kata.CustomTypes.Kata.Recipe.Part12
 
         public virtual DishBuilderResult AddIngredient(string name, string amount)
         {
-                    return DishBuilderResult.IngredientNotFound;
+               return DishBuilderResult.IngredientNotFound;
         }
 
         public virtual DishBuilderResult AddStage(string name, Stage stage)

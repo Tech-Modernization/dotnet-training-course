@@ -8,6 +8,9 @@
         StageAdded,
         DuplicateStage,
         UnnamedStage,
-        StageHasNoIngredients
+        StageHasNoIngredients,
+        DuplicateIngredient,
+        IngredientDefined,
+        IngredientsLoaded
     }
 }
