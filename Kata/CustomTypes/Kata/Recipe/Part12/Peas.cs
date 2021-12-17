@@ -6,9 +6,8 @@ namespace Kata.CustomTypes.Kata.Recipe.Part12
 {
     public class Peas : Ingredient
     {
-        public Peas(string amount) : base("peas", amount)
+        public Peas(string name, string amount, Action altPrep = null) : base(name, amount, altPrep)
         {
         }
-
     }
 }

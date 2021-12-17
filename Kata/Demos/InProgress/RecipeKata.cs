@@ -35,7 +35,7 @@ namespace Kata.Demos
             //  AddPart(Part9, "Provide a way to specify an alternate preparation method for ingredients"); 
             //  AddPart(Part10A, "Load the ingredients from a JSON file"); 
             //  AddPart(Part11, "Decouple the data source and load from CSV instead");
-            AddPart(Part12, "Allow custom dishes to be built on the fly");
+            AddPart(Part12a, "Allow custom dishes to be built on the fly");
             //AddPart(Part15, "Move to a data-driven model including stages of dish prep"); 
             base.Run();
         }
@@ -150,15 +150,45 @@ namespace Kata.Demos
             r.Follow();
         }
 
-        public void Part12()
+        public void Part12a()
         {
             var spagBol = new Part12.SpagBol();
             var r = new Part12.Recipe<Part12.SpagBol>(spagBol);
             r.Follow();
+
+            var fishPie = new Part12.CustomDish("Fish Pie");
+            var result = fishPie.DefineIngredient<Part12.Ingredient>("milk", "half a pint");
+            if (!CheckStatus(result)) return;
+
+            result = fishPie.DefineIngredient<Part12.Ingredient>("butter", "100g", new List<string> { "melt the butter" });
+            if (!CheckStatus(result)) return;
+
+            result = fishPie.DefineIngredient<Part12.Ingredient>("white pepper", "0.5g");
+            if (!CheckStatus(result)) return;
+
+            result = fishPie.DefineIngredient<Part12.Ingredient>("flour", "200g", new List<string> { "sieve the flour" });
+            if (!CheckStatus(result)) return;
+
+            result = fishPie.LoadIngredients();
+            if (CheckStatus(result))
+            {
+                var fishRep = new Part12.Recipe<Part12.CustomDish>(fishPie);
+                fishRep.Follow();
+            }
+        }
+
+        public bool CheckStatus(Part12.DishBuilderResult result)
+        {
+            if (result != Part12.DishBuilderResult.IngredientDefined)
+            {
+                Console.WriteLine($"Ingredient definition failed: {result}");
+            }
+            return (result == Part12.DishBuilderResult.IngredientDefined);
         }
 
         public void Part15()
         {
+
         /*    var r = new Part12.Recipe(new Part12.CookBook(new Part12.JsonRecipeService(new Part12.FileDataService())));
             r.Follow("Fish pie");
             r.Follow("Salad");

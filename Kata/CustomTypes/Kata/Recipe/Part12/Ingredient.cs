@@ -11,13 +11,10 @@ namespace Kata.CustomTypes.Kata.Recipe.Part12
 
         protected Action AltPrepMethod;
 
-        public Ingredient(string name, string amount)
+        public Ingredient(string name, string amount, Action altPrep = null)
         {
             Name = name;
             Amount = amount;
-        }
-        public Ingredient(string name, string amount, Action altPrep) : this(name, amount)
-        {
             AltPrepMethod = altPrep;
         }
 

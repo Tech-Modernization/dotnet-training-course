@@ -11,23 +11,12 @@ namespace Kata.CustomTypes.Kata.Recipe.Part12
     {
         public SpagBol() : base("Spaghetti Bolognese")
         {
-            var instantiators = new Dictionary<string, Func<string, Ingredient>>();
-            instantiators.Add("spag", (validName) => new Ingredient(validName, "125g"));
-            instantiators.Add("beef", (validName) => new Ingredient(validName, "1/2lb"));
-            instantiators.Add("peas", (validName) => new Peas("half a bag"));
-            instantiators.Add("tomato", (validName) => new Tomato("half a dozen", () => Console.WriteLine("Chopping the tomatoes")));
+            DefineIngredient<Ingredient>("spag", "125g");
+            DefineIngredient<Ingredient>("beef", "1/2/lb");
+            DefineIngredient<Peas>("pea", "half a bag");
+            DefineIngredient<Tomato>("tom", "half a dozen", new List<string> { "chop the tomatoes" });
 
-            foreach(var instantiator in instantiators)
-            {
-                var matches = Pantry.LookupIngredient(instantiator.Key);
-                if (matches.Count != 1)
-                {
-                    var result = matches.Count == 0 ? DishBuilderResult.IngredientNotFound : DishBuilderResult.AmbiguousIngredient;
-                    throw new Exception($"{result}");
-                }
-                var ingred = instantiator.Value(matches.First());
-                Ingreds.Add(ingred);
-            }
-        }
+            LoadIngredients();
+       }
     }
 }

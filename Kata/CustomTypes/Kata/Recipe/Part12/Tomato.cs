@@ -6,10 +6,7 @@ namespace Kata.CustomTypes.Kata.Recipe.Part12
 {
     public class Tomato : Ingredient
     {
-        public Tomato(string amount) : base("tomato", amount)
-        {
-        }
-        public Tomato(string amount, Action altPrep) : base("tomato", amount, altPrep)
+        public Tomato(string name, string amount, Action altPrep = null) : base(name, amount, altPrep)
         {
         }
 
