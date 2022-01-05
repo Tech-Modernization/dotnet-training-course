@@ -7,7 +7,6 @@
   <ItemGroup>
     <Compile Remove="Complete\BlackJackDemo.cs" />
     <Compile Remove="Complete\GamependiumDemo.cs" />
-    <Compile Remove="Exercise11DemoDone.cs" />
     <Compile Remove="TrackListFactoryDemo.cs" />
   </ItemGroup>
 
@@ -18,6 +17,10 @@
   <ItemGroup>
     <ProjectReference Include="..\CustomTypes\CustomTypes.csproj" />
     <ProjectReference Include="..\Helpers\Helpers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Complete\GenericTypes\" />
   </ItemGroup>
 
 </Project>

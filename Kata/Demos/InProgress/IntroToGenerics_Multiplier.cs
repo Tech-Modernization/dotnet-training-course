@@ -15,6 +15,32 @@ namespace Kata.Demos
             multiplier.Multiply(new Hammer("Claw"), 5);
             multiplier.Multiply(new Shoes("Docs", 10), 8);
         }
+
+        public class Hammer
+        {
+            string name;
+
+            public Hammer(string name)
+            {
+                this.name = name;
+            }
+            public string FormatDetails()
+            {
+                return $"{name}";
+            }
+        }
+
+        public class Shoes
+        {
+            int size;
+            string style;
+
+            public Shoes(string style, int size)
+            {
+                this.size = size;
+            }
+
+        }
         public class Multiplier
         {
             public void Multiply<T>(T arg, int multiplier)

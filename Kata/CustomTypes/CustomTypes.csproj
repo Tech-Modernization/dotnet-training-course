@@ -5,70 +5,66 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Demo\BlackJackDealer\**" />
+    <Compile Remove="Complete\BlackJackDealer\**" />
     <Compile Remove="FixedValues\**" />
     <Compile Remove="MenuFactoryRecursiveApproach\**" />
-    <Compile Remove="MenuFactoryVariantApproach\**" />
-    <Compile Remove="Validation\**" />
-    <EmbeddedResource Remove="Demo\BlackJackDealer\**" />
+    <Compile Remove="AdHoc\Indexcellence\**" />
+    <EmbeddedResource Remove="Complete\BlackJackDealer\**" />
     <EmbeddedResource Remove="FixedValues\**" />
     <EmbeddedResource Remove="MenuFactoryRecursiveApproach\**" />
-    <EmbeddedResource Remove="MenuFactoryVariantApproach\**" />
-    <EmbeddedResource Remove="Validation\**" />
-    <None Remove="Demo\BlackJackDealer\**" />
+    <EmbeddedResource Remove="AdHoc\Indexcellence\**" />
+    <None Remove="Complete\BlackJackDealer\**" />
     <None Remove="FixedValues\**" />
     <None Remove="MenuFactoryRecursiveApproach\**" />
-    <None Remove="MenuFactoryVariantApproach\**" />
-    <None Remove="Validation\**" />
+    <None Remove="AdHoc\Indexcellence\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Kata\Recipe.WIP\Exercise14Demo.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\BeerVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\CocaColaMenuItem.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\CocaColaVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\CoffeeMenuItem.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\CoffeeVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\DefaultVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\DrinkMenuItem.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\DrinkMenuItemVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\DrinksMenu.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\DrinksMenuItem.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\MenuBase.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\MenuItemBase.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\MenuItemVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\MenuItemVariantDictionary.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\MenuVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\SizeVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\TeaVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryDic\WineVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\BeerVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\CoffeeVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\DrinkMenuItem.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\DrinksMenu.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\IMenu.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\MenuBase.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\MenuItemBase.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\SizeVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\TeaVariant.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\WineMenuItem.cs" />
-    <Compile Remove="WIP\MenuFactoryRecursive\WineVariant.cs" />
-    <Compile Remove="WIP\TrackListAbstractFactory\AbstractFactoryTemplate.cs" />
-    <Compile Remove="WIP\TrackListAbstractFactory\AlbumFactoryBase.cs" />
-    <Compile Remove="WIP\TrackListAbstractFactory\CompactDiscAlbum.cs" />
-    <Compile Remove="WIP\TrackListAbstractFactory\CompactDiscTrackList.cs" />
-    <Compile Remove="WIP\TrackListAbstractFactory\TrackDetail.cs" />
-    <Compile Remove="WIP\TrackListAbstractFactory\TrackListBase.cs" />
-    <Compile Remove="WIP\TrackListAbstractFactory\VinylAlbum.cs" />
-    <Compile Remove="WIP\TrackListAbstractFactory\VinylTrackList.cs" />
+    <Compile Remove="InProgress\Recipe.WIP\Exercise14Demo.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\BeerVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\CocaColaMenuItem.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\CocaColaVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\CoffeeMenuItem.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\CoffeeVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\DefaultVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\DrinkMenuItem.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\DrinkMenuItemVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\DrinksMenu.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\DrinksMenuItem.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\MenuBase.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\MenuItemBase.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\MenuItemVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\MenuItemVariantDictionary.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\MenuVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\SizeVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\TeaVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryDic\WineVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\BeerVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\CoffeeVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\DrinkMenuItem.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\DrinksMenu.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\IMenu.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\MenuBase.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\MenuItemBase.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\SizeVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\TeaVariant.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\WineMenuItem.cs" />
+    <Compile Remove="AdHoc\MenuFactoryRecursive\WineVariant.cs" />
+    <Compile Remove="AdHoc\TrackListAbstractFactory\AbstractFactoryTemplate.cs" />
+    <Compile Remove="AdHoc\TrackListAbstractFactory\AlbumFactoryBase.cs" />
+    <Compile Remove="AdHoc\TrackListAbstractFactory\CompactDiscAlbum.cs" />
+    <Compile Remove="AdHoc\TrackListAbstractFactory\CompactDiscTrackList.cs" />
+    <Compile Remove="AdHoc\TrackListAbstractFactory\TrackDetail.cs" />
+    <Compile Remove="AdHoc\TrackListAbstractFactory\TrackListBase.cs" />
+    <Compile Remove="AdHoc\TrackListAbstractFactory\VinylAlbum.cs" />
+    <Compile Remove="AdHoc\TrackListAbstractFactory\VinylTrackList.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Kata\FestivalFactory\211103-Answers\" />
-    <Folder Include="WIP\MenuFactoryDic\" />
-    <Folder Include="WIP\MenuFactoryRecursive\" />
-    <Folder Include="WIP\Indexcellence\" />
-    <Folder Include="WIP\TrackListAbstractFactory\" />
+    <Folder Include="InProgress\FestivalFactory\211103-Answers\" />
+    <Folder Include="AdHoc\MenuFactoryDic\" />
+    <Folder Include="AdHoc\MenuFactoryRecursive\" />
+    <Folder Include="AdHoc\TrackListAbstractFactory\" />
   </ItemGroup>
 
   <ItemGroup>
