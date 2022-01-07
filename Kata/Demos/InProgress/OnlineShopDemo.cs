@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Kata.Helpers;
 
 using Part1 = CustomTypes.OnlineShop.Part1;
 using Part2 = CustomTypes.OnlineShop.Part2;
-//using Part3 = Kata.CustomTypes.OnlineShop.Part3;
+using Part3 = CustomTypes.OnlineShop.Part3;
 //using Part4 = Kata.CustomTypes.OnlineShop.Part4;
 //using Part5 = Kata.CustomTypes.OnlineShop.Part5;
 //using Part6 = Kata.CustomTypes.OnlineShop.Part6;
@@ -14,15 +15,23 @@ namespace Kata.Demos
 {
     public class OnlineShopDemo : DemoBase
     {
+        Dictionary<string, decimal> basket = new Dictionary<string, decimal>
+            {
+                {"t-shirt", 10.50M},
+                {"jeans", 30.99M},
+                {"beanie", 14.00M}
+            };
+
         public override void Run()
         {
         //    AddPart(Part1, "Define basic classes");
-            AddPart(Part2, "Enable the shop to load an inventory, create orders and take payments");
-        /*    AddPart(Part3, "Try to resolve SRP violation");
-            AddPart(Part4, "Violate ISP and DIP, then resolve SRP, ISP and DIP violations");
-            AddPart(Part5, "Demonstrate violation of DIP");
-            AddPart(Part6, "Resolve violation of DIP with InventoryService and CsvDataService");
-        */
+         //   AddPart(Part2, "Enable the shop to load an inventory, create orders and take payments");
+            AddPart(Part3, "Separating order, payment, inventory and logging concerns");
+            /*
+                AddPart(Part4, "Violate ISP and DIP, then resolve SRP, ISP and DIP violations");
+                AddPart(Part5, "Demonstrate violation of DIP");
+                AddPart(Part6, "Resolve violation of DIP with InventoryService and CsvDataService");
+            */
             base.Run();
         }
         public void Part1()
@@ -41,15 +50,9 @@ namespace Kata.Demos
         public void Part2()
         {
             var shop = new Part2.OnlineShop();
-            var inv = new Dictionary<string, decimal>()
-            {
-                {"t-shirt", 10.50M},
-                {"jeans", 30.99M},
-                {"beanie", 14.00M}
-            };
         
             shop.LoadInventory();
-            foreach(var kvp in inv)
+            foreach(var kvp in basket)
             {
                 shop.CreateOrder(kvp.Key, kvp.Value);
             }
@@ -70,23 +73,19 @@ namespace Kata.Demos
                 dbg($"Order of {order.ProductName}: amount of {order.Price:C} {(order.Paid ? "received" : "due")}");
             }
         }
-        /*
+        
         public void Part3()
         {
-            var shop = new Part3.OnlineShop();
-            shop.Orders.Add(new Part3.OnlineOrder() { ProductName = "t-shirt", Price = 10.50M, Paid = false });
-            shop.Orders.Add(new Part3.OnlineOrder() { ProductName = "jeans", Price = 30.99M, Paid = false });
-            shop.Orders.Add(new Part3.OnlineOrder() { ProductName = "beanie", Price = 14.00M, Paid = true });
+            var invManager = new Part3.LocalInventoryManager();
+            var payManager = new Part3.LocalPaymentManager();
+            var orderManager = new Part3.LocalOrderManager();
+            var logManager = new Part3.LocalLogManager();
 
-            foreach (var order in shop.Orders)
-            {
-                shop.LoadInventory();
-                shop.CreateOrder();
-                order.Paid = true;
-                shop.TakePayment();
-                dbg($"Order of {order.ProductName}: amount of {order.Price:C} {(order.Paid ? "received" : "due")}");
-            }
+            var shop = new Part3.OnlineShop(invManager, orderManager, payManager, logManager);
+            Console.WriteLine($"Basket {(shop.Checkout(basket) ? "" : "not ")}checked out.");
         }
+
+        /*
         public void Part4()
         {
             var invManager = new Part4.InventoryManager();
