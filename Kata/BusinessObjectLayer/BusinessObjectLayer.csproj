@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="FixedValues\**" />
+    <Compile Remove="MenuFactoryRecursiveApproach\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="FixedValues\**" />
+    <EmbeddedResource Remove="MenuFactoryRecursiveApproach\**" />
+    <None Remove="bin\**" />
+    <None Remove="FixedValues\**" />
+    <None Remove="MenuFactoryRecursiveApproach\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="InProgress\FestivalFactory\211103-Answers\" />
+    <Folder Include="AdHoc\MenuFactoryDic\" />
+    <Folder Include="AdHoc\MenuFactoryRecursive\" />
+    <Folder Include="AdHoc\TrackListAbstractFactory\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessServiceLayer\BusinessServiceLayer.csproj" />
+    <ProjectReference Include="..\Helpers\Helpers.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CustomTypes\CustomTypes.csproj" />
-    <ProjectReference Include="..\Demos\Demos.csproj" />
     <ProjectReference Include="..\Helpers\Helpers.csproj" />
   </ItemGroup>
 

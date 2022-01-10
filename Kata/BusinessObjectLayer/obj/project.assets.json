@@ -174,17 +174,46 @@
           }
         }
       },
-      "Services/1.0.0": {
+      "BusinessServiceLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\ImplementationLayer.csproj": "1.0.0",
+          "Helpers": "1.0.0",
+          "ImplementationLayer": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/BusinessServiceLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessServiceLayer.dll": {}
+        }
+      },
+      "Helpers/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "bin/placeholder/Services.dll": {}
+          "bin/placeholder/Helpers.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Services.dll": {}
+          "bin/placeholder/Helpers.dll": {}
+        }
+      },
+      "ImplementationLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/ImplementationLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImplementationLayer.dll": {}
         }
       }
     }
@@ -504,16 +533,27 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Services/1.0.0": {
+    "BusinessServiceLayer/1.0.0": {
       "type": "project",
-      "path": "../Services/Services.csproj",
-      "msbuildProject": "../Services/Services.csproj"
+      "path": "../BusinessServiceLayer/BusinessServiceLayer.csproj",
+      "msbuildProject": "../BusinessServiceLayer/BusinessServiceLayer.csproj"
+    },
+    "Helpers/1.0.0": {
+      "type": "project",
+      "path": "../Helpers/Helpers.csproj",
+      "msbuildProject": "../Helpers/Helpers.csproj"
+    },
+    "ImplementationLayer/1.0.0": {
+      "type": "project",
+      "path": "../ImplementationLayer/ImplementationLayer.csproj",
+      "msbuildProject": "../ImplementationLayer/ImplementationLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "BusinessServiceLayer >= 1.0.0",
+      "Helpers >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1",
-      "Services >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 6.0.0"
     ]
   },
@@ -525,11 +565,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj",
-      "projectName": "CustomTypes",
-      "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj",
+      "projectUniqueName": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\BusinessObjectLayer\\BusinessObjectLayer.csproj",
+      "projectName": "BusinessObjectLayer",
+      "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\BusinessObjectLayer\\BusinessObjectLayer.csproj",
       "packagesPath": "C:\\Users\\paulb\\.nuget\\packages\\",
-      "outputPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\obj\\",
+      "outputPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\BusinessObjectLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -552,8 +592,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Services\\Services.csproj": {
-              "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Services\\Services.csproj"
+            "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\BusinessServiceLayer\\BusinessServiceLayer.csproj": {
+              "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\BusinessServiceLayer\\BusinessServiceLayer.csproj"
+            },
+            "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj": {
+              "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj"
             }
           }
         }
@@ -595,5 +638,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\ImplementationLayer.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\ImplementationLayer.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

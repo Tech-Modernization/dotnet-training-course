@@ -170,7 +170,6 @@
       },
       "CustomTypes/1.0.0": {
         "dependencies": {
-          "DataServices": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
           "Services": "1.0.0",
           "System.Configuration.ConfigurationManager": "6.0.0"
@@ -179,21 +178,20 @@
           "CustomTypes.dll": {}
         }
       },
-      "DataServices/1.0.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "runtime": {
-          "DataServices.dll": {}
-        }
-      },
       "Services/1.0.0": {
         "dependencies": {
-          "DataServices": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "Services.dll": {}
+        }
+      },
+      "DataServices/1.0.0.0": {
+        "runtime": {
+          "DataServices.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -279,13 +277,13 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DataServices/1.0.0": {
+    "Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Services/1.0.0": {
-      "type": "project",
+    "DataServices/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

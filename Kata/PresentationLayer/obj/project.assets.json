@@ -206,26 +206,10 @@
           "bin/placeholder/BusinessServiceLayer.dll": {}
         }
       },
-      "CustomTypes/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
-          "Services": "1.0.0",
-          "System.Configuration.ConfigurationManager": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CustomTypes.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CustomTypes.dll": {}
-        }
-      },
       "Helpers/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "CustomTypes": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -246,19 +230,6 @@
         },
         "runtime": {
           "bin/placeholder/ImplementationLayer.dll": {}
-        }
-      },
-      "Services/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Services.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Services.dll": {}
         }
       }
     }
@@ -588,11 +559,6 @@
       "path": "../BusinessServiceLayer/BusinessServiceLayer.csproj",
       "msbuildProject": "../BusinessServiceLayer/BusinessServiceLayer.csproj"
     },
-    "CustomTypes/1.0.0": {
-      "type": "project",
-      "path": "../CustomTypes/CustomTypes.csproj",
-      "msbuildProject": "../CustomTypes/CustomTypes.csproj"
-    },
     "Helpers/1.0.0": {
       "type": "project",
       "path": "../Helpers/Helpers.csproj",
@@ -602,11 +568,6 @@
       "type": "project",
       "path": "../ImplementationLayer/ImplementationLayer.csproj",
       "msbuildProject": "../ImplementationLayer/ImplementationLayer.csproj"
-    },
-    "Services/1.0.0": {
-      "type": "project",
-      "path": "../Services/Services.csproj",
-      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -73,7 +73,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataServices\DataServices.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
