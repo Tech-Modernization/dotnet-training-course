@@ -178,7 +178,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "DataServices": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
           "Services": "1.0.0",
           "System.Configuration.ConfigurationManager": "6.0.0"
@@ -188,34 +187,6 @@
         },
         "runtime": {
           "bin/placeholder/CustomTypes.dll": {}
-        }
-      },
-      "DataServices/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/DataServices.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataServices.dll": {}
-        }
-      },
-      "Demos/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "CustomTypes": "1.0.0",
-          "Helpers": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Demos.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Demos.dll": {}
         }
       },
       "Helpers/1.0.0": {
@@ -236,7 +207,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "DataServices": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -568,16 +538,6 @@
       "path": "../CustomTypes/CustomTypes.csproj",
       "msbuildProject": "../CustomTypes/CustomTypes.csproj"
     },
-    "DataServices/1.0.0": {
-      "type": "project",
-      "path": "../DataServices/DataServices.csproj",
-      "msbuildProject": "../DataServices/DataServices.csproj"
-    },
-    "Demos/1.0.0": {
-      "type": "project",
-      "path": "../Demos/Demos.csproj",
-      "msbuildProject": "../Demos/Demos.csproj"
-    },
     "Helpers/1.0.0": {
       "type": "project",
       "path": "../Helpers/Helpers.csproj",
@@ -592,7 +552,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "CustomTypes >= 1.0.0",
-      "Demos >= 1.0.0",
       "Helpers >= 1.0.0"
     ]
   },
@@ -633,9 +592,6 @@
           "projectReferences": {
             "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj": {
               "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\CustomTypes\\CustomTypes.csproj"
-            },
-            "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Demos\\Demos.csproj": {
-              "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Demos\\Demos.csproj"
             },
             "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj": {
               "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj"

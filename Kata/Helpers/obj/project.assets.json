@@ -178,7 +178,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "DataServices": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
           "Services": "1.0.0",
           "System.Configuration.ConfigurationManager": "6.0.0"
@@ -190,24 +189,10 @@
           "bin/placeholder/CustomTypes.dll": {}
         }
       },
-      "DataServices/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/DataServices.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataServices.dll": {}
-        }
-      },
       "Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "DataServices": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -538,11 +523,6 @@
       "type": "project",
       "path": "../CustomTypes/CustomTypes.csproj",
       "msbuildProject": "../CustomTypes/CustomTypes.csproj"
-    },
-    "DataServices/1.0.0": {
-      "type": "project",
-      "path": "../DataServices/DataServices.csproj",
-      "msbuildProject": "../DataServices/DataServices.csproj"
     },
     "Services/1.0.0": {
       "type": "project",
