@@ -1,4 +1,4 @@
-﻿namespace Kata.CustomTypes.MenuFactoryListDone
+﻿namespace BusinessObjectLayer.MenuFactoryListDone
 {
     public class DrinksMenu : MenuBase
     {

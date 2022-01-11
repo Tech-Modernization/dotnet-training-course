@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public enum Placement { Implicit, Explicit, Sample };
     public abstract class FactoryDemoBase<TAbstractCreator, TAbstractProduct> : DemoBase, IFactoryDemo<TAbstractCreator, TAbstractProduct>

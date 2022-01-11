@@ -7,7 +7,7 @@ using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class SomeClass { }
     public class IndexerDemo : DemoBase

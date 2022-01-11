@@ -1,4 +1,4 @@
-﻿using Kata.CustomTypes.Bartender;
+﻿using BusinessObjectLayer.Bartender;
 
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,7 @@ using System.Text;
 // 
 
 
-namespace Kata.Demos.Kata
+namespace PresentationLayer.Kata
 {
     public class Bartender : IPaymentProcessor
     {

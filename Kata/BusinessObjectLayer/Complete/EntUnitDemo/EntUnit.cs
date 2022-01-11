@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.EntUnitDemo
+namespace BusinessObjectLayer.EntUnitDemo
 {
     public abstract class EntUnit
     {

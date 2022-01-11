@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-using Kata.CustomTypes.Demo.Distractions;
+using BusinessObjectLayer.Demo.Distractions;
 
-namespace Kata.CustomTypes.Demo.Distractions
+namespace BusinessObjectLayer.Demo.Distractions
 {
     public class SandwichTrolley : DistractionBase
     {

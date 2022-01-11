@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Kata.CustomTypes.AccommodationFactory;
+using BusinessObjectLayer.AccommodationFactory;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class AccomondationFactoryDemo  
     {

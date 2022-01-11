@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-using Kata.CustomTypes.Kata.OfficeDistractions;
+using BusinessObjectLayer.OfficeDistractions;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class DistractionKata : DemoBase
     {

@@ -1,6 +1,6 @@
-﻿using Kata.CustomTypes.Demo.Distractions;
+﻿using BusinessObjectLayer.Demo.Distractions;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class DistractionDemo : DemoBase
     {

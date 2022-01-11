@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Kata.Helpers;
+using Helpers;
 
 using Newtonsoft.Json;
 
@@ -142,7 +142,7 @@ conceptual objective:
 
 
 */
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class FileSystemDemo : DemoBase
     {

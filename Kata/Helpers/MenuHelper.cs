@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 using System.Reflection;
 
-namespace Kata.Helpers
+namespace Helpers
 {
 
     public class MenuHelper

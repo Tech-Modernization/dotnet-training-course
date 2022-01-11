@@ -194,10 +194,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\ImplementationLayer.csproj": "1.0.0",
           "Helpers": "1.0.0",
-          "ImplementationLayer": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "ImplementationLayer": "1.0.0"
         },
         "compile": {
           "bin/placeholder/BusinessServiceLayer.dll": {}
@@ -654,16 +652,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\ImplementationLayer.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\ImplementationLayer.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

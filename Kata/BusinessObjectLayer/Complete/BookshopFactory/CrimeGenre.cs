@@ -1,5 +1,5 @@
 ﻿
-namespace Kata.CustomTypes.BookshopFactory
+namespace BusinessObjectLayer.BookshopFactory
 {
     public class CrimeGenre : GenreBase
     {

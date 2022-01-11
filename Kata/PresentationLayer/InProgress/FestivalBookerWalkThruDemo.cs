@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using Kata.CustomTypes.FestivalBookerWalkThru;
+using BusinessObjectLayer.FestivalBookerWalkThru;
 
 using Newtonsoft.Json;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class FestivalBookerWalkThruDemo : DemoBase
     {

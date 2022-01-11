@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.RecyclingFactoryDone
+namespace BusinessObjectLayer.RecyclingFactoryDone
 {
     public class Tuna : TinBase
     {

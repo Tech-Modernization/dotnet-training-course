@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public interface IFactoryDemo<TAbstractCreator, TAbstractProduct>
     {

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Kata.CustomTypes.Kata.Recipe.Part12;
+using BusinessObjectLayer.Recipe.Part12;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class JsonDemo : DemoBase
     {

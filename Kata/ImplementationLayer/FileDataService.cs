@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Kata.DataServices
+namespace  ImplementationLayer
 {
     public class FileDataService : IFileDataService
     {

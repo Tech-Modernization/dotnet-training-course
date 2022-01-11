@@ -1,4 +1,4 @@
-﻿using Kata.CustomTypes.Charades;
+﻿using BusinessObjectLayer.Charades;
 
 using System;
 using System.Collections.Generic;
@@ -68,7 +68,7 @@ using System.Text;
  *    - give the players a choice of whether to timebox the game or play to a max or "best of" point limit
  *      
  */
-namespace Kata.Demos.Kata
+namespace PresentationLayer.Kata
 {
     public class CharadesDemo : DemoBase
     {

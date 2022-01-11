@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
-
-using Kata.DataServices;
-
 using Newtonsoft.Json;
+using ImplementationLayer;
 
-namespace Kata.Services
+namespace BusinessServiceLayer
 {
     public class JsonRecipeService : IRecipeService
     {

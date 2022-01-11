@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "COaQ64GPoeWDeN/fABJNSM7o0i/eCzWy+xVmCVmLM8Z823+cNGe60NLyUwskDzTxkdCMuYblW0noAnnNEXZJgA==",
-  "success": false,
+  "dgSpecHash": "XlTeJOJF2TvpG5wuWVxPlnoMB8EaWmXg/wgtvq+Jc/HlLTtRfTJiRrCC8RfH0Gb6pdCgjONXHBam4ZQ5K/1eeg==",
+  "success": true,
   "projectFilePath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\BusinessObjectLayer\\BusinessObjectLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\paulb\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
@@ -15,15 +15,5 @@
     "C:\\Users\\paulb\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\paulb\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\ImplementationLayer.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\DataServices\\ImplementationLayer.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }

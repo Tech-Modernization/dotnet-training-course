@@ -1,5 +1,5 @@
 ﻿
-namespace Kata.CustomTypes.Validation
+namespace BusinessObjectLayer.Validation
 {
 
     public abstract class ValidatorBase<T> : IValidator

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Kata.CustomTypes.PublicationFactory;
+using BusinessObjectLayer.PublicationFactory;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class PressFactoryDemo : FactoryDemoBase<PressBase, PublicationBase>
     {

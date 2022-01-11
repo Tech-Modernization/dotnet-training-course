@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.DrinkFactory
+namespace BusinessObjectLayer.DrinkFactory
 {
     public abstract class DrinkVariantBase
     {

@@ -6,7 +6,7 @@ using System.Text;
 
 using Newtonsoft.Json;
 
-namespace Kata.Helpers
+namespace Helpers
 {
     public class FileHelper
     {

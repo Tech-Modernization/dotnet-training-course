@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.Helpers
+namespace Helpers
 {
     public class KeyRangeValidator : RangeValidator
     {

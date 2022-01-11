@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Kata.CustomTypes.BookshopFactory
+namespace BusinessObjectLayer.BookshopFactory
 {
     public abstract class SectionBase
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public interface IDemo
     {

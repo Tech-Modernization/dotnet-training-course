@@ -1,0 +1,15 @@
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\bin\Debug\netcoreapp3.1\BusinessServiceLayer.deps.json
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\bin\Debug\netcoreapp3.1\BusinessServiceLayer.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\bin\Debug\netcoreapp3.1\BusinessServiceLayer.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\bin\Debug\netcoreapp3.1\Helpers.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\bin\Debug\netcoreapp3.1\ImplementationLayer.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\bin\Debug\netcoreapp3.1\Helpers.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\bin\Debug\netcoreapp3.1\ImplementationLayer.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\obj\Debug\netcoreapp3.1\BusinessServiceLayer.csproj.AssemblyReference.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\obj\Debug\netcoreapp3.1\BusinessServiceLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\obj\Debug\netcoreapp3.1\BusinessServiceLayer.AssemblyInfoInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\obj\Debug\netcoreapp3.1\BusinessServiceLayer.AssemblyInfo.cs
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\obj\Debug\netcoreapp3.1\BusinessServiceLayer.csproj.CoreCompileInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\obj\Debug\netcoreapp3.1\BusinessServiceLayer.csproj.CopyComplete
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\obj\Debug\netcoreapp3.1\BusinessServiceLayer.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessServiceLayer\obj\Debug\netcoreapp3.1\BusinessServiceLayer.pdb

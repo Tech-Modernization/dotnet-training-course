@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-using Kata.CustomTypes;
+using BusinessObjectLayer;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class IntroToGenerics_CrossRef : DemoBase
     { 

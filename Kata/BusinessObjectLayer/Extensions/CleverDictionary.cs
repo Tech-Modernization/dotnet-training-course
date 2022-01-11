@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Kata.CustomTypes.Extensions
+namespace BusinessObjectLayer.Extensions
 {
     public class CleverDictionary: Dictionary<string, string>
     {

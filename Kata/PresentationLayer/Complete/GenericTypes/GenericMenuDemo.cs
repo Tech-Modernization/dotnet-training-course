@@ -5,7 +5,7 @@ using System.Text;
 
 
 
-namespace Kata.Demos.GenericMenu
+namespace PresentationLayer.GenericMenu
 {
     public class GenericMenuDemo : DemoBase
     {

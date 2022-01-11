@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Kata.CustomTypes.MenuFactoryListDone
+namespace BusinessObjectLayer.MenuFactoryListDone
 {
     public abstract class MenuItemBase
     {

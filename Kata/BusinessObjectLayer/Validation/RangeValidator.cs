@@ -1,6 +1,6 @@
-﻿using Kata.CustomTypes.Validation;
+﻿using BusinessObjectLayer.Validation;
 
-namespace DemoKata.CustomTypes
+namespace BusinessObjectLayer
 {
     public class RangeValidator : NumberValidator
     {

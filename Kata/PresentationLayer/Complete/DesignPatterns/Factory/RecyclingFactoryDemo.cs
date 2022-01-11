@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Kata.CustomTypes.RecyclingFactoryDone;
+using BusinessObjectLayer.RecyclingFactoryDone;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class RecyclingFactoryDemo : FactoryDemoBase<ContainerBase, MaterialBase>
     {

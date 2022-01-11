@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Part1 = Kata.CustomTypes.Kata.Recipe.Part1;
-using Part2 = Kata.CustomTypes.Kata.Recipe.Part2;
-using Part3 = Kata.CustomTypes.Kata.Recipe.Part3;
-using Part4 = Kata.CustomTypes.Kata.Recipe.Part4;
-using Part5 = Kata.CustomTypes.Kata.Recipe.Part5;
-using Part6 = Kata.CustomTypes.Kata.Recipe.Part6;
-using Part7 = Kata.CustomTypes.Kata.Recipe.Part7;
-using Part8 = Kata.CustomTypes.Kata.Recipe.Part8;
-using Part9 = Kata.CustomTypes.Kata.Recipe.Part9;
-using Part10 = Kata.CustomTypes.Kata.Recipe.Part10;
-using Part11 = Kata.CustomTypes.Kata.Recipe.Part11;
-using Part12 = Kata.CustomTypes.Kata.Recipe.Part12;
+using Part1 = BusinessObjectLayer.Recipe.Part1;
+using Part2 = BusinessObjectLayer.Recipe.Part2;
+using Part3 = BusinessObjectLayer.Recipe.Part3;
+using Part4 = BusinessObjectLayer.Recipe.Part4;
+using Part5 = BusinessObjectLayer.Recipe.Part5;
+using Part6 = BusinessObjectLayer.Recipe.Part6;
+using Part7 = BusinessObjectLayer.Recipe.Part7;
+using Part8 = BusinessObjectLayer.Recipe.Part8;
+using Part9 = BusinessObjectLayer.Recipe.Part9;
+using Part10 = BusinessObjectLayer.Recipe.Part10;
+using Part11 = BusinessObjectLayer.Recipe.Part11;
+using Part12 = BusinessObjectLayer.Recipe.Part12;
 using Newtonsoft.Json;
 using System.IO;
-//using Part13 = Kata.CustomTypes.Kata.Recipe.Part13;
+//using Part13 = BusinessObjectLayer.Recipe.Part13;
 
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class RecipeKata : DemoBase
     {

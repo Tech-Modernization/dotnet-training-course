@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class AnonMethodDemo : DemoBase
     {
@@ -100,7 +100,7 @@ namespace Kata.Demos
 
             DoSomething();
             // ...with its anonymous version voidNoParams, which also takes no parameters, returns nothing 
-            // and simple writes a message to the console.
+            // and simply writes a message to the console.
             voidNoParams();
 
             // 4. anonymous methods can take parameters (see above and also...)
@@ -229,7 +229,6 @@ namespace Kata.Demos
             foreach (var a in actions)
             {
                 a($"Doing action number {actionNumber}");
-                    
             }
         }
     }

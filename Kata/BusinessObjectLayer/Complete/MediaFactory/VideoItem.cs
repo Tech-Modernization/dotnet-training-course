@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.MediaFactory
+namespace BusinessObjectLayer.MediaFactory
 {
     // Concrete Product role
     public class VideoItem : MediaItemBase

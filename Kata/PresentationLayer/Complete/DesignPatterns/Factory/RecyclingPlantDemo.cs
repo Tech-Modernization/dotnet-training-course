@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Kata.CustomTypes.RecyclingFactoryDone;
+using BusinessObjectLayer.RecyclingFactoryDone;
 /*
  * define an interface to manage a recycling plant.  you'll need methods to:
 
@@ -27,7 +27,7 @@ using Kata.CustomTypes.RecyclingFactoryDone;
 the method signatures are all you have to write.  the types named are abitrary and you can use types that don't exist etc to get your concept across.
 */
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class RecyclingPlantDemo : DemoBase
     {

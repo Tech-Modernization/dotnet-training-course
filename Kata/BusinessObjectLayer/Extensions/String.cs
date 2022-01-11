@@ -4,7 +4,7 @@ using System.Text;
 using System.Linq;
 using System.Globalization;
 
-namespace Kata.CustomTypes.Extensions
+namespace BusinessObjectLayer.Extensions
 {
     public static class String
     {

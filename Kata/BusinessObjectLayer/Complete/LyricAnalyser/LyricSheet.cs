@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-using Kata.CustomTypes.Extensions;
+using BusinessObjectLayer.Extensions;
 
 using Newtonsoft.Json.Linq;
 
-namespace Kata.CustomTypes.Demo.LyricAnalyser
+namespace BusinessObjectLayer.Demo.LyricAnalyser
 {
     public class LyricSheet
     {

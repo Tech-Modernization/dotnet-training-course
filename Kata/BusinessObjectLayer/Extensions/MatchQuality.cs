@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.Extensions
+namespace BusinessObjectLayer.Extensions
 {
     [Flags]
     public enum MatchQuality

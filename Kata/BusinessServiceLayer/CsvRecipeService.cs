@@ -1,12 +1,7 @@
-﻿using System;
+﻿using ImplementationLayer;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
 
-using Kata.DataServices;
-
-namespace Kata.Services
+namespace BusinessServiceLayer
 {
     public class CsvRecipeService : IRecipeService
     {

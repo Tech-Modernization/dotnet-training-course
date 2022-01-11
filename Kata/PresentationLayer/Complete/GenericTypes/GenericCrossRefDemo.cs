@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Kata.CustomTypes;
+using BusinessObjectLayer;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class GenericCrossRefDemo : DemoBase
     {

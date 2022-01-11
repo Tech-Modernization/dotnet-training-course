@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Kata.CustomTypes.Demo.Distractions
+namespace BusinessObjectLayer.Demo.Distractions
 {
     public class Office
     {

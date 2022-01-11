@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.HiFiFactory
+namespace BusinessObjectLayer.HiFiFactory
 {
     public class CompactDisc : ComponentBase
     {

@@ -1,4 +1,4 @@
-﻿namespace Kata.CustomTypes.FixedValues
+﻿namespace BusinessObjectLayer.FixedValues
 {
     public enum StringValidator
     {

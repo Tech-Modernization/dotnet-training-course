@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-using Kata.CustomTypes.FestivalFactory;
+using BusinessObjectLayer.FestivalFactory;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class FestivalDemo : DemoBase
     {

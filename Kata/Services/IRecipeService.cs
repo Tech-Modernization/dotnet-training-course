@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.Services
+namespace BusinessServiceLayer
 {
     public interface IRecipeService
     {

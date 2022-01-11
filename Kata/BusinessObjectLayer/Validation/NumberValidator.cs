@@ -1,4 +1,4 @@
-﻿namespace Kata.CustomTypes.Validation
+﻿namespace BusinessObjectLayer.Validation
 {
     public class NumberValidator : ValidatorBase<int>
     {

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Kata.Demos;
-using Kata.Helpers;
+using Helpers;
+using PresentationLayer;
 
 namespace Kata
 {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace Kata.Helpers
+namespace Helpers
 {
     public class ConsoleHelper
     {

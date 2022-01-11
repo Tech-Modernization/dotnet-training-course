@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Kata.CustomTypes.HiFiFactory;
+using BusinessObjectLayer.HiFiFactory;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class HiFiFactoryDemo : FactoryDemoBase<HomeStereoBase, ComponentBase>
     {

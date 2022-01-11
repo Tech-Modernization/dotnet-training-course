@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.Demo.Distractions
+namespace BusinessObjectLayer.Demo.Distractions
 {
     public class FaultyFireAlarm : DistractionBase
     {

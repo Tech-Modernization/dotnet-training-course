@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.Demo.LyricAnalyser
+namespace BusinessObjectLayer.Demo.LyricAnalyser
 {
 
     [Flags]

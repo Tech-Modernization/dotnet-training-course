@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Kata.CustomTypes.MediaFactory;
+using BusinessObjectLayer.MediaFactory;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class MediaFactoryDemo : FactoryDemoBase<MediaCollectionBase, MediaItemBase>
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Kata.CustomTypes
+namespace BusinessObjectLayer
 {
     public class RSVP : CrossRef<string>
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class InterfaceDemo : DemoBase
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.Demos.EntUnitDemo
+namespace PresentationLayer.EntUnitDemo
 {
     public class EntUnitDemo : DemoBase
     {

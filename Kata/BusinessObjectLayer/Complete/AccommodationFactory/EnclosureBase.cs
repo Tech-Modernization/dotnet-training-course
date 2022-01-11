@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kata.CustomTypes.AccommodationFactory
+namespace BusinessObjectLayer.AccommodationFactory
 {
     // abstract creator
     public abstract class EnclosureBase

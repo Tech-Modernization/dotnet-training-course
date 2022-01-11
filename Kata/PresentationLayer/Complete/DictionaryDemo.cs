@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class DictionaryDemo : DemoBase
     {

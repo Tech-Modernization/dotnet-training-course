@@ -1,4 +1,4 @@
-﻿namespace Kata.CustomTypes.Demo.LyricAnalyser
+﻿namespace BusinessObjectLayer.Demo.LyricAnalyser
 {
     public class WordOccurrence
     {

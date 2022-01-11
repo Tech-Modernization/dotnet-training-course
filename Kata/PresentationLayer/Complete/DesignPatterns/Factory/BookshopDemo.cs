@@ -1,8 +1,8 @@
-﻿using Kata.CustomTypes.BookshopFactory;
-using Kata.CustomTypes.MediaFactory;
+﻿using BusinessObjectLayer.BookshopFactory;
+using BusinessObjectLayer.MediaFactory;
 using System;
 
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class BookshopDemo : FactoryDemoBase<SectionBase, MediaItemBase>
     {

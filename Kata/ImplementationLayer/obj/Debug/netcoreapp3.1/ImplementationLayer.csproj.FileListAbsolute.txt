@@ -1,0 +1,9 @@
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\bin\Debug\netcoreapp3.1\ImplementationLayer.deps.json
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\bin\Debug\netcoreapp3.1\ImplementationLayer.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\bin\Debug\netcoreapp3.1\ImplementationLayer.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.AssemblyInfoInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.AssemblyInfo.cs
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.csproj.CoreCompileInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.dll
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.pdb

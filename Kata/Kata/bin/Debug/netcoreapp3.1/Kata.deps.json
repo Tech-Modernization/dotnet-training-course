@@ -8,9 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "Kata/1.0.0": {
         "dependencies": {
-          "CustomTypes": "1.0.0",
-          "Demos": "1.0.0",
-          "Helpers": "1.0.0"
+          "Helpers": "1.0.0",
+          "PresentationLayer": "1.0.0"
         },
         "runtime": {
           "Kata.dll": {}
@@ -169,51 +168,50 @@
           }
         }
       },
-      "CustomTypes/1.0.0": {
+      "BusinessObjectLayer/1.0.0": {
         "dependencies": {
-          "DataServices": "1.0.0",
+          "BusinessServiceLayer": "1.0.0",
+          "Helpers": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
-          "Services": "1.0.0",
           "System.Configuration.ConfigurationManager": "6.0.0"
         },
         "runtime": {
-          "CustomTypes.dll": {}
+          "BusinessObjectLayer.dll": {}
         }
       },
-      "DataServices/1.0.0": {
+      "BusinessServiceLayer/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "runtime": {
-          "DataServices.dll": {}
-        }
-      },
-      "Demos/1.0.0": {
-        "dependencies": {
-          "CustomTypes": "1.0.0",
           "Helpers": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "ImplementationLayer": "1.0.0"
         },
         "runtime": {
-          "Demos.dll": {}
+          "BusinessServiceLayer.dll": {}
         }
       },
       "Helpers/1.0.0": {
         "dependencies": {
-          "CustomTypes": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "Helpers.dll": {}
         }
       },
-      "Services/1.0.0": {
+      "ImplementationLayer/1.0.0": {
         "dependencies": {
-          "DataServices": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
-          "Services.dll": {}
+          "ImplementationLayer.dll": {}
+        }
+      },
+      "PresentationLayer/1.0.0": {
+        "dependencies": {
+          "BusinessObjectLayer": "1.0.0",
+          "Helpers": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "PresentationLayer.dll": {}
         }
       }
     }
@@ -294,17 +292,12 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "CustomTypes/1.0.0": {
+    "BusinessObjectLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DataServices/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Demos/1.0.0": {
+    "BusinessServiceLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -314,7 +307,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Services/1.0.0": {
+    "ImplementationLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

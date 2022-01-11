@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Kata.CustomTypes.Extensions;
+using BusinessObjectLayer.Extensions;
 
-namespace Kata.CustomTypes.Demo.LyricAnalyser
+namespace BusinessObjectLayer.Demo.LyricAnalyser
 {
     public class LyricQueryReport
     {

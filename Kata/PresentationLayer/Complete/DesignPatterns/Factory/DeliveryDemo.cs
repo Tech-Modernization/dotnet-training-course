@@ -21,7 +21,7 @@ using System.Text;
 - out of hours deliveries are permitted with prior arrangement and authentication.  
 - ooh shifts must be full staffed.  on-call team members are available to fill shifts at short notice.
 */
-namespace Kata.Demos
+namespace PresentationLayer
 {
     public class DeliveryDemo : DemoBase
     {
