@@ -7,7 +7,7 @@ namespace Helpers
 {
     public class ConsoleHelper
     {
-        public static bool GetInteger(string prompt, out int validatedInput, params IValidator[] validators)
+        public static bool GetInteger(string prompt, out int validatedInput, params IValidator<int>[] validators)
         {
             ConsoleKey k = default;
             string input = default;
@@ -41,6 +41,46 @@ namespace Helpers
             }
             
             return true;
+        }
+
+        public static bool GetString(string prompt, out string validatedInput, params IValidator<string>[] validators)
+        {
+            do
+            {
+                Console.WriteLine(prompt);
+                validatedInput = Console.ReadLine();
+            }
+            while (validatedInput.Trim().Length == 0);
+
+            foreach(var v in validators)
+            {
+                if (!v.IsValid(validatedInput))
+                    return false;
+            }
+
+            return true;
+        }
+
+        public static ConsoleKey GetKey(string prompt, params ConsoleKey[] keysAllowed)
+        {
+            var keyList = new List<ConsoleKey>(keysAllowed);
+            keyList.Add(ConsoleKey.Q);
+            ConsoleKey key = default;
+
+            do
+            {
+                if (key != default)
+                {
+                    Console.WriteLine($"{key} is not a valid choice");
+                }
+
+                Console.Write(prompt);
+                key = Console.ReadKey().Key;
+                Console.WriteLine();
+            }
+            while (!keysAllowed.Contains(key));
+
+            return key;                        
         }
     }
 }

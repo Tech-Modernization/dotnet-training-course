@@ -1,29 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Helpers
+﻿namespace Helpers
 {
-    public class RangeValidator : IValidator
+    public class RangeValidator : NumberValidator
     {
-        private int lowerBound;
-        private int upperBound;
+        private int Min;
+        private int Max;
 
-        public RangeValidator(int lowerBound, int upperBound)
+        public RangeValidator(int min, int max)
         {
-            this.lowerBound = lowerBound;
-            this.upperBound = upperBound;
+            Min = min;
+            Max = max;
         }
 
-        public virtual bool IsValid(string input)
+        public override bool IsValid(int num)
         {
-            var outInt = 0;
-            return int.TryParse(input, out outInt) && IsValid(outInt);
-        }
-
-        public virtual bool IsValid(int input)
-        {
-            return input >= lowerBound && input <= upperBound;
+            return num >= Min && num <= Max;
         }
     }
 }

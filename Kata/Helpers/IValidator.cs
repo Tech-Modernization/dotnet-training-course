@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Helpers
 {
-    public interface IValidator
+    public interface IValidator<T>
     {
-        bool IsValid(string input);
-        bool IsValid(int input);
+        bool IsValid(T arg);
     }
 }

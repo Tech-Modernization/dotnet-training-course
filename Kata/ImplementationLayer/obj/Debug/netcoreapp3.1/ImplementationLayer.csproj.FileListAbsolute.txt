@@ -7,3 +7,4 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLaye
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\ImplementationLayer\obj\Debug\netcoreapp3.1\ImplementationLayer.csproj.AssemblyReference.cache

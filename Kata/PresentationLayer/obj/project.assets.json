@@ -572,6 +572,7 @@
     ".NETCoreApp,Version=v3.1": [
       "BusinessObjectLayer >= 1.0.0",
       "Helpers >= 1.0.0",
+      "ImplementationLayer >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1"
     ]
   },
@@ -615,6 +616,9 @@
             },
             "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj": {
               "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\Helpers\\Helpers.csproj"
+            },
+            "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\ImplementationLayer\\ImplementationLayer.csproj": {
+              "projectPath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\ImplementationLayer\\ImplementationLayer.csproj"
             }
           }
         }

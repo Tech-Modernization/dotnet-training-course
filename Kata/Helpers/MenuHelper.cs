@@ -3,19 +3,39 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Reflection;
+using System.Collections;
 
 namespace Helpers
 {
 
-    public class MenuHelper
+    public class MenuHelper : IEnumerable
     {
         protected List<MenuItemBase> Options { get; }
         public MenuSettings Settings { get; }
+
+        public MenuFlags SettingsFlags
+        {
+            get
+            {
+                return MenuFlags.ClearScreenFirst;
+            }
+            set
+            {
+                Settings.ClearScreenFirst = value.HasFlag(MenuFlags.ClearScreenFirst);
+                Settings.Flags = value;
+
+            }
+        }
 
         public MenuHelper()
         {
             Settings = new MenuSettings();
             Options = new List<MenuItemBase>();
+        }
+
+        public void Clear()
+        {
+            Options.Clear();
         }
 
         public void Build(Func<List<MenuItemBase>> optionGenerator, Action<Type> itemRunner = null)
@@ -68,7 +88,7 @@ namespace Helpers
             Console.WriteLine();
         }
 
-        public int SelectFromMenu(string prompt=            null)
+        public int SelectFromMenu(string prompt = null)
         {
             if (prompt == null)
                 prompt = Settings.Prompt;
@@ -88,6 +108,13 @@ namespace Helpers
                     opt.Run(opt.ImplementedAs);
             }
             return gotSelection ? selection : Settings.DefaultOption;
+        }
+
+        public int AddOption(string optionText)
+        {
+            var newOpt = new MenuItemBase() { Index = Options.Count + 1, Text = optionText };
+            Options.Add(newOpt);
+            return newOpt.Index;
         }
 
         public void Configure(MenuFlags flags, string prompt, int defaultOption)
@@ -149,5 +176,9 @@ namespace Helpers
             */
         }
 
-}
+        public IEnumerator GetEnumerator()
+        {
+            return ((IEnumerable)Options).GetEnumerator();
+        }
+    }
 }

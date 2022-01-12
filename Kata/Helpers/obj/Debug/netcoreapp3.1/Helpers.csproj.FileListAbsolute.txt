@@ -76,3 +76,4 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.AssemblyReference.cache

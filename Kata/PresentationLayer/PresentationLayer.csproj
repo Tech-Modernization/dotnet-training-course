@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BusinessObjectLayer\BusinessObjectLayer.csproj" />
     <ProjectReference Include="..\Helpers\Helpers.csproj" />
+    <ProjectReference Include="..\ImplementationLayer\ImplementationLayer.csproj" />
   </ItemGroup>
 
 </Project>
