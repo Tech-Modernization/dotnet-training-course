@@ -106,7 +106,7 @@ namespace PresentationLayer
             var menu = new Menu();
 
             var customersWaiting = true;
-       //     while(customersWaiting)
+            while(customersWaiting)
             {
                 var nextCustomer = new Customer();
 
@@ -126,6 +126,7 @@ namespace PresentationLayer
                 };
                 
                 var drinkSelection = MenuHelper.SelectMulti(menu, steps);
+                customersWaiting = (drinkSelection?.Count ?? 0) != 0;
             }
         }
 

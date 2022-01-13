@@ -31,7 +31,7 @@ namespace Kata
                 var selection = thisMenu.SelectFromMenu();
                 if (selection == thisMenu.Settings.ExitOption)
                     break;
-
+                Console.WriteLine($"--- Finished {thisMenu[selection].Text} - [Enter] ==> previous menu ---");
                 keystroke = Console.ReadKey().Key;
             }
             while (keystroke != ConsoleKey.Escape);

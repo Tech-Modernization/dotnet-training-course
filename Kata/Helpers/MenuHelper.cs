@@ -51,8 +51,7 @@ namespace Helpers
 
         public MenuItemBase this[int i]
         {
-            get => Options[i - 1];
-            set => Options[i - 1] = value;
+            get => Options.SingleOrDefault(o => o.Index == i);
         }
 
         public static List<MenuItemBase> GetTypedMenuItems(List<Type> types)
