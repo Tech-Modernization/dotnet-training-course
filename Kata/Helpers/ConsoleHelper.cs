@@ -5,8 +5,9 @@ using System.Linq;
 
 namespace Helpers
 {
-    public class ConsoleHelper
+    public static class ConsoleHelper
     {
+
         public static bool GetInteger(string prompt, out int validatedInput, params IValidator<int>[] validators)
         {
             ConsoleKey k = default;
@@ -63,8 +64,8 @@ namespace Helpers
 
         public static ConsoleKey GetKey(string prompt, params ConsoleKey[] keysAllowed)
         {
-            var keyList = new List<ConsoleKey>(keysAllowed);
-            keyList.Add(ConsoleKey.Q);
+            var keyList = keysAllowed.ToList();
+            if (!keyList.Contains(ConsoleKey.Q)) keyList.Add(ConsoleKey.Q);
             ConsoleKey key = default;
 
             do

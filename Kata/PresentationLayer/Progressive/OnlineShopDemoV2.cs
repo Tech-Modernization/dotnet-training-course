@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObjectLayer.Progressive.OnlineShop.V2;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,17 +9,14 @@ namespace PresentationLayer.Progressive
     {
         public override void Run()
         {
-            AddPart(Part1, "Initial stage of interface-first approach");
+            AddPart(Part3, "Establish main components of the shop (Parts 1-3 in OnlineShop.docx)");
             base.Run();
         }
 
-        public void Part1()
+        public void Part3()
         {
             var shop = new OnlineShop();
-            var inv = shop.LoadInventory();
-            var basket = shop.SelectProducts(inv);
-            var order = shop.CreateOrder(basket);
-            var result = shop.TakePayment(order);
+            shop.Enter(null);
         }
     }
 }

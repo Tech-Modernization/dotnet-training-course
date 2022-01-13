@@ -8,7 +8,7 @@ using System.Collections;
 namespace Helpers
 {
 
-    public class MenuHelper : IEnumerable
+    public class MenuHelper
     {
         protected List<MenuItemBase> Options { get; }
         public MenuSettings Settings { get; }
@@ -122,6 +122,54 @@ namespace Helpers
             Configure(flags.HasFlag(MenuFlags.SelectWithReadKey), ConsoleKey.Escape, defaultOption, flags.HasFlag(MenuFlags.GenerateExitOption)
                 , prompt, flags.HasFlag(MenuFlags.ClearScreenFirst), flags);
         }
+
+
+        public static MenuSelectionItem SelectByKeySequence(List<KeyStep<int>> steps)
+        {
+            var cw = typeof(Console).GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.ExactBinding)
+                .Where(m => m.Name == "Write" && m.GetParameters().Length == 2 && m.GetParameters()[1].ParameterType == typeof(object[])).FirstOrDefault();
+
+            foreach (var step in steps)
+            {
+                var cwParams = steps.Select(s => $"{s.Response}").ToArray();
+                Console.Write(step.Prompt, cwParams);
+               
+                step.Key = Console.ReadKey().Key;
+                Console.WriteLine();
+                step.Response = step.Translate(step.Key);
+            }
+            return null;
+        }
+
+        public static MenuSelection SelectMulti(IMenu menu, List<KeyStep<int>> steps)
+        {
+            Console.Clear();
+            menu.Display();
+
+            var selection = new MenuSelection();
+            var ynKey = ConsoleKey.N;
+            do
+            {
+                var key = default(ConsoleKey);
+                do
+                {
+                    var selItem = SelectByKeySequence(steps);
+                    Console.WriteLine("\n");
+                    key = Console.ReadKey().Key;
+                }
+                while (key != ConsoleKey.Enter);
+
+                ynKey = ConsoleHelper.GetKey("Enter Y to confirm your selection, N to re-enter your selection or Q to quit: ", ConsoleKey.Y, ConsoleKey.N);
+            }
+            while (ynKey == ConsoleKey.N);
+
+            if (ynKey == ConsoleKey.Q)
+            {
+                selection = null;
+            }    
+            return selection;
+        }
+
         public void Configure(MenuFlags flags, string prompt, int defaultOption, ConsoleKey exitKey)
         {
             Configure(flags.HasFlag(MenuFlags.SelectWithReadKey), exitKey, defaultOption, flags.HasFlag(MenuFlags.GenerateExitOption)

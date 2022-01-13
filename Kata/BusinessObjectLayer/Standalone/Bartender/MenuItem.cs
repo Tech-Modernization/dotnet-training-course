@@ -4,15 +4,14 @@ using System.Text;
 
 namespace BusinessObjectLayer.Bartender
 {
+    // Responsibility: encapsulate the text reprensentation of a product and its price
     public class MenuItem
     {
         public string Text { get; }
-        public DrinkMeasure Measure { get; }
         public decimal Price { get; }
-        public MenuItem(string text, DrinkMeasure measure, decimal price)
+        public MenuItem(string text, decimal price)
         {
             Text = text;
-            Measure = measure;
             Price = price;
         }
     }

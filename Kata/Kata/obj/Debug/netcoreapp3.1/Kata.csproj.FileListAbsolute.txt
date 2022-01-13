@@ -145,11 +145,6 @@ E:\000000\00-tech\00-Contino\source\repos\kata-crib\rlg-dotnet-fun-main\Kata\Kat
 E:\000000\00-tech\00-Contino\source\repos\kata-crib\rlg-dotnet-fun-main\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.dll
 E:\000000\00-tech\00-Contino\source\repos\kata-crib\rlg-dotnet-fun-main\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.pdb
 E:\000000\00-tech\00-Contino\source\repos\kata-crib\rlg-dotnet-fun-main\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.genruntimeconfig.cache
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.GeneratedMSBuildEditorConfig.editorconfig
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfoInputs.cache
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfo.cs
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.CoreCompileInputs.cache
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.AssemblyReference.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\charades.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\cookbook.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\ingredients.json
@@ -196,6 +191,11 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\net
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\BusinessObjectLayer.pdb
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\BusinessServiceLayer.pdb
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\bin\Debug\netcoreapp3.1\ImplementationLayer.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.AssemblyReference.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.GeneratedMSBuildEditorConfig.editorconfig
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfoInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.AssemblyInfo.cs
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.csproj.CopyComplete
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Kata\obj\Debug\netcoreapp3.1\Kata.pdb

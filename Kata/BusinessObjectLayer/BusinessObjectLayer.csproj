@@ -17,6 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Standalone\Bartender\BarMenuItem.cs" />
+    <Compile Remove="Standalone\Bartender\DrinkMenuSelectionItem.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Standalone\FestivalFactory\211103-Answers\" />
   </ItemGroup>
 

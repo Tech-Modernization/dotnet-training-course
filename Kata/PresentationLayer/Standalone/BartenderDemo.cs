@@ -2,7 +2,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+
+using Helpers;
 
 /*
  * objectives:
@@ -33,10 +35,15 @@ using System.Text;
 // 
 // 6. identify the data items for each concept
 // 7. identify the process for resolving the unknowns
+// 8. figure out how to approach each problem
+// 
+//    a. identify the relevant resources - which objects/variables are potentially
+//    involved as either inputs or outputs of the solution.
+//
+//    b. check SOLID principles
 // 
 
-
-namespace PresentationLayer.Kata
+namespace PresentationLayer
 {
     public class Bartender : IPaymentProcessor
     {
@@ -67,8 +74,10 @@ namespace PresentationLayer.Kata
 
         public override void Run()
         {
-            AddPart(Part1, "Set up the drinks");
-            AddPart(Part2, "Set up the order (payment)");
+            //  AddPart(Part1, "Set up the drinks");
+            //  AddPart(Part2, "Set up the order (payment)");
+            //  AddPart(Part3, "Adding drinks to an order");
+            AddPart(Part3, "example string formatting");
             base.Run();
         }
 
@@ -90,6 +99,51 @@ namespace PresentationLayer.Kata
 
             Console.WriteLine($"Order totalling {payment.AmountDue:C} payment result: {payResult}");
 
+        }
+
+        public void Part3()
+        {
+            var menu = new Menu();
+
+            var customersWaiting = true;
+       //     while(customersWaiting)
+            {
+                var nextCustomer = new Customer();
+
+                var steps = new List<KeyStep<int>> {
+                       new KeyStep<int> { Prompt =
+                            "What can I get you?  [B]eer, [W]ine or [S]pirit? : ",
+                            Translate = (key) => (int) key },
+
+                        new KeyStep<int> { Prompt =
+                            "{0} it is!  You want {1} or a {2}? : ",
+                            Translate = (key) => (int) key },
+
+                        new KeyStep<int> { Prompt =
+                               "How many {1} {0}s would you like? Enter 1-9: ",
+                                Translate = (key) => (int) key 
+                        }
+                };
+                
+                var drinkSelection = MenuHelper.SelectMulti(menu, steps);
+            }
+        }
+
+        public void Part3a()
+        {
+            var prompts = new[]
+            {
+                "What is your name? ",
+                "What is your favourite style of music, {0}? ",
+                "Okay, {0}, who's your favourite {1} artist? "
+            };
+
+            var responses = new List<string>();
+            for(var i = 0; i< prompts.Length; i++)
+            {
+                Console.Write(prompts[i], responses.ToArray());
+                responses.Add(Console.ReadLine());
+            }
         }
         // 1. think about each concept in turn and tell its story
         //   a. identify the most fundamental thing about the problem.
