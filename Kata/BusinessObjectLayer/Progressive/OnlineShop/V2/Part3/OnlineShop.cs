@@ -1,18 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace BusinessObjectLayer.Progressive.OnlineShop.V2
+namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part3
 {
-    public class ShopAssistant : IShopAssistant
-    {
-        public OnlineBasket Browse()
-        {
-            throw new NotImplementedException();
-        }
-    }
     public class OnlineShop : IShopContainer
     {
+        private IShopAssistant shopAssistant;
+        private IOrderManager orderManager;
+        private IPaymentManager payManager;
+
+        public OnlineShop(IShopAssistant shopAssistant, IOrderManager orderManager, IPaymentManager payManager)
+        {
+            this.shopAssistant = shopAssistant;
+            this.orderManager = orderManager;
+            this.payManager = payManager;
+        }
+
         public void Enter(Customer cust)
         {
             throw new NotImplementedException();
@@ -20,8 +22,7 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2
 
         public OnlineBasket Browse()
         {
-            var shopAssistant = new ShopAssistant();
-            return shopAssistant.Browse();
+            return null;
         }
 
         public void Checkout(OnlineBasket basket)

@@ -4,6 +4,7 @@ using System.Text;
 
 namespace BusinessObjectLayer.Progressive.OnlineShop.V2
 {
+    // Encaps. Product details.
     public class Product
     {
         public string Name { get; }
