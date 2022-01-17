@@ -44,12 +44,17 @@ namespace Helpers
             return true;
         }
 
+        public static string GetString(string prompt)
+        {
+            Console.Write(prompt);
+            return Console.ReadLine();
+        }
+
         public static bool GetString(string prompt, out string validatedInput, params IValidator<string>[] validators)
         {
             do
             {
-                Console.WriteLine(prompt);
-                validatedInput = Console.ReadLine();
+                validatedInput = GetString(prompt);
             }
             while (validatedInput.Trim().Length == 0);
 

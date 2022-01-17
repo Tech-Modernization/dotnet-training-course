@@ -20,9 +20,9 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
         public void ServeCustomer()
         {
             // TODO: refactor IShopAssistant.Browse to also provide user decision
-            var basket = shopAssistant.Browse();
+            //var basket = shopAssistant.Browse();
             // TODO: prompt for login etc depending on browse status
-            Checkout(basket);
+           // Checkout(basket);
         }
 
 
