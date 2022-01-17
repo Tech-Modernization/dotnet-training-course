@@ -10,7 +10,19 @@ namespace Helpers
 {
     public class FileHelper
     {
-        public static T ImportJson<T>(string path) => JsonConvert.DeserializeObject<T>(path);
+        public static T ImportJson<T>(string path)
+        {
+            try
+            {
+                var jsonText = File.ReadAllText(path);
+                return JsonConvert.DeserializeObject<T>(jsonText);
+            }
+            catch (Exception ex)
+            {
+                // write to a log file and re throw the exception
+                throw new Exception($"Error importing {typeof(T).FullName} from {path}", ex);
+            }
+        }
         public static string GetJsonPath(string dbDir)
         {
             var m = new MenuHelper();

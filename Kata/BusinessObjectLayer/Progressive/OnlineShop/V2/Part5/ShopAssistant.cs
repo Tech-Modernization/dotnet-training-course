@@ -32,14 +32,20 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
             while (!exitOptions.Contains(decision))
             {
                 var searchString = string.Empty;
-                var searchDecision = GetSearchString(ref searchString);
-                if (searchDecision != CustomerDecision.Search) continue;
+                decision = GetSearchString(ref searchString);
+                if (decision != CustomerDecision.Search) continue;
 
                 var searchResults = invManager.Search(searchString);
                 decision = GetBrowseDecision(searchResults);
             }
 
-            return default(CustomerDecision);
+            if (decision == CustomerDecision.Quit)
+            {
+                // discard the basket
+                basket = null;
+            }
+
+            return decision;
         }
 
         private CustomerDecision GetCustomerDecision(string prompt, params CustomerDecision[] options)
@@ -48,8 +54,9 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
         }
 
         private CustomerDecision QuitWithoutSaving()
-        { 
-            return default(CustomerDecision);
+        {
+            var key = interactor.GetKey("Do you want to [S]ave your basket or [Q]uit without saving? : ", ConsoleKey.S);
+            return key == ConsoleKey.S ? CustomerDecision.SaveAndQuit : CustomerDecision.Quit;
         }
 
         private void AddToBasket(Product product, OnlineBasket basket) 
@@ -59,12 +66,22 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
         private CustomerDecision GetBrowseDecision(List<Product> results)
         {
             // if no results do they wanna quit/checkout/search again
+            if (results.Count == 0)
+            {
+                var key = interactor.GetKey("No matching products.  Do you want to [Q]uit or [S]earch again?");
+                if (key == ConsoleKey.Q)
+                {
+                    return QuitWithoutSaving();
+                }
+                return CustomerDecision.Search;
+            }
             // (same conditional code as before)
             // display results
             // do they wanna add to basket/search again/checkout/quit
             // (product availability handshake)
             // (same conditional code + add to basket branch)
-            return default;
+            Console.WriteLine($"Products found: \n{string.Join("\n", results.Select(p => $"{p.Name}: {p.Price:C}"))}");
+            return CustomerDecision.Search;
         }
 
         private CustomerDecision GetSearchString(ref string searchString)

@@ -84,7 +84,7 @@ namespace Helpers
                 key = Console.ReadKey().Key;
                 Console.WriteLine();
             }
-            while (!keysAllowed.Contains(key));
+            while (!keyList.Contains(key));
 
             return key;                        
         }
