@@ -49,7 +49,6 @@ namespace Helpers
             Console.Write(prompt);
             return Console.ReadLine();
         }
-
         public static bool GetString(string prompt, out string validatedInput, params IValidator<string>[] validators)
         {
             do
@@ -67,10 +66,13 @@ namespace Helpers
             return true;
         }
 
-        public static ConsoleKey GetKey(string prompt, params ConsoleKey[] keysAllowed)
+        public static ConsoleKey GetKey(string prompt, bool addQuit, params ConsoleKey[] keysAllowed)
         {
             var keyList = keysAllowed.ToList();
-            if (!keyList.Contains(ConsoleKey.Q)) keyList.Add(ConsoleKey.Q);
+            if (!keyList.Contains(ConsoleKey.Q) && addQuit)
+            {
+                keyList.Add(ConsoleKey.Q);
+            }
             ConsoleKey key = default;
 
             do
@@ -86,7 +88,11 @@ namespace Helpers
             }
             while (!keyList.Contains(key));
 
-            return key;                        
+            return key;
+        }
+        public static ConsoleKey GetKey(string prompt, params ConsoleKey[] keysAllowed)
+        {
+            return GetKey(prompt, true, keysAllowed);
         }
     }
 }

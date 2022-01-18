@@ -1,8 +1,10 @@
-﻿namespace Helpers
+﻿using System.Collections;
+
+namespace Helpers
 {
-    public interface IMenu
+    public interface IMenu : IEnumerable
     {
         void Display();
-        HelperMenuItems GetItems();
+        MenuSelectionItemBase SelectionItem { get; }
     }
 }

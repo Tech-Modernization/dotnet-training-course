@@ -10,6 +10,15 @@ namespace Helpers
 
     public class MenuHelper
     {
+        public static KeyFunctionMap DefaultKeyFunctionMap = new KeyFunctionMap()
+                {
+                    {ConsoleKey.Q, cki => FilterMenuAction.ReturnForCustomAction },
+                    {ConsoleKey.End, cki => FilterMenuAction.ReturnLast },
+                    {ConsoleKey.Home, cki => FilterMenuAction.ReturnFirst },
+                    {ConsoleKey.PageUp, cki => FilterMenuAction.ReturnForCustomAction },
+                    {ConsoleKey.PageDown, cki => FilterMenuAction.ReturnForCustomAction },
+                    {ConsoleKey.Insert, cki => FilterMenuAction.DivertToCustomAction }
+                };
         protected List<MenuItemBase> Options { get; }
         public MenuSettings Settings { get; }
 
@@ -17,13 +26,14 @@ namespace Helpers
         {
             get
             {
-                return MenuFlags.ClearScreenFirst;
+                return Settings.Flags;
             }
             set
             {
                 Settings.ClearScreenFirst = value.HasFlag(MenuFlags.ClearScreenFirst);
+                Settings.GenerateExitOption = value.HasFlag(MenuFlags.GenerateExitOption);
+                Settings.SelectWithReadKey = value.HasFlag(MenuFlags.SelectWithReadKey);
                 Settings.Flags = value;
-
             }
         }
 
@@ -122,52 +132,129 @@ namespace Helpers
                 , prompt, flags.HasFlag(MenuFlags.ClearScreenFirst), flags);
         }
 
-
-        public static MenuSelectionItem SelectByKeySequence(List<KeyStep<int>> steps)
+        public class KeyFunctionMap : Dictionary<ConsoleKey, Func<ConsoleKeyInfo, FilterMenuAction>>
         {
-            var cw = typeof(Console).GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.ExactBinding)
-                .Where(m => m.Name == "Write" && m.GetParameters().Length == 2 && m.GetParameters()[1].ParameterType == typeof(object[])).FirstOrDefault();
 
-            foreach (var step in steps)
-            {
-                var cwParams = steps.Select(s => $"{s.Response}").ToArray();
-                Console.Write(step.Prompt, cwParams);
-               
-                step.Key = Console.ReadKey().Key;
-                Console.WriteLine();
-                step.Response = step.Translate(step.Key);
-            }
-            return null;
         }
 
-        public static MenuSelection SelectMulti(IMenu menu, List<KeyStep<int>> steps)
+        public enum FilterMenuAction
         {
+            ReturnLast = 1,
+            ReturnFirst,
+            ReadNextKey,
+            RemoveLastKey,
+            RemoveAllKeys,
+            ReturnForCustomAction,
+            DivertToCustomAction
+        }
+
+        public static T FilterMenu<T>(List<T> items, Func<T, string, bool> filter, KeyFunctionMap keyFuncMap = null, string prompt = "Start typing to filter the list: ")
+        {
+            if (keyFuncMap == null)
+            {
+                keyFuncMap = DefaultKeyFunctionMap;
+            }
+
+            Console.Clear();
+            var keyInfo = default(ConsoleKeyInfo);
+            var key = keyInfo.Key;
+            var keyChar = keyInfo.KeyChar;
+            var keys = new List<ConsoleKeyInfo>();
+            var filteredItems = items;
+            while (filteredItems.Count != 1)
+            {
+                var filterString = string.Join("", keys.Select(ki => ki.KeyChar));
+                filteredItems = items.Where(item => filter(item, filterString)).ToList();
+                formatList(filteredItems, prompt);
+                keyInfo = Console.ReadKey();
+                if (keyFuncMap.ContainsKey(keyInfo.Key))
+                {
+                    switch (keyFuncMap[keyInfo.Key](keyInfo))
+                    {
+                        case FilterMenuAction.ReturnLast:
+                            return filteredItems.Last();
+                        case FilterMenuAction.ReturnFirst:
+                            return filteredItems.First();
+                        case FilterMenuAction.ReadNextKey:
+                            continue;
+                        case FilterMenuAction.RemoveLastKey:
+                            keys.Remove(keys.Last());
+                            break;
+                        case FilterMenuAction.RemoveAllKeys:
+                            keys.Clear();
+                            break;
+                        case FilterMenuAction.ReturnForCustomAction:
+                            return default;
+                    }
+                }
+                if (char.IsLetterOrDigit(keyInfo.KeyChar) || char.IsPunctuation(keyInfo.KeyChar))
+                {
+                    keys.Add(keyInfo);
+                }
+            }
+            return filteredItems.First();
+        }
+        private static void formatList<T>(List<T> filteredItems, string prompt)
+        {
+            Console.Clear();
+            Console.WriteLine(prompt);
+            Console.WriteLine(string.Join("\n", filteredItems));
+            Console.WindowTop = 0;
+            Console.WindowLeft = 0;
+            Console.CursorTop = 0;
+            Console.CursorLeft = prompt.Length;
+        }
+
+        public static MenuSelectionItemBase SelectByKeySequence(IMenu menu)
+        {
+            // common elements of these steps:
+            foreach (KeyStepBase keyStep in menu)
+            {
+                // 0. format the prompt (we need to use the previous answers to formulate the next question).
+                // 1. the question
+                var key = keyStep.Ask();
+                // 1.1  did they abort the question?
+                if (key == ConsoleKey.Q) return menu.SelectionItem;
+
+                // 3. filling in the relevant bit of the selection item
+                keyStep.ConvertKeyToSelectionData();
+            }
+
+            return menu.SelectionItem;
+        }
+        public static T SelectMulti<T>(IMenu menu)
+            where T : MenuSelectionBase, new()
+        {
+            var selection = new T();
+
             Console.Clear();
             menu.Display();
 
-            var selection = new MenuSelection();
-            var ynKey = ConsoleKey.N;
+            var ynKey = default(ConsoleKey);
             do
             {
-                var key = default(ConsoleKey);
-                do
+                var selectionItem = SelectByKeySequence(menu);
+
+                // did they abort the sequence?
+                if (selectionItem.IsComplete)
                 {
-                    var selItem = SelectByKeySequence(steps);
-                    Console.WriteLine("\n");
-                    key = Console.ReadKey().Key;
+                    // add to the order
+                    selection.Add(selectionItem);
                 }
-                while (key != ConsoleKey.Enter);
-
-                ynKey = ConsoleHelper.GetKey("Enter Y to confirm your selection, N to re-enter your selection or Q to quit: ", ConsoleKey.Y, ConsoleKey.N);
+                else
+                {
+                    Console.WriteLine("Item cancelled.");
+                }
+                // ask if they want anything else
+                ynKey = ConsoleHelper.GetKey("Anything else? [Y]es/[N]o: ", false, ConsoleKey.Y, ConsoleKey.N);
             }
-            while (ynKey == ConsoleKey.N);
+            while (ynKey == ConsoleKey.Y);
 
-            if (ynKey == ConsoleKey.Q)
-            {
-                selection = null;
-            }    
+
             return selection;
         }
+
+
 
         public void Configure(MenuFlags flags, string prompt, int defaultOption, ConsoleKey exitKey)
         {

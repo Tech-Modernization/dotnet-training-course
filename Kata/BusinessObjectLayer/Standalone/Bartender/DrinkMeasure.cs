@@ -13,7 +13,8 @@ namespace BusinessObjectLayer.Bartender
 {
     public enum DrinkMeasure
     {
-        Half = 1,
+        None,
+        Half,
         Pint,
         Small,
         Large,

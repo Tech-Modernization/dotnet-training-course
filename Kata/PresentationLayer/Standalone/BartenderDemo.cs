@@ -70,7 +70,7 @@ namespace PresentationLayer
     }
     public class BartenderDemo : DemoBase
     {
-        private Menu menu = new Menu();
+        private BarMenu menu = new BarMenu();
 
         public override void Run()
         {
@@ -103,31 +103,9 @@ namespace PresentationLayer
 
         public void Part3()
         {
-            var menu = new Menu();
 
-            var customersWaiting = true;
-            while(customersWaiting)
-            {
-                var nextCustomer = new Customer();
+            var selection = MenuHelper.SelectMulti<BarSelection>(menu);
 
-                var steps = new List<KeyStep<int>> {
-                       new KeyStep<int> { Prompt =
-                            "What can I get you?  [B]eer, [W]ine or [S]pirit? : ",
-                            Translate = (key) => (int) key },
-
-                        new KeyStep<int> { Prompt =
-                            "{0} it is!  You want {1} or a {2}? : ",
-                            Translate = (key) => (int) key },
-
-                        new KeyStep<int> { Prompt =
-                               "How many {1} {0}s would you like? Enter 1-9: ",
-                                Translate = (key) => (int) key 
-                        }
-                };
-                
-                var drinkSelection = MenuHelper.SelectMulti(menu, steps);
-                customersWaiting = (drinkSelection?.Count ?? 0) != 0;
-            }
         }
 
         public void Part3a()

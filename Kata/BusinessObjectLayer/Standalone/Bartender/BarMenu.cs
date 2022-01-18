@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Helpers;
+using System.Collections;
 
 namespace BusinessObjectLayer.Bartender
 {
@@ -11,14 +12,14 @@ namespace BusinessObjectLayer.Bartender
     //    -- get stock from file
     //    -- introduce stock level so menu doesn't display out of stock items
     // 
-    public class Menu : IMenu
+    public class BarMenu : IMenu
     {
-        protected List<Drink> stock;
-        public List<MenuItem> tariff;
-
-        public Menu()
+        protected List<Drink> Stock { get; }
+        protected List<BarKeyStep> Steps { get; }
+        public List<TariffItem> Tariff { get; }
+        public BarMenu()
         {
-            stock = new List<Drink>()
+            Stock = new List<Drink>()
             {
                 // shortcut for:
                 //    new Drink("name", new List<DrinkMeasure>() {DrinkMeasure.Pint, etc})
@@ -27,23 +28,34 @@ namespace BusinessObjectLayer.Bartender
                 new Drink("Beer", new []{DrinkMeasure.Half, DrinkMeasure.Pint}.ToList()),
                 new Drink("Wine", new []{DrinkMeasure.Small, DrinkMeasure.Large}.ToList())
             };
-
+            Tariff = new List<TariffItem>();
             LoadMenu();
+
+            Steps = new List<BarKeyStep>();
+            LoadSteps();
         }
+
+
+        private void LoadSteps()
+        {
+            Steps.Add(new BarKeyStep(1, "What can I get you? {0} or {1}: ", this, null));
+            Steps.Add(new BarKeyStep(2, "{0} it is!  Do you want {0} or {1}: ", this, null));
+            Steps.Add(new BarKeyStep(3, "How many {1} of {0} would you like? Enter 1 - 9: ", this, null));
+        }
+
 
         private void LoadMenu()
         {
-            tariff = new List<MenuItem>();
             var basePrice = 1.0M;
             var increment = 2M;
-
-            foreach(var d in stock)
+            var menuWidth = 50;
+            foreach (var d in Stock)
             {
                 var price = basePrice;
                 foreach (var m in d.Measures)
                 {
                     var text = $"{d.Name} ({m})";
-                    tariff.Add(new MenuItem(text, price));
+                    Tariff.Add(new TariffItem(text, price, menuWidth));
                     price *= increment;
                 }
                 basePrice *= increment;
@@ -52,23 +64,17 @@ namespace BusinessObjectLayer.Bartender
 
         public void Display()
         {
-            var menuWidth = 50;
-            foreach(var drink in tariff)
+            foreach(var tariffItem in Tariff)
             {
-                var price = $"{drink.Price:C}";
-                var dots = new string('.', menuWidth - drink.Text.Length - price.Length);
-                Console.WriteLine($"{drink.Text}{dots}{price}");
+                Console.WriteLine(tariffItem);
             }
         }
 
-        public HelperMenuItems GetItems()
+        public MenuSelectionItemBase SelectionItem => new BarSelectionItem();
+
+        public IEnumerator GetEnumerator()
         {
-            var items = new HelperMenuItems();
-            foreach(var item in tariff)
-            {
-                items.Add(item.Text);
-            }
-            return items;
+            return Steps.GetEnumerator();
         }
     }
 }
