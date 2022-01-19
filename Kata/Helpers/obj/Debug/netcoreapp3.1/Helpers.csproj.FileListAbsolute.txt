@@ -70,10 +70,10 @@ E:\000000\00-tech\00-Contino\source\repos\kata-crib\rlg-dotnet-fun-main\Kata\Hel
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\bin\Debug\netcoreapp3.1\Helpers.deps.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\bin\Debug\netcoreapp3.1\Helpers.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\bin\Debug\netcoreapp3.1\Helpers.pdb
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.AssemblyReference.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.GeneratedMSBuildEditorConfig.editorconfig
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfoInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfo.cs
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.AssemblyReference.cache

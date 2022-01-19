@@ -4,6 +4,7 @@ using System.Text;
 using System.Linq;
 using System.Reflection;
 using System.Collections;
+using Helpers.Extensions;
 
 namespace Helpers
 {
@@ -15,6 +16,8 @@ namespace Helpers
                     {ConsoleKey.Q, cki => FilterMenuAction.ReturnForCustomAction },
                     {ConsoleKey.End, cki => FilterMenuAction.ReturnLast },
                     {ConsoleKey.Home, cki => FilterMenuAction.ReturnFirst },
+                    {ConsoleKey.Backspace, cki => FilterMenuAction.RemoveLastKey },
+                    {ConsoleKey.Delete, cki => FilterMenuAction.RemoveLastKey },
                     {ConsoleKey.PageUp, cki => FilterMenuAction.ReturnForCustomAction },
                     {ConsoleKey.PageDown, cki => FilterMenuAction.ReturnForCustomAction },
                     {ConsoleKey.Insert, cki => FilterMenuAction.DivertToCustomAction }
@@ -132,7 +135,7 @@ namespace Helpers
                 , prompt, flags.HasFlag(MenuFlags.ClearScreenFirst), flags);
         }
 
-        public class KeyFunctionMap : Dictionary<ConsoleKey, Func<ConsoleKeyInfo, FilterMenuAction>>
+        public class KeyFunctionMap : Dictionary<ConsoleKey, Func<string, FilterMenuAction>>
         {
 
         }
@@ -145,31 +148,48 @@ namespace Helpers
             RemoveLastKey,
             RemoveAllKeys,
             ReturnForCustomAction,
-            DivertToCustomAction
+            DivertToCustomAction,
+            SelectByIndex
         }
 
         public static T FilterMenu<T>(List<T> items, Func<T, string, bool> filter, KeyFunctionMap keyFuncMap = null, string prompt = "Start typing to filter the list: ")
         {
-            if (keyFuncMap == null)
-            {
-                keyFuncMap = DefaultKeyFunctionMap;
-            }
-
             Console.Clear();
             var keyInfo = default(ConsoleKeyInfo);
             var key = keyInfo.Key;
             var keyChar = keyInfo.KeyChar;
             var keys = new List<ConsoleKeyInfo>();
             var filteredItems = items;
+            
+            if (keyFuncMap == null)
+            {
+                keyFuncMap = DefaultKeyFunctionMap;
+            }
+
+            if (filter == null)
+            {
+                filter = (item, filterString) => $"{item}".ToLower().Contains(filterString.ToLower()) || filterString.ToInteger(filteredItems.Count + 1) <= filteredItems.Count;
+            }
+
             while (filteredItems.Count != 1)
             {
-                var filterString = string.Join("", keys.Select(ki => ki.KeyChar));
+                var filterString = GetKeyString(keys);
                 filteredItems = items.Where(item => filter(item, filterString)).ToList();
+
+                SetupIndexSelection(keyFuncMap, filteredItems);
+
                 formatList(filteredItems, prompt);
+
+                Console.Write(filterString);
                 keyInfo = Console.ReadKey();
+                if (char.IsLetterOrDigit(keyInfo.KeyChar) || char.IsPunctuation(keyInfo.KeyChar))
+                {
+                    keys.Add(keyInfo);
+                }
+
                 if (keyFuncMap.ContainsKey(keyInfo.Key))
                 {
-                    switch (keyFuncMap[keyInfo.Key](keyInfo))
+                    switch (keyFuncMap[keyInfo.Key](GetKeyString(keys)))
                     {
                         case FilterMenuAction.ReturnLast:
                             return filteredItems.Last();
@@ -185,20 +205,51 @@ namespace Helpers
                             break;
                         case FilterMenuAction.ReturnForCustomAction:
                             return default;
+                        case FilterMenuAction.SelectByIndex:
+                            return filteredItems.ElementAt(int.Parse(GetKeyString(keys)) - 1);
                     }
-                }
-                if (char.IsLetterOrDigit(keyInfo.KeyChar) || char.IsPunctuation(keyInfo.KeyChar))
-                {
-                    keys.Add(keyInfo);
                 }
             }
             return filteredItems.First();
         }
+
+        private static string GetKeyString(List<ConsoleKeyInfo> keys)
+        {
+            return string.Join("", keys.Select(ki => ki.KeyChar));
+        }
+
+        private static void SetupIndexSelection<T>(KeyFunctionMap keyFuncMap, List<T> filteredItems)
+        {
+            for(var ck = ConsoleKey.D0; ck <= ConsoleKey.D9; ck++)
+            {
+                keyFuncMap.Remove(ck);
+            }
+
+            for(var ck = ConsoleKey.D0; ck <= ConsoleKey.D9; ck++)
+            {
+                    keyFuncMap.Add(ck, (keyString) => GetFilterMenuAction(keyString, filteredItems));
+            }
+        }
+        private static FilterMenuAction GetFilterMenuAction<T>(string keyString, List<T> filteredItems)
+        {
+            var menuIndex = 0;
+
+            return int.TryParse(keyString, out menuIndex)
+                    ? (menuIndex <= filteredItems.Count)
+                        ? (menuIndex * 10) > filteredItems.Count
+                            ? FilterMenuAction.SelectByIndex
+                            : FilterMenuAction.ReadNextKey
+                        : FilterMenuAction.RemoveLastKey
+                    : FilterMenuAction.ReadNextKey;
+        }
+
+
         private static void formatList<T>(List<T> filteredItems, string prompt)
         {
             Console.Clear();
             Console.WriteLine(prompt);
-            Console.WriteLine(string.Join("\n", filteredItems));
+            Console.WriteLine(string.Join("\n", filteredItems.Select(item => $"[{filteredItems.IndexOf(item) + 1:D2}] - {item}")));
+
             Console.WindowTop = 0;
             Console.WindowLeft = 0;
             Console.CursorTop = 0;

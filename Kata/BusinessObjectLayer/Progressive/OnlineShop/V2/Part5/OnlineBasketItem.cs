@@ -3,7 +3,7 @@
     public class OnlineBasketItem
     {
         public Product Product { get; }
-        public int Quantity { get; }
+        public int Quantity { get; internal set; }
         public OnlineBasketItem(Product product, int quantity)
         {
             Product = product;

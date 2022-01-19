@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Helpers.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -71,7 +72,15 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
                 return QuitWithoutSaving();
             }
 
-            basket.Add(new OnlineBasketItem(product, (int)key - 48));
+            var existingItem = basket.SingleOrDefault(item => item.Product.Name == product.Name);
+            if (existingItem == null)
+            {
+                basket.Add(new OnlineBasketItem(product, (int)key - 48));
+            }
+            else
+            {
+                existingItem.Quantity += (int)key - 48;
+            }
             return CustomerDecision.AddToBasket;
         }
 
@@ -110,7 +119,7 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
             }
 
 
-            interactor.Message($"{results.Count} product{(results.Count == 1 ? "" : "s")} found\n\n");
+            interactor.Message($"{"product".Pluralise(results.Count)} found\n\n");
             // display results
             interactor.Message($"Products found: \n{string.Join("\n", results.Select(p => $"{p.Name}: {p.Price:C}"))}");
 

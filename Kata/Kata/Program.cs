@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Reflection;
+using BusinessObjectLayer.Progressive.OnlineShop.V2.Part5;
 using Helpers;
 using PresentationLayer;
 
@@ -9,37 +12,30 @@ namespace Kata
 
         static void Main(string[] args)
         {
-            runMenu(typeof(IDemo));
+            var idemoImplementers = typeof(IDemo).Assembly.GetTypes()
+                .Where(t => typeof(IDemo).IsAssignableFrom(t) && !t.IsAbstract && t.GetConstructors().Any(ci => ci.GetParameters().Length == 0))
+                .Select(t => t)
+                .OrderBy(t => t.Name)
+                .ToDictionary(t => t.FullName);
+
+            var keyFuncMap = MenuHelper.DefaultKeyFunctionMap;
+
+            var typeName = string.Empty;
+            while (true)
+            {
+                typeName = MenuHelper.FilterMenu(idemoImplementers.Keys.ToList(), null, keyFuncMap, "Select by index or start typing to filter: ");
+                if (string.IsNullOrEmpty(typeName)) break;
+                Run(idemoImplementers[typeName]);
+                Console.Write("---- Any key to return to menu ----");
+                Console.ReadKey();
+            }
         }
-        static void runMenu(Type sourceType)
+        static void Run(Type t)
         {
-            var thisMenu = new MenuHelper();
-            if (sourceType.IsInterface)
-                thisMenu.Build(() => MenuHelper.GetTypedMenuItems(TypeHelper.ImplementersOf(sourceType)), t => runMenu(t));
-            else if (sourceType.IsAbstract)
-                thisMenu.Build(() => MenuHelper.GetTypedMenuItems(TypeHelper.ChildrenOf(sourceType)), t => runMenu(t));
-            else
-            {
-                var inst = sourceType.Assembly.CreateInstance(sourceType.FullName);
-                sourceType.GetMethod("Run").Invoke(inst, null);
-                return;
-            }
-
-            var keystroke = default(ConsoleKey);
-            do
-            {
-                var selection = thisMenu.SelectFromMenu();
-                if (selection == thisMenu.Settings.ExitOption)
-                    break;
-                Console.WriteLine($"--- Finished {thisMenu[selection].Text} - [Enter] ==> previous menu ---");
-                keystroke = Console.ReadKey().Key;
-            }
-            while (keystroke != ConsoleKey.Escape);
+            var ass = Assembly.GetAssembly(t);
+            var inst = ass.CreateInstance(t.FullName);
+            t.GetMethod("Run").Invoke(inst, null);
+            return;
         }
-
-        static void classMenu()
-        { }
-        static void ifaceMenu()
-        { }
     }
 }

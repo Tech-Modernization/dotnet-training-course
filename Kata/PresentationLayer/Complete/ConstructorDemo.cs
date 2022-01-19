@@ -31,7 +31,7 @@ namespace PresentationLayer
 
     public abstract class Animal
     {
-        protected virtual string Name { get; set; }
+        public virtual string Name { get; set; }
         protected Animal(string name)
         {
             Name = name;

@@ -35,9 +35,9 @@ namespace Helpers
 
             var keyFuncMap = MenuHelper.DefaultKeyFunctionMap;
             var customKeyPressed = ConsoleKey.Escape;
-            keyFuncMap[ConsoleKey.PageUp] = cki =>
+            keyFuncMap[ConsoleKey.PageUp] = keyString =>
             {
-                customKeyPressed = cki.Key;
+                customKeyPressed = (ConsoleKey) keyString.Last();
                 Environment.CurrentDirectory = "..";
                 return MenuHelper.FilterMenuAction.ReturnForCustomAction;
             };
