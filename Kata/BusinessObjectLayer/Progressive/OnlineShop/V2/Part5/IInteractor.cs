@@ -9,5 +9,6 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
     {
         string GetString(string prompt);
         ConsoleKey GetKey(string prompt, params ConsoleKey[] keyAllowed);
+        void Message(string msg);
     }
 }

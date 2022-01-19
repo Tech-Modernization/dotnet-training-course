@@ -1,5 +1,257 @@
 [
   {
+    "Name": "white t-shirt",
+    "Price": 10.50
+  },
+  {
+    "Name": "white jeans",
+    "Price": 30.99
+  },
+  {
+    "Name": "white beanie",
+    "Price": 14.0
+  },
+  {
+    "Name": "white belt",
+    "Price": 5.79
+  },
+  {
+    "Name": "white cardigan",
+    "Price": 34.0
+  },
+  {
+    "Name": "white socks",
+    "Price": 8.0
+  },
+  {
+    "Name": "white boxers",
+    "Price": 4.49
+  },
+  {
+    "Name": "white leather jacket",
+    "Price": 129.99
+  },
+  {
+    "Name": "white weatherproof jacket",
+    "Price": 87.50
+  },
+  {
+    "Name": "brownt-shirt",
+    "Price": 10.50
+  },
+  {
+    "Name": "brownjeans",
+    "Price": 30.99
+  },
+  {
+    "Name": "brownbeanie",
+    "Price": 14.0
+  },
+  {
+    "Name": "brownbelt",
+    "Price": 5.79
+  },
+  {
+    "Name": "browncardigan",
+    "Price": 34.0
+  },
+  {
+    "Name": "brownsocks",
+    "Price": 8.0
+  },
+  {
+    "Name": "brownboxers",
+    "Price": 4.49
+  },
+  {
+    "Name": "brownleather jacket",
+    "Price": 129.99
+  },
+  {
+    "Name": "brownweatherproof jacket",
+    "Price": 87.50
+  },
+  {
+    "Name": "black t-shirt",
+    "Price": 10.50
+  },
+  {
+    "Name": "black jeans",
+    "Price": 30.99
+  },
+  {
+    "Name": "black beanie",
+    "Price": 14.0
+  },
+  {
+    "Name": "black belt",
+    "Price": 5.79
+  },
+  {
+    "Name": "black cardigan",
+    "Price": 34.0
+  },
+  {
+    "Name": "black socks",
+    "Price": 8.0
+  },
+  {
+    "Name": "black boxers",
+    "Price": 4.49
+  },
+  {
+    "Name": "black leather jacket",
+    "Price": 129.99
+  },
+  {
+    "Name": "black weatherproof jacket",
+    "Price": 87.50
+  },
+  {
+    "Name": "black t-shirt",
+    "Price": 10.50
+  },
+  {
+    "Name": "black jeans",
+    "Price": 30.99
+  },
+  {
+    "Name": "black beanie",
+    "Price": 14.0
+  },
+  {
+    "Name": "black belt",
+    "Price": 5.79
+  },
+  {
+    "Name": "black cardigan",
+    "Price": 34.0
+  },
+  {
+    "Name": "black socks",
+    "Price": 8.0
+  },
+  {
+    "Name": "black boxers",
+    "Price": 4.49
+  },
+  {
+    "Name": "black leather jacket",
+    "Price": 129.99
+  },
+  {
+    "Name": "black weatherproof jacket",
+    "Price": 87.50
+  },
+  {
+    "Name": "purple t-shirt",
+    "Price": 10.50
+  },
+  {
+    "Name": "purple jeans",
+    "Price": 30.99
+  },
+  {
+    "Name": "purple beanie",
+    "Price": 14.0
+  },
+  {
+    "Name": "purple belt",
+    "Price": 5.79
+  },
+  {
+    "Name": "purple cardigan",
+    "Price": 34.0
+  },
+  {
+    "Name": "purple socks",
+    "Price": 8.0
+  },
+  {
+    "Name": "purple boxers",
+    "Price": 4.49
+  },
+  {
+    "Name": "purple leather jacket",
+    "Price": 129.99
+  },
+  {
+    "Name": "purple weatherproof jacket",
+    "Price": 87.50
+  },
+  {
+    "Name": "red t-shirt",
+    "Price": 10.50
+  },
+  {
+    "Name": "red jeans",
+    "Price": 30.99
+  },
+  {
+    "Name": "red beanie",
+    "Price": 14.0
+  },
+  {
+    "Name": "red belt",
+    "Price": 5.79
+  },
+  {
+    "Name": "red cardigan",
+    "Price": 34.0
+  },
+  {
+    "Name": "red socks",
+    "Price": 8.0
+  },
+  {
+    "Name": "red boxers",
+    "Price": 4.49
+  },
+  {
+    "Name": "red leather jacket",
+    "Price": 129.99
+  },
+  {
+    "Name": "red weatherproof jacket",
+    "Price": 87.50
+  },
+  {
+    "Name": "armani t-shirt",
+    "Price": 10.50
+  },
+  {
+    "Name": "armani jeans",
+    "Price": 30.99
+  },
+  {
+    "Name": "armani beanie",
+    "Price": 14.0
+  },
+  {
+    "Name": "armani belt",
+    "Price": 5.79
+  },
+  {
+    "Name": "armani cardigan",
+    "Price": 34.0
+  },
+  {
+    "Name": "armani socks",
+    "Price": 8.0
+  },
+  {
+    "Name": "armani boxers",
+    "Price": 4.49
+  },
+  {
+    "Name": "armani leather jacket",
+    "Price": 129.99
+  },
+  {
+    "Name": "armani weatherproof jacket",
+    "Price": 87.50
+  },
+  {
     "Name": "t-shirt",
     "Price": 10.50
   },

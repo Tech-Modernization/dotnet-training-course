@@ -9,7 +9,18 @@ namespace Helpers
     public class FileHelper
     {
         private static string DefaultCurrentDirectory = Path.GetFullPath(".");
-        public static T ImportJson<T>(string path) => JsonConvert.DeserializeObject<T>(path);
+        public static T ImportJson<T>(string path)
+        {
+            try
+            {
+                var jsonText = File.ReadAllText(path);
+                return JsonConvert.DeserializeObject<T>(jsonText);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"FileHelper.ImportJson failed with: ", ex);
+            }
+        }
         public static string GetJsonPath(string dbDir)
         {
             var m = new MenuHelper();

@@ -15,5 +15,10 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
         {
             return ConsoleHelper.GetKey(prompt, keysAllowed);
         }
+
+        public void Message(string msg)
+        {
+            Console.WriteLine(msg);
+        }
     }
 }
