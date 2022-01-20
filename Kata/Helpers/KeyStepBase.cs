@@ -9,8 +9,8 @@ namespace Helpers
     {
         protected int Index { get; }
 
-        private string promptFormat;
-        public string Prompt => promptFormat;
+        protected string PromptFormat;
+        public string Prompt => FormatPrompt();
 
         protected IMenu Menu { get; }
 
@@ -21,22 +21,25 @@ namespace Helpers
         protected KeyStepBase(int index, string promptFormat, IMenu menu, Action<ConsoleKey, int> convertKeyToData)
         {
             Index = index;
-            this.promptFormat = promptFormat;
+            PromptFormat = promptFormat;
             Menu = menu;
             ConvertKeyToData = convertKeyToData;
         }
 
-        public ConsoleKey Ask()
-        {
-            var keysAllowed = new List<ConsoleKey>() { ConsoleKey.B, ConsoleKey.W, ConsoleKey.S };
-            Key = ConsoleHelper.GetKey(Prompt, keysAllowed.ToArray());
-            return Key;
-        }
+        public abstract ConsoleKey Ask();
 
         public void ConvertKeyToSelectionData()
         {
-            // ConvertKeyToData(Key, Index);
-            Console.WriteLine($"Converting {Key} to data...");
+            ConvertKeyToData(Key, Index);
         }
+
+        protected string FormatListExceptLast(List<string> list)
+        {
+            var copy = list.ToList();
+            copy.Remove(copy.Last());
+            return string.Join(", ", copy);
+        }
+
+        public abstract string FormatPrompt();
     }
 }

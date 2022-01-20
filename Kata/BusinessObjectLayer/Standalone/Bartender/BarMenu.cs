@@ -38,9 +38,9 @@ namespace BusinessObjectLayer.Bartender
 
         private void LoadSteps()
         {
-            Steps.Add(new BarKeyStep(1, "What can I get you? {0} or {1}: ", this, null));
-            Steps.Add(new BarKeyStep(2, "{0} it is!  Do you want {0} or {1}: ", this, null));
-            Steps.Add(new BarKeyStep(3, "How many {1} of {0} would you like? Enter 1 - 9: ", this, null));
+            Steps.Add(new BarKeyStep(1, "What can I get you? {0} or {1}: ", this, MapKeyToDrink));
+            Steps.Add(new BarKeyStep(2, "{0} it is!  Do you want {1} or {2}: ", this, MapKeyToMeasure));
+            Steps.Add(new BarKeyStep(3, "How many {0} of {1} would you like? Enter 1 - 9: ", this, MapKeyToQuantity));
         }
 
 
@@ -70,11 +70,37 @@ namespace BusinessObjectLayer.Bartender
             }
         }
 
-        public MenuSelectionItemBase SelectionItem => new BarSelectionItem();
+        private BarSelectionItem selItem = new BarSelectionItem();
+        public MenuSelectionItemBase SelectionItem => selItem;
 
         public IEnumerator GetEnumerator()
         {
             return Steps.GetEnumerator();
         }
+
+        private void MapKeyToDrink(ConsoleKey key, int index)
+        {
+            var drink = Stock.SingleOrDefault(item => item.Name[0] == (char)key);
+            if (drink != null)
+            {
+                selItem.Stock = drink;
+            }
+        }
+
+        private void MapKeyToMeasure(ConsoleKey key, int index)
+        {
+            var measure = selItem.Stock.Measures.SingleOrDefault(m => m.ToString()[0] == (char)key);
+            if (measure != DrinkMeasure.None)
+            {
+                selItem.Measure = measure;
+            }
+        }
+
+        private void MapKeyToQuantity(ConsoleKey key, int index)
+        {
+            selItem.Quantity = (int)key - 48;
+        }
+
+        public List<string> ItemNames => Stock.Select(item => item.Name).ToList();
     }
 }
