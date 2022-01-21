@@ -1,6 +1,6 @@
 ﻿namespace Helpers
 {
-    public class RangeValidator : NumberValidator
+    public class RangeValidator : IValidator<int>
     {
         private int Min;
         private int Max;
@@ -11,7 +11,7 @@
             Max = max;
         }
 
-        public override bool IsValid(int num)
+        public bool IsValid(int num)
         {
             return num >= Min && num <= Max;
         }

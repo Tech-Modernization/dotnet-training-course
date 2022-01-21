@@ -21,6 +21,10 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
         {
             OnlineBasket basket = default;
             var browseDecision = shopAssistant.Browse(out basket);
+            foreach(var item in basket)
+            {
+                Console.WriteLine($"{item.Quantity} x {item.Product.Name} @{item.Product.Price:C} = {item.Quantity * item.Product.Price:C}");
+            }
             // TODO: prompt for login etc depending on browse status
            // Checkout(basket);
         }

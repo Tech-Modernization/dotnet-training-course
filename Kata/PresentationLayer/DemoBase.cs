@@ -11,6 +11,7 @@ namespace PresentationLayer
         protected Dictionary<string, Action> Parts = new Dictionary<string, Action>();
         public virtual void Run()
         {
+            Console.Clear();
             var p = 1;
             foreach (var kvp in Parts)
             {

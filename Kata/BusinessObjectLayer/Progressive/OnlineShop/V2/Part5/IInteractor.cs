@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Helpers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,7 +9,12 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
     public interface IInteractor
     {
         string GetString(string prompt);
-        ConsoleKey GetKey(string prompt, params ConsoleKey[] keyAllowed);
+        ConsoleKey GetKey(string prompt, bool addQuit, bool noNewLine, params ConsoleKey[] keysAllowed);
+        ConsoleKey GetKey(string prompt, bool addQuit, params ConsoleKey[] keysAllowed);
+        ConsoleKey GetKey(string prompt, params ConsoleKey[] keysAllowed);
         void Message(string msg);
+
+        int GetInteger(string prompt, Func<ConsoleKey> preEntryStep,
+            out ConsoleKey terminator, params IValidator<int>[] validators);
     }
 }

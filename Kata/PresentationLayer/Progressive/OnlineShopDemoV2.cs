@@ -13,6 +13,7 @@ namespace PresentationLayer.Progressive
     {
         public override void Run()
         {
+            Console.Clear();
             //AddPart(Part3, "Establish main components of the shop (Parts 1-3 in OnlineShop.docx)");
             // AddPart(Part4, "Get an end-to-end high level process to run");
             AddPart(Part5, "Implement the IShopAssistnt.Browse method (i)");

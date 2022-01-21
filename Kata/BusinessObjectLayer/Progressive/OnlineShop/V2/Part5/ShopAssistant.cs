@@ -62,11 +62,15 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
 
         private CustomerDecision AddToBasket(Product product, OnlineBasket basket) 
         {
-            var keys = new List<ConsoleKey>();
-            for (var i = 1; i < 10; i++)
-                keys.Add((ConsoleKey)i + 48);
+            var prompt = $"How many {product.Name}s would you like?\nEnter the number or [Q]uit: ";
+            var keysAllowed = new List<ConsoleKey>();
+            for (var k = ConsoleKey.D0; k <= ConsoleKey.D9; k++)
+                keysAllowed.Add(k);
+            var key = default(ConsoleKey);
+            var quantity = interactor.GetInteger("",
+                () => interactor.GetKey(prompt, true, true, keysAllowed.ToArray())
+                , out key, new QuantityValidator());
 
-            var key = interactor.GetKey($"How many {product.Name}s would you like? Enter 1-9: ", keys.ToArray());
             if (key == ConsoleKey.Q)
             {
                 return QuitWithoutSaving();
@@ -75,11 +79,11 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
             var existingItem = basket.SingleOrDefault(item => item.Product.Name == product.Name);
             if (existingItem == null)
             {
-                basket.Add(new OnlineBasketItem(product, (int)key - 48));
+                basket.Add(new OnlineBasketItem(product, quantity));
             }
             else
             {
-                existingItem.Quantity += (int)key - 48;
+                existingItem.Quantity += quantity;
             }
             return CustomerDecision.AddToBasket;
         }

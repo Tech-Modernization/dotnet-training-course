@@ -17,6 +17,8 @@ namespace BusinessObjectLayer.Bartender
         protected List<Drink> Stock { get; }
         protected List<BarKeyStep> Steps { get; }
         public List<TariffItem> Tariff { get; }
+        public List<string> ItemNames => Stock.Select(item => item.Name).ToList();
+
         public BarMenu()
         {
             Stock = new List<Drink>()
@@ -35,14 +37,12 @@ namespace BusinessObjectLayer.Bartender
             LoadSteps();
         }
 
-
         private void LoadSteps()
         {
             Steps.Add(new BarKeyStep(1, "What can I get you? {0} or {1}: ", this, MapKeyToDrink));
             Steps.Add(new BarKeyStep(2, "{0} it is!  Do you want {1} or {2}: ", this, MapKeyToMeasure));
             Steps.Add(new BarKeyStep(3, "How many {0} of {1} would you like? Enter 1 - 9: ", this, MapKeyToQuantity));
         }
-
 
         private void LoadMenu()
         {
@@ -100,7 +100,5 @@ namespace BusinessObjectLayer.Bartender
         {
             selItem.Quantity = (int)key - 48;
         }
-
-        public List<string> ItemNames => Stock.Select(item => item.Name).ToList();
     }
 }

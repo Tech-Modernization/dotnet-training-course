@@ -10,37 +10,24 @@ namespace Helpers
 
         public static bool GetInteger(string prompt, out int validatedInput, params IValidator<int>[] validators)
         {
-            ConsoleKey k = default;
+            return GetInteger(prompt, null, out validatedInput, validators);
+        }
+        public static bool GetInteger(string prompt, string initialValue, out int validatedInput, params IValidator<int>[] validators)
+        {
             string input = default;
             validatedInput = default;
 
             Console.Write(prompt);
-            var getWithReadKey = validators.Any(v => v is KeyRangeValidator);
-            if (getWithReadKey)
-                k = Console.ReadKey().Key;
-            else
-            {
-                input = Console.ReadLine();
-                var isValidInt = int.TryParse(input, out validatedInput);
-                if (!isValidInt) return false;
-            }
+            input = string.IsNullOrEmpty(initialValue) ? Console.ReadLine() : $"{initialValue}{Console.ReadLine()}";
+            var isValidInt = int.TryParse(input, out validatedInput);
+            if (!isValidInt) return false;
 
             foreach (var v in validators)
             {
-                if (v is KeyRangeValidator)
-                {
-                    if (((KeyRangeValidator) v).IsValid(k))
-                    {
-                        validatedInput = (int)k - 48;
-                        continue;
-                    }
-                    return false;
-                }
-
                 if (!v.IsValid(validatedInput))
                     return false;
             }
-            
+
             return true;
         }
 
@@ -68,6 +55,10 @@ namespace Helpers
 
         public static ConsoleKey GetKey(string prompt, bool addQuit, params ConsoleKey[] keysAllowed)
         {
+            return GetKey(prompt, addQuit, false, keysAllowed);
+        }
+        public static ConsoleKey GetKey(string prompt, bool addQuit, bool noNewLine, params ConsoleKey[] keysAllowed)
+        {
             var keyList = keysAllowed.ToList();
             if (!keyList.Contains(ConsoleKey.Q) && addQuit)
             {
@@ -84,7 +75,7 @@ namespace Helpers
 
                 Console.Write(prompt);
                 key = Console.ReadKey().Key;
-                Console.WriteLine();
+                if (!noNewLine) Console.WriteLine();
             }
             while (!keyList.Contains(key));
 
