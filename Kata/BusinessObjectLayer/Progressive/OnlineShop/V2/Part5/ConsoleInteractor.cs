@@ -6,6 +6,10 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
     // resp: interacting thru the console
     public class ConsoleInteractor : IInteractor
     {
+        public bool GetString(string prompt, out string validatedString, params IValidator<string>[] validators)
+        {
+            return ConsoleHelper.GetString(prompt, out validatedString, validators);
+        }
         public string GetString(string prompt)
         {
             return ConsoleHelper.GetString(prompt);

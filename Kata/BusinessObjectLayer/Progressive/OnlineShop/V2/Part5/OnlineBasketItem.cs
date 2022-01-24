@@ -1,5 +1,6 @@
 ﻿namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
 {
+    // Resp: encapsulate and products and quantities given by the customer.
     public class OnlineBasketItem
     {
         public Product Product { get; }

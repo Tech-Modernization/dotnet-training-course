@@ -18,7 +18,7 @@ namespace Helpers
             }
             catch (Exception ex)
             {
-                throw new Exception($"FileHelper.ImportJson failed with: ", ex);
+                throw new FileHelperException(ex);
             }
         }
         public static string GetJsonPath(string dbDir)

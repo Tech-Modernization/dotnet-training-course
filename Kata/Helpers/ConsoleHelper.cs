@@ -7,7 +7,6 @@ namespace Helpers
 {
     public static class ConsoleHelper
     {
-
         public static bool GetInteger(string prompt, out int validatedInput, params IValidator<int>[] validators)
         {
             return GetInteger(prompt, null, out validatedInput, validators);
@@ -18,7 +17,10 @@ namespace Helpers
             validatedInput = default;
 
             Console.Write(prompt);
-            input = string.IsNullOrEmpty(initialValue) ? Console.ReadLine() : $"{initialValue}{Console.ReadLine()}";
+            input = string.IsNullOrEmpty(initialValue)
+                ? Console.ReadLine()
+                : $"{initialValue}{Console.ReadLine()}";
+
             var isValidInt = int.TryParse(input, out validatedInput);
             if (!isValidInt) return false;
 

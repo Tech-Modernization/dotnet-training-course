@@ -47,13 +47,20 @@ namespace PresentationLayer.Progressive
                 var ass = new Part5.ShopAssistant(inv, con, aud);
                 var ord = new Part5.LocalOrderManager();
                 var pay = new Part5.LocalPaymentManager();
-                var sec = new Part5.LocalSecurityManager();
-                var shop = new Part5.OnlineShop(ass, ord, pay, sec);
+                var cus = new Part5.CustomerService(json, con);
+                var shop = new Part5.OnlineShop(ass, ord, pay, con, cus);
                 shop.ServeCustomer();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Unable to open the shop due to: \n {ex.Message}");
+                Console.WriteLine($"Unable to open the shop due to: \n");
+                var indent = "   ";
+                while(ex != null)
+                {
+                    Console.WriteLine($"{indent}{ex.Message}");
+                    indent = $"   {indent}";
+                    ex = ex.InnerException;
+                }
             }
         }
     }

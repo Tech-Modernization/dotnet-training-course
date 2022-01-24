@@ -102,8 +102,8 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
             if (results.Count == 0)
             {
                 key = basket.Count == 0
-                    ? interactor.GetKey("No matching products.  Do you want to [S]earch again or [Q]uit?")
-                    : interactor.GetKey("No matching products.  Do you want to [C]heckout, [S]earch again or [Q]uit?");
+                    ? interactor.GetKey("No matching products.  Do you want to [S]earch again or [Q]uit?", true, ConsoleKey.S)
+                    : interactor.GetKey("No matching products.  Do you want to [C]heckout, [S]earch again or [Q]uit?", false, keyDecisionMap.Keys.ToArray());
 
                 switch (key)
                 {
@@ -115,13 +115,6 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
                         return CustomerDecision.Search;
                 }
             }
-
-            if (results.Count > 9)
-            {
-                interactor.Message($"Too many results.  Please refine your search.");
-                return CustomerDecision.Search;
-            }
-
 
             interactor.Message($"{"product".Pluralise(results.Count)} found\n\n");
             // display results
@@ -142,6 +135,11 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
                 keysAllowed.Add(ConsoleKey.C);
 
                 key = interactor.GetKey(promptString, keysAllowed.ToArray());
+                if (key == ConsoleKey.Q)
+                {
+                    return QuitWithoutSaving();
+                }
+
                 if (char.IsLetter((char)key))
                 {
                     return keyDecisionMap[key];
