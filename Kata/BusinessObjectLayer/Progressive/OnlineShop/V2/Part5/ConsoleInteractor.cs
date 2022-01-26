@@ -47,5 +47,10 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
         {
             return ConsoleHelper.GetKey(prompt, addQuit, false, keysAllowed);
         }
+
+        public ConsoleKey GetKey(string prompt, GetKeyFlags flags = GetKeyFlags.AddQuit | GetKeyFlags.NoNewLine, params ConsoleKey[] keysAllowed)
+        {
+            return ConsoleHelper.GetKey(prompt, flags, keysAllowed);
+        }
     }
 }

@@ -10,7 +10,8 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
         private IInteractor interactor;
         private ICustomerService custService;
 
-        public OnlineShop(IShopAssistant shopAssistant, IOrderManager orderManager, IPaymentManager payManager, IInteractor interactor, ICustomerService custService)
+        public OnlineShop(IShopAssistant shopAssistant, IOrderManager orderManager, IPaymentManager payManager, 
+            IInteractor interactor, ICustomerService custService)
         {
             this.shopAssistant = shopAssistant;
             this.orderManager = orderManager;
@@ -36,7 +37,10 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
                 case CustomerDecision.Checkout:
                     var customer = custService.EstablishCustomerContext(browseDecision);
                     interactor.Message($"Ready to checkout {customer.Email}");
-                    
+
+                    var order = orderManager.Create(basket);
+                    var payResult = payManager.Pay(order);
+
                     break;
 
                 default:

@@ -55,6 +55,19 @@ namespace Helpers
             return true;
         }
 
+        public static ConsoleKey GetKey(string prompt, GetKeyFlags flags = GetKeyFlags.AddQuit | GetKeyFlags.NoNewLine, params ConsoleKey[] keysAllowed )
+        {
+            var addQuit = flags.HasFlag(GetKeyFlags.AddQuit);
+            var noNewLine = flags.HasFlag(GetKeyFlags.NoNewLine);
+            
+            if (flags.HasFlag(GetKeyFlags.YesNo))
+            {
+                keysAllowed = new ConsoleKey[] { ConsoleKey.Y, ConsoleKey.N };
+            }
+
+            return GetKey(prompt, addQuit, noNewLine, keysAllowed);
+        }
+
         public static ConsoleKey GetKey(string prompt, bool addQuit, params ConsoleKey[] keysAllowed)
         {
             return GetKey(prompt, addQuit, false, keysAllowed);

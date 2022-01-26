@@ -10,6 +10,7 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
     {
         string GetString(string prompt);
         bool GetString(string prompt, out string validatedString, params IValidator<string>[] validators);
+        ConsoleKey GetKey(string prompt, GetKeyFlags flags = GetKeyFlags.AddQuit | GetKeyFlags.NoNewLine, params ConsoleKey[] keysAllowed);
         ConsoleKey GetKey(string prompt, bool addQuit, bool noNewLine, params ConsoleKey[] keysAllowed);
         ConsoleKey GetKey(string prompt, bool addQuit, params ConsoleKey[] keysAllowed);
         ConsoleKey GetKey(string prompt, params ConsoleKey[] keysAllowed);

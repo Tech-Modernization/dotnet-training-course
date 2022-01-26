@@ -198,7 +198,7 @@ namespace Helpers
                         case FilterMenuAction.ReadNextKey:
                             continue;
                         case FilterMenuAction.RemoveLastKey:
-                            keys.Remove(keys.Last());
+                            if (keys.Count > 0) keys.Remove(keys.Last());
                             break;
                         case FilterMenuAction.RemoveAllKeys:
                             keys.Clear();

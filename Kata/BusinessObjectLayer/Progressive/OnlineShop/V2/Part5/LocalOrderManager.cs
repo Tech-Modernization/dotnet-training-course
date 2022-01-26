@@ -9,7 +9,7 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part5
     {
         public OnlineOrder Create(OnlineBasket basket)
         {
-            throw new NotImplementedException();
+            return new OnlineOrder(basket);
         }
     }
 }
