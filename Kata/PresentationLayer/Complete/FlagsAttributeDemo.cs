@@ -564,7 +564,7 @@ namespace PresentationLayer.Complete
             Console.WriteLine($"---- Just {blueOrangeMask} ----");
             Console.WriteLine(string.Join("", lightScenes.Where(scene => scene.Value == blueOrangeMask).Select(scene => $"\n    {scene.Key}: {scene.Value}")));
 
-            // so then the production designer says, "well not on they're own obviously but I bet there's load with blue and orange and lot a lot else!".
+            // so then the production designer says, "well not on their own obviously but I bet there's load with blue and orange and lot a lot else!".
             // okay, so you go figure that out tooo....
             Console.WriteLine($"---- At least {blueOrangeMask} ----");
             Console.WriteLine(string.Join("", lightScenes.Where(scene => scene.Value.HasFlag(blueOrangeMask)).Select(scene => $"\n    {scene.Key}: {scene.Value}")));

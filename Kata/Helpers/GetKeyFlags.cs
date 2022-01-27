@@ -7,6 +7,7 @@ namespace Helpers
     {
         AddQuit = 1,
         NoNewLine = 1 << 1,
-        YesNo = 1 << 2
+        YesNo = 1 << 2,
+        AutoGenerate = 1 << 3
     }
 }

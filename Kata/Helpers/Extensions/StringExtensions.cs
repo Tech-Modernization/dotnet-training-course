@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-namespace Helpers.Extensions
+namespace Helpers
 {
     public static class StringExtensions
     {
@@ -15,6 +16,11 @@ namespace Helpers.Extensions
         {
             var asInt = 0;
             return int.TryParse(source, out asInt) ? asInt : defaultValue;
+        }
+
+        public static string Collapse(this string source)
+        {
+            return source.Where(c => char.IsLetterOrDigit(c)).ToString().ToLower();
         }
     }
 }

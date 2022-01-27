@@ -8,42 +8,7 @@ using Part3 = BusinessObjectLayer.Progressive.OnlineShop.V2.Part3;
 using Part4 = BusinessObjectLayer.Progressive.OnlineShop.V2.Part4;
 using Part5 = BusinessObjectLayer.Progressive.OnlineShop.V2.Part5;
 using Part6 = BusinessObjectLayer.Progressive.OnlineShop.V2.Part6;
-
-/*                              
- *       --------------------------                   
- *       0000 0000 0000 0000 
- *       0001 0000 0000 0100
- *       0000 0000 0000 0001
- *                         |
- *                         ^ bit 1 reps having a cup of tea 
- *          |            |
- *          |            ^ bit 3 reps adding a new line 
- *          ^ bit 13 represent add quit option 
- *                       
- *       NoNewLine = 4
- *       AddQuit = 4096
- *       
- *       mask = 4100
- *       
- *       mask of all 3 = 4101
- *       
- *       0000 0000 0000 0001  HaveTea
- *       0001 0000 0000 0000  AddQuit
- *       0000 0000 0000 0100  NoNewLine
- *       
- *       0001 0000 0000 0101  allFlags
- *       
- *       AddQuit & NoNewLine  = 0
- *       
- *       0001 0000 0000 0100  AddQuit | NoNewLine ("twoFlags")
- *       
- *       allFlags = HaveTea|AddQuit|NoNewLine; (4101)
- *       
- *       if (allFlags & (AddQuit|NoNewLine) == AddQuit|NoNewLine)
- *       
- *       bool HasAddQuit = allFlags & AddQuit == AddQuit
- *       
- */
+using Part7 = BusinessObjectLayer.Progressive.OnlineShop.V2.Part7;
 
 namespace PresentationLayer.Progressive
 {
@@ -55,7 +20,8 @@ namespace PresentationLayer.Progressive
 
             //AddPart(Part3, "Establish main components of the shop (Parts 1-3 in OnlineShop.docx)");
             // AddPart(Part4, "Get an end-to-end high level process to run");
-            AddPart(Part5, "Implement the IShopAssistnt.Browse method (i)");
+            //AddPart(Part5, "Implement the IShopAssistnt.Browse method (i)");
+            AddPart(Part7, "Fix Lyskov violation");
             base.Run();
         }
 
@@ -137,7 +103,37 @@ namespace PresentationLayer.Progressive
 
         public void Part7()
         {
-
+            try
+            {
+                var json = new Part7.LocalJsonDataService();
+                var inv = new Part7.JsonInventoryManager(json);
+                var con = new Part7.ConsoleInteractor();
+                var aud = new Part7.Auditor();
+                var ass = new Part7.ShopAssistant(inv, con, aud);
+                var ord = new Part7.LocalOrderManager();
+                var visa = new Part7.VisaPaymentMethod("Visa");
+                var mst = new Part7.MastercardPaymentMethod("Mastercard");
+                var appl = new Part7.ApplePaymentMethod("Apply Pay");
+                var amzn = new Part7.AmazonPaymentMethod("Amazon Pay");
+                var gpay = new Part7.GooglePaymentMethod("Google Pay");
+                var nect = new Part7.NectarPaymentMethod("Nectar Card");
+                var methods = new List<Part7.IPaymentMethod>() { amzn, appl, mst, gpay, visa, nect };
+                var pay = new Part7.PaymentManager(con, methods);
+                var cus = new Part7.CustomerService(json, con);
+                var shop = new Part7.OnlineShop(ass, ord, pay, con, cus);
+                shop.ServeCustomer();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unable to open the shop due to: \n");
+                var indent = "   ";
+                while (ex != null)
+                {
+                    Console.WriteLine($"{indent}{ex.Message}");
+                    indent = $"   {indent}";
+                    ex = ex.InnerException;
+                }
+            }
         }
     }
 }

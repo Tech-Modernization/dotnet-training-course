@@ -55,6 +55,20 @@ namespace Helpers
             return true;
         }
 
+        public static ConsoleKey GetKey(string prompt, List<string> options, out Dictionary<ConsoleKey, string> result)
+        {
+            var _result = new Dictionary<ConsoleKey, string>();
+            foreach(var opt in options)
+            {
+                var key = opt.FirstOrDefault(c => !_result.Keys.Any(k => k == (ConsoleKey)c));
+                var optIndex = opt.IndexOf(key);
+                opt.Remove(optIndex);
+                _result.TryAdd((ConsoleKey)key, opt.Insert(optIndex, $"[{char.ToUpper(key)}]"));
+            }
+            var _prompt = prompt.Replace("#options", string.Join(", ", _result.Values));
+            result = _result;
+            return GetKey(_prompt, _result.Keys.ToArray());
+        }
         public static ConsoleKey GetKey(string prompt, GetKeyFlags flags = GetKeyFlags.AddQuit | GetKeyFlags.NoNewLine, params ConsoleKey[] keysAllowed )
         {
             var addQuit = flags.HasFlag(GetKeyFlags.AddQuit);
@@ -63,6 +77,11 @@ namespace Helpers
             if (flags.HasFlag(GetKeyFlags.YesNo))
             {
                 keysAllowed = new ConsoleKey[] { ConsoleKey.Y, ConsoleKey.N };
+            }
+
+            if (flags.HasFlag(GetKeyFlags.AutoGenerate))
+            {
+
             }
 
             return GetKey(prompt, addQuit, noNewLine, keysAllowed);

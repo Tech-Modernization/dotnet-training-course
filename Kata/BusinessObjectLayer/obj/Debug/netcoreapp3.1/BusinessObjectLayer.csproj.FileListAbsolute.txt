@@ -1,3 +1,8 @@
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.csproj.AssemblyReference.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.AssemblyInfoInputs.cache
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.AssemblyInfo.cs
+E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\bin\Debug\netcoreapp3.1\Standalone\Soshal\soshe.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\bin\Debug\netcoreapp3.1\BusinessObjectLayer.deps.json
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\bin\Debug\netcoreapp3.1\BusinessObjectLayer.dll
@@ -8,11 +13,6 @@ E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLaye
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\bin\Debug\netcoreapp3.1\BusinessServiceLayer.pdb
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\bin\Debug\netcoreapp3.1\Helpers.pdb
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\bin\Debug\netcoreapp3.1\ImplementationLayer.pdb
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.csproj.AssemblyReference.cache
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.GeneratedMSBuildEditorConfig.editorconfig
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.AssemblyInfoInputs.cache
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.AssemblyInfo.cs
-E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.csproj.CoreCompileInputs.cache
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.csproj.CopyComplete
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.dll
 E:\000000\00-tech\00-Contino\source\repos\rlg-dotnet-fun\Kata\BusinessObjectLayer\obj\Debug\netcoreapp3.1\BusinessObjectLayer.pdb
