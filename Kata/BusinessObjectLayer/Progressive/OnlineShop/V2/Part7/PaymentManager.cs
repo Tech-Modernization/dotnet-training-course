@@ -11,8 +11,7 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
     {
         IInteractor interactor;
         List<IPaymentMethod> paymentMethods;
-        Dictionary<ConsoleKey, IPaymentMethod> keyMap;
-
+       
         public PaymentManager(IInteractor interactor, List<IPaymentMethod> paymentMethods)
         {
             this.interactor = interactor;
@@ -25,7 +24,7 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
             var payChoice = interactor.GetKey("How would you like to pay? (#options) : ", paymentMethods, p => p.Name, out keyMap);
             if (payChoice == ConsoleKey.Q) return PaymentResult.CustomerCancelled;
 
-            var method = this.keyMap[payChoice];
+            var method = keyMap[payChoice];
 
             return method.ProcessPayment(customer, order);
 

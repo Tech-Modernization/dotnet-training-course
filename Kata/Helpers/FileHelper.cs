@@ -21,6 +21,20 @@ namespace Helpers
                 throw new FileHelperException(ex);
             }
         }
+
+        public static void Save(string dbPath, object serObj)
+        {
+            try
+            {
+                var jsonText = JsonConvert.SerializeObject(serObj);
+                File.WriteAllText(dbPath, jsonText);
+            }
+            catch (Exception ex)
+            {
+                throw new FileHelperException(ex);
+            }
+        }
+
         public static string GetJsonPath(string dbDir)
         {
             var m = new MenuHelper();

@@ -4,7 +4,7 @@ using Helpers;
 
 namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
 {
-    public class LocalJsonDataService : IJsonDataService
+    public class JsonDataService : IJsonDataService
     {
         public JArray GetJsonArray(string path)
         {
@@ -14,6 +14,11 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
         public JObject GetJsonObject(string path)
         {
             return FileHelper.ImportJson<JObject>(path);
+        }
+
+        public void Save(string dbPath, object objToSerialise)
+        {
+            FileHelper.Save(dbPath, objToSerialise);
         }
     }
 }

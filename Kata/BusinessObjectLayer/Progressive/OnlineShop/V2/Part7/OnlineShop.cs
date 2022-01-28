@@ -9,15 +9,17 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
         private IPaymentManager payManager;
         private IInteractor interactor;
         private ICustomerService custService;
+        private IInventoryManager invManager;
 
-        public OnlineShop(IShopAssistant shopAssistant, IOrderManager orderManager, IPaymentManager payManager, 
-            IInteractor interactor, ICustomerService custService)
+        public OnlineShop(IShopAssistant shopAssistant, IOrderManager orderManager, IPaymentManager payManager,
+            IInteractor interactor, ICustomerService custService, IInventoryManager invManager)
         {
             this.shopAssistant = shopAssistant;
             this.orderManager = orderManager;
             this.payManager = payManager;
             this.interactor = interactor;
             this.custService = custService;
+            this.invManager = invManager;
         }
 
         public void ServeCustomer()
@@ -36,7 +38,7 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
 
                 case CustomerDecision.Checkout:
                     var customer = custService.EstablishCustomerContext(browseDecision);
-                    interactor.Message($"Ready to checkout {customer.Email}");
+                    interactor.Message($"Ready to checkout {customer.Name}");
 
                     var order = orderManager.Create(basket);
                     var payResult = payManager.ProcessPayment(customer, order);
@@ -45,6 +47,22 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
 
                 default:
                     throw new Exception($"An invalid CustomerDecision {browseDecision} was returned from { shopAssistant.GetType().FullName }.Browse()");
+            }
+        }
+
+        public void Admin()
+        {
+            var key = interactor.GetKey("Edit [C]ustomers or [P]roducts : ", ConsoleKey.C, ConsoleKey.P);
+            switch(key)
+            {
+                case ConsoleKey.C:
+                    custService.Manage();
+                    break;
+                case ConsoleKey.P:
+                    invManager.Manage();
+                    break;
+                default:
+                    break;
             }
         }
     }

@@ -76,6 +76,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "E:\\000000\\00-tech\\00-Contino\\source": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

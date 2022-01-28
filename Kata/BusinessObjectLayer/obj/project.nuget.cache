@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5yMmaxFR3YSNTLtSk2TAYz8kr3aBKqbXv2q/HXUyUJGsM8gxC69QGCivhSJTXvQ9a77+KTaJTAUwgOlIr36pxg==",
+  "dgSpecHash": "SM92jwF1+ZZcrYTjA/q7L5VYkBPvJecibLI3wRixt1Nfdfpp4Su6LcnGGIoRgxkHkn04+d2w+hBvwrzdd+rMng==",
   "success": true,
   "projectFilePath": "E:\\000000\\00-tech\\00-Contino\\source\\repos\\rlg-dotnet-fun\\Kata\\BusinessObjectLayer\\BusinessObjectLayer.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,8 @@
     "C:\\Users\\paulb\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
     "C:\\Users\\paulb\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
     "C:\\Users\\paulb\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\paulb\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\paulb\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\paulb\\.nuget\\packages\\helpers\\1.0.0\\helpers.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

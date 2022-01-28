@@ -3,12 +3,14 @@
 namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
 {
     // Resp: encapulate all customer and related data
-    public class CustomerDb
+    public class ShopDb
     {
         public List<CustomerProfile> Customers { get; }
-        public CustomerDb()
+        public List<Product> Products { get; }
+        public ShopDb(List<CustomerProfile> customers, List<Product> products)
         {
-            Customers = new List<CustomerProfile>();
+            Customers = customers;
+            Products = products;
         }
     }
 }

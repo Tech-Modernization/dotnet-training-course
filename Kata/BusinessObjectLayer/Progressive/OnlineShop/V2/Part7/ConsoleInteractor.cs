@@ -62,7 +62,11 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
             var key = ConsoleHelper.GetKey(prompt, options.Select(o => getOptionText(o)).ToList(), out dic);
 
             var _result = new Dictionary<ConsoleKey, T>();
-            dic.Select(s => _result.TryAdd(s.Key, options.SingleOrDefault(opt => getOptionText(opt).Collapse() == s.Value.Collapse())));
+            foreach (var kvp in dic)
+            {
+                _result.TryAdd(kvp.Key, options.SingleOrDefault(opt => getOptionText(opt).Collapse() == kvp.Value.Collapse()));
+            }
+
             result = _result;
             return key;
         }

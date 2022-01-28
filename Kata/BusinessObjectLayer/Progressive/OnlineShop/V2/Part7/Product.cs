@@ -9,10 +9,12 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
     {
         public string Name { get; }
         public decimal Price { get; }
+        public bool IsNew { get; internal set; }
         public Product(string name, decimal price)
         {
             Name = name;
             Price = price;
+            IsNew = true;
         }
     }
 }

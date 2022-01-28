@@ -105,9 +105,9 @@ namespace PresentationLayer.Progressive
         {
             try
             {
-                var json = new Part7.LocalJsonDataService();
-                var inv = new Part7.JsonInventoryManager(json);
+                var json = new Part7.JsonDataService();
                 var con = new Part7.ConsoleInteractor();
+                var inv = new Part7.JsonInventoryManager(json, con);
                 var aud = new Part7.Auditor();
                 var ass = new Part7.ShopAssistant(inv, con, aud);
                 var ord = new Part7.LocalOrderManager();
@@ -120,8 +120,12 @@ namespace PresentationLayer.Progressive
                 var methods = new List<Part7.IPaymentMethod>() { amzn, appl, mst, gpay, visa, nect };
                 var pay = new Part7.PaymentManager(con, methods);
                 var cus = new Part7.CustomerService(json, con);
-                var shop = new Part7.OnlineShop(ass, ord, pay, con, cus);
-                shop.ServeCustomer();
+                var shop = new Part7.OnlineShop(ass, ord, pay, con, cus, inv);
+
+                var key = con.GetKey("Admin or customer?  ", ConsoleKey.A, ConsoleKey.C);
+
+                if (key == ConsoleKey.C) shop.ServeCustomer();
+                if (key == ConsoleKey.A) shop.Admin();
             }
             catch (Exception ex)
             {

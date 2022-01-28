@@ -60,10 +60,10 @@ namespace Helpers
             var _result = new Dictionary<ConsoleKey, string>();
             foreach(var opt in options)
             {
-                var key = opt.FirstOrDefault(c => !_result.Keys.Any(k => k == (ConsoleKey)c));
+                var key = char.ToUpper(opt.FirstOrDefault(c => !_result.Keys.Any(k => k == (ConsoleKey) char.ToUpper(c))));
                 var optIndex = opt.IndexOf(key);
-                opt.Remove(optIndex);
-                _result.TryAdd((ConsoleKey)key, opt.Insert(optIndex, $"[{char.ToUpper(key)}]"));
+                var _opt = opt.Remove(optIndex, 1);
+                _result.TryAdd((ConsoleKey)key, _opt.Insert(optIndex, $"[{char.ToUpper(key)}]"));
             }
             var _prompt = prompt.Replace("#options", string.Join(", ", _result.Values));
             result = _result;

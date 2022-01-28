@@ -3,14 +3,14 @@
     // Responsibility: Encapsulating Customer Details
     public class CustomerProfile
     {
-        public string Email { get; }
-        public string Password { get; }
+        public string Name { get; }
+        public bool IsNew { get; internal set; }
         public OnlineBasket SavedBasket { get; internal set; }
 
-        public CustomerProfile(string email, string password)
+        public CustomerProfile(string name)
         {
-            Email = email;
-            Password = password;
+            Name = name;
+            IsNew = true;
         }
     }
 }

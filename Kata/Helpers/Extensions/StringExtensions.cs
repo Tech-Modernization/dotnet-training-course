@@ -17,10 +17,5 @@ namespace Helpers
             var asInt = 0;
             return int.TryParse(source, out asInt) ? asInt : defaultValue;
         }
-
-        public static string Collapse(this string source)
-        {
-            return source.Where(c => char.IsLetterOrDigit(c)).ToString().ToLower();
-        }
     }
 }

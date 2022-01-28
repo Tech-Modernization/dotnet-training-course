@@ -8,5 +8,6 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
     public interface IShopContainer
     {
         void ServeCustomer();
+        void Admin();
     }
 }

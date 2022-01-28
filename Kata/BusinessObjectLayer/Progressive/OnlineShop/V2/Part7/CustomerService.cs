@@ -11,15 +11,15 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
     {
         private IJsonDataService dataService;
         private IInteractor interactor;
-        private CustomerDb custDb;
-        private string dbPath = @"online-shop-customers.json";
+        private ShopDb shopDb;
+        private const string dbPath = "online-shop-inventory.json";
 
         public CustomerService(IJsonDataService dataService, IInteractor interactor)
         {
             this.dataService = dataService;
             this.interactor = interactor;
 
-            custDb = Load(dbPath);
+            shopDb = Load(dbPath);
         }
 
         public void SaveBasket(OnlineBasket basket, CustomerProfile customer = null)
@@ -30,47 +30,34 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
                 if (customer != null)
                 {
                     customer.SavedBasket = basket;
-                    interactor.Message($"Basket saved.  Come back and check out soon, {customer.Email}");
+                    dataService.Save(dbPath, shopDb);
+                    interactor.Message($"Basket saved.  Come back and check out soon, {customer.Name}");
                 }
             }
         }
 
-        public CustomerProfile Login()
+        private CustomerProfile GetCustomer()
         {
             var username = string.Empty;
-            var gotEmail = interactor.GetString("Email: ", out username);
-            if (gotEmail)
-            {
-                var customer = custDb.Customers.SingleOrDefault(customer => customer.Email == username);
-                if (customer == null)
-                {
-                    customer = Register(username);
-                }
-                return customer;
-            }
-            return null;
+            var gotEmail = interactor.GetString("Name: ", out username);
+            return gotEmail 
+                ? shopDb.Customers.SingleOrDefault(customer => customer.Name == username)
+                : Register(username);
+        }
+        public CustomerProfile Login()
+        {
+            return GetCustomer();
         }
 
         private CustomerProfile Register(string username)
         {
-            return new CustomerProfile(username, "xyz");
+            return new CustomerProfile(username);
         }
 
-        private CustomerDb Load(string path)
+        private ShopDb Load(string path)
         {
-            try
-            {
-                var jsonObj = dataService.GetJsonObject(path);
-                return jsonObj.ToObject<CustomerDb>();
-            }
-            catch (FileHelperException ex)
-            {
-                if (ex.InnerException is FileNotFoundException)
-                {
-                    return new CustomerDb();
-                }
-                throw;
-            }
+            var jsonObj = dataService.GetJsonObject(path);
+            return jsonObj.ToObject<ShopDb>();
         }
 
         public CustomerProfile EstablishCustomerContext(CustomerDecision decision)
@@ -91,10 +78,57 @@ namespace BusinessObjectLayer.Progressive.OnlineShop.V2.Part7
                 case ConsoleKey.L:
                     return Login();
                 case ConsoleKey.C:
-                    return new CustomerProfile("guest@shop.com", "abc");
+                    return new CustomerProfile("guest@shop.com");
                 default:
                     return null;
             }
+        }
+
+        public void Manage()
+        {
+            var key = interactor.GetKey("[A]dd, [E]dit or [D]elete customer? ", ConsoleKey.A, ConsoleKey.E, ConsoleKey.D);
+            switch(key)
+            {
+                case ConsoleKey.E:
+                case ConsoleKey.A:
+                    AddCustomer();
+                    break;
+                case ConsoleKey.D:
+                    DeleteCustomer();
+                    break;
+            }
+
+            dataService.Save(dbPath, shopDb);
+        }
+
+        private void AddCustomer()
+        {
+            var customer = GetCustomer();
+            if (customer != null)
+            {
+                if (customer.IsNew)
+                {
+                    shopDb.Customers.Add(customer);
+                }
+                else
+                {
+                    EditCustomer(customer);
+                }
+            }
+        }
+
+        private void DeleteCustomer()
+        {
+            var cust = GetCustomer();
+            if (cust != null)
+            {
+                shopDb.Customers.Remove(cust);
+            }
+        }
+
+        private void EditCustomer(CustomerProfile customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }
